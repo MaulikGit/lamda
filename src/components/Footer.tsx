@@ -167,24 +167,36 @@ export default function Footer() {
 
         {/* Contact Bar */}
         <div className="mt-12 pt-8 border-t border-neutral-200">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
-              <div className="flex items-center gap-2 text-sm text-neutral-500">
-                <MapPin className="w-4 h-4 text-brand-teal" />
-                <span>Ahmedabad, India</span>
+          <div className="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6">
+            <div className="flex flex-col gap-2.5 text-sm text-neutral-500">
+              <div className="flex items-start sm:items-center gap-2">
+                <MapPin className="w-4 h-4 text-brand-teal shrink-0 mt-0.5 sm:mt-0" />
+                <span>Lambda House, Plot No. 38, Survey No. 388, Near Silver Oak University, S. G. Highway, Gota, Ahmedabad - 382481, Gujarat, India</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-neutral-500">
-                <Phone className="w-4 h-4 text-brand-teal" />
-                <span>+91 79 0000 0000</span>
+              <div className="flex items-start sm:items-center gap-2">
+                <MapPin className="w-4 h-4 text-brand-teal shrink-0 mt-0.5 sm:mt-0" />
+                <span>London, UK (ABL): 319 Sage House, Pinner Road, Harrow, London, HA1 4HF, UK</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-neutral-500">
-                <Mail className="w-4 h-4 text-brand-teal" />
-                <span>info@lambdacdmo.com</span>
+              <div className="flex flex-wrap items-center gap-6 pt-1">
+                <a
+                  href="tel:+917940202020"
+                  className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-brand-teal shrink-0" />
+                  <span>+91-79-40202020</span>
+                </a>
+                <a
+                  href="mailto:BD@lambda-cro.com"
+                  className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-brand-teal shrink-0" />
+                  <span>BD@lambda-cro.com</span>
+                </a>
               </div>
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-[10px] border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-medium text-xs uppercase tracking-wider shadow-sm hover:shadow active:scale-98 transition-all"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-[10px] border border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-medium text-xs uppercase tracking-wider shadow-sm hover:shadow active:scale-98 transition-all shrink-0"
             >
               GET IN TOUCH
             </Link>

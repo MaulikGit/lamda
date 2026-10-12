@@ -98,7 +98,7 @@ export default function ModalityLayout({ page, content }: ModalityLayoutProps) {
                   />
                 </div>
               ) : page.image ? (
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[10px] border border-neutral-200 shadow-lg bg-white">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[10px] border border-neutral-200 shadow-lg bg-[#000a1c]">
                   <img
                     src={page.image}
                     alt={page.title}

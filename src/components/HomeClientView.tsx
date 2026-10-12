@@ -390,7 +390,7 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
               >
                 <Link href={`/modalities/${modal.slug}`} className="group block h-full">
                   <div className="h-full glass-card rounded-[10px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div className="relative aspect-[4/3] overflow-hidden bg-slate-950">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-[#000a1c]">
                       <img
                         src={modal.image}
                         alt={modal.title}

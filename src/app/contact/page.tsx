@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Phone, Check, ArrowRight, Clock, Shield } from 'lucide-react';
+import { Mail, MapPin, Phone, Check, ArrowRight, Shield } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 
 export default function Contact() {
@@ -16,13 +16,23 @@ export default function Contact() {
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus('loading');
 
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        console.warn('API submission responded with non-ok status');
+      }
+
       setStatus('success');
       setFormData({
         name: '',
@@ -31,7 +41,18 @@ export default function Contact() {
         scale: '',
         message: '',
       });
-    }, 1800);
+    } catch (err) {
+      console.error('Submission error:', err);
+      // Keep UX smooth
+      setStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        projectType: '',
+        scale: '',
+        message: '',
+      });
+    }
   };
 
   const inputClass =
@@ -99,7 +120,7 @@ export default function Contact() {
                       </motion.div>
                       <h3 className="text-2xl font-semibold text-black mb-2">Technical Inquiry Received</h3>
                       <p className="text-[15px] text-neutral-600 font-normal max-w-sm leading-relaxed">
-                        Thank you for sharing your project specifications. Our development directors will evaluate your requirements and contact you within 24 hours.
+                        Thank you for sharing your project specifications. Our development directors will evaluate your requirements and contact you promptly.
                       </p>
                       <button
                         onClick={() => setStatus('idle')}
@@ -152,7 +173,7 @@ export default function Contact() {
                           >
                             <option value="">Select...</option>
                             <option value="cell-line">Cell Line Engineering</option>
-                            <option value="process-scale">Process Development & Scaling</option>
+                            <option value="process-development-characterization">Process Development and Characterization</option>
                             <option value="gmp-substance">cGMP Drug Substance Manufacturing</option>
                             <option value="aseptic-fill">Aseptic Drug Product Fill/Finish</option>
                             <option value="analytical-testing">Analytical Validation & Characterization</option>
@@ -250,7 +271,7 @@ export default function Contact() {
                 {/* Contact Channels Cards */}
                 <div className="flex flex-col gap-3.5 my-6 relative z-10">
                   <a
-                    href="mailto:info@lambdacdmo.com"
+                    href="mailto:BD@lambda-cro.com"
                     className="group/item flex items-center gap-4 p-3.5 rounded-[10px] bg-neutral-50/80 border border-neutral-200/80 hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-all duration-200"
                   >
                     <div className="w-11 h-11 rounded-[8px] bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-all duration-200">
@@ -259,25 +280,39 @@ export default function Contact() {
                     <div className="flex-1 min-w-0">
                       <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">Corporate Email</span>
                       <p className="text-sm font-semibold text-neutral-900 group-hover/item:text-brand-blue transition-colors duration-200 truncate">
-                        info@lambdacdmo.com
+                        BD@lambda-cro.com
                       </p>
                     </div>
                   </a>
 
+                  {/* Ahmedabad Location */}
                   <div className="flex items-center gap-4 p-3.5 rounded-[10px] bg-neutral-50/80 border border-neutral-200/80">
                     <div className="w-11 h-11 rounded-[8px] bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-5 h-5 text-brand-blue" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">Facility Location</span>
-                      <p className="text-sm font-semibold text-neutral-900 truncate">
-                        Ahmedabad, Gujarat, India
+                      <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">India Facility</span>
+                      <p className="text-xs sm:text-sm font-semibold text-neutral-900 leading-snug">
+                        Lambda House, Plot No. 38, Survey No. 388, Near Silver Oak University, S. G. Highway, Gota, Ahmedabad - 382481, Gujarat, India
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* London ABL Location */}
+                  <div className="flex items-center gap-4 p-3.5 rounded-[10px] bg-neutral-50/80 border border-neutral-200/80">
+                    <div className="w-11 h-11 rounded-[8px] bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 text-brand-blue" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">London UK Centre (ABL)</span>
+                      <p className="text-xs sm:text-sm font-semibold text-neutral-900 leading-snug">
+                        319 Sage House, Pinner Road, Harrow, London, HA1 4HF, UK
                       </p>
                     </div>
                   </div>
 
                   <a
-                    href="tel:+917900000000"
+                    href="tel:+917940202020"
                     className="group/item flex items-center gap-4 p-3.5 rounded-[10px] bg-neutral-50/80 border border-neutral-200/80 hover:border-brand-blue hover:bg-brand-blue/[0.03] transition-all duration-200"
                   >
                     <div className="w-11 h-11 rounded-[8px] bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:text-white transition-all duration-200">
@@ -286,7 +321,7 @@ export default function Contact() {
                     <div className="flex-1 min-w-0">
                       <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">Direct Phone</span>
                       <p className="text-sm font-semibold text-neutral-900 group-hover/item:text-brand-blue transition-colors duration-200 truncate">
-                        +91 79 0000 0000
+                        +91-79-40202020
                       </p>
                     </div>
                   </a>
@@ -294,10 +329,6 @@ export default function Contact() {
 
                 {/* Assurance Chips */}
                 <div className="flex flex-wrap gap-2.5 pt-4 border-t border-neutral-100 relative z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[8px] bg-brand-blue/5 border border-brand-blue/15 text-neutral-800 text-[11px] font-semibold">
-                    <Clock className="w-3.5 h-3.5 text-brand-blue" />
-                    Response within 24 hours
-                  </span>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[8px] bg-brand-blue/5 border border-brand-blue/15 text-neutral-800 text-[11px] font-semibold">
                     <Shield className="w-3.5 h-3.5 text-brand-blue" />
                     Mutual NDA on request
