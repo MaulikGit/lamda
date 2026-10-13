@@ -971,13 +971,13 @@ export const cdmoData: CDMOPage[] = [
     "description": "Our Ahmedabad facility brings together **cell line development, upstream and downstream process development, analytical development and characterization, drug product development, and GMP manufacturing** within an integrated biologics development and manufacturing environment.",
     "image": "/images/development.jpg",
     "images": [
+      "/images/Screenshot 2026-09-11 131721.png",
+      "/images/Screenshot 2026-09-11 132304.png",
+      "/images/Screenshot 2026-09-11 132325.png",
       "/images/Screenshot 2026-09-11 131810.png",
       "/images/Screenshot 2026-09-11 131847.png",
       "/images/Screenshot 2026-09-11 132133.png",
-      "/images/Screenshot 2026-09-11 132304.png",
-      "/images/Screenshot 2026-09-11 132325.png",
-      "/images/Screenshot 2026-09-11 132518.png",
-      "/images/Screenshot 2026-09-11 131721.png"
+      "/images/Screenshot 2026-09-11 132518.png"
     ],
     "sections": [
       {
@@ -1232,7 +1232,7 @@ export const cdmoData: CDMOPage[] = [
         "subtitle": "01 — UPSTREAM PROCESS DEVELOPMENT",
         "text": "High-throughput mammalian cell culture capabilities support the development and optimization of robust upstream processes.",
         "dark": false,
-        "image": "/images/uk/upstream/Ambr 250 High-Throughput Bioreactor System.png",
+        "image": "/images/uk/upstream/Integrated ATF Perfusion Bioreactor System.png",
         "imageSide": "left",
         "bullets": [
           "Media screening and optimization",
@@ -1242,7 +1242,17 @@ export const cdmoData: CDMOPage[] = [
           "Glycosylation and product quality optimization",
           "Scale-up and process characterization"
         ],
-        "footerText": "The team supports development across monoclonal antibodies, complex proteins, biosimilars, novel biologics, and animal therapeutics."
+        "footerText": "The team supports development across monoclonal antibodies, complex proteins, biosimilars, novel biologics, and animal therapeutics.",
+        "images": [
+          "/images/uk/upstream/Integrated ATF Perfusion Bioreactor System.png",
+          "/images/uk/upstream/Parallel 5 L Bench-Scale Bioreactor Platform for Upstream Process Development.jpg",
+          "/images/uk/upstream/Shake Flask Culture and Seed Train Development.jpg",
+          "/images/uk/upstream/Automated Cell Viability and Cell Density Analysis.jpg",
+          "/images/uk/upstream/Cell Culture Analytics and Process Monitoring.jpg",
+          "/images/uk/upstream/Ambr 250 High-Throughput Bioreactor System.png",
+          "/images/uk/upstream/Automated Osmolality Measurement.png",
+          "/images/uk/upstream/Milli-Q Water Purification Platform.png"
+        ]
       },
       {
         "id": "sec-dxxhlf9",
