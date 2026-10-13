@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   MapPin, 
   ArrowRight, 
@@ -368,6 +368,14 @@ export default function CDMOLocationsMapSection({
                       style={{ left: '33.5%', top: '21.0%' }}
                       className="absolute -translate-x-1/2 z-30 flex flex-col items-center"
                     >
+                      {/* Active beacon pulse ring */}
+                      {activeLocationId === 'uk' && (
+                        <div className="absolute -translate-y-full top-0 pointer-events-none flex items-center justify-center">
+                          <span className="absolute w-8 h-8 rounded-full bg-brand-orange/30 animate-ping" />
+                          <span className="w-10 h-10 rounded-full bg-brand-orange/15 blur-xs" />
+                        </div>
+                      )}
+
                       {/* Interactive Pin Trigger Button with Standalone Location MapPin Icon (pointing at origin) */}
                       <button
                         type="button"
@@ -383,48 +391,20 @@ export default function CDMOLocationsMapSection({
                           strokeLinejoin="round"
                           className={`w-5.5 h-5.5 sm:w-6 sm:h-6 transition-all duration-300 drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] ${
                             activeLocationId === 'uk'
-                              ? 'fill-brand-orange scale-110 drop-shadow-[0_3px_12px_rgba(245,134,52,0.85)]'
+                              ? 'fill-brand-orange scale-115 drop-shadow-[0_3px_14px_rgba(245,134,52,0.9)]'
                               : 'fill-brand-orange/95 scale-100 hover:scale-110 hover:fill-brand-orange'
                           }`}
                         />
                       </button>
 
                       {/* Fixed Label Pill below pin icon */}
-                      <div className="absolute top-1.5 whitespace-nowrap bg-white/95 border border-brand-orange/40 text-[10px] sm:text-[11px] font-bold text-brand-orange px-2 py-0.5 rounded-full shadow-sm pointer-events-none z-20">
+                      <div className={`absolute top-1.5 whitespace-nowrap px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold shadow-sm pointer-events-none z-20 transition-all duration-300 ${
+                        activeLocationId === 'uk'
+                          ? 'bg-brand-orange text-black border border-brand-orange/60 shadow-md scale-105 ring-2 ring-brand-orange/20 font-extrabold'
+                          : 'bg-white/95 border border-brand-orange/40 text-brand-orange'
+                      }`}>
                         London, UK
                       </div>
-
-                      {/* POPUP MODAL ANIMATION FOR LONDON - Active state below location name */}
-                      <AnimatePresence>
-                        {activeLocationId === 'uk' && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 8, scale: 0.94 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: 6, scale: 0.94 }}
-                            transition={{ duration: 0.22, ease: 'easeOut' }}
-                            className="hidden xl:block absolute z-50 left-1/2 -translate-x-[65%] top-8.5 w-76 sm:w-80 bg-white/95 backdrop-blur-xl border border-brand-orange/40 rounded-xl p-3.5 shadow-2xl text-left"
-                          >
-                            <div className="flex items-center mb-1.5">
-                              <h4 className="text-sm font-bold text-neutral-900 flex items-center gap-1.5">
-                                <MapPin className="w-3.5 h-3.5 text-brand-orange" />
-                                <span>London, UK</span>
-                              </h4>
-                            </div>
-
-                            <p className="text-xs text-slate-600 leading-relaxed mb-3">
-                              Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.
-                            </p>
-
-                            <Link
-                              href="/facility&location/UK"
-                              className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-brand-orange hover:bg-brand-orange-hover text-black text-xs font-semibold transition-all shadow-sm"
-                            >
-                              <span>Explore London Centre</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </Link>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
                     </div>
 
                     {/* LOCATION 2: Ahmedabad, India Pin & Beacon (Blue with white border) */}
@@ -432,6 +412,14 @@ export default function CDMOLocationsMapSection({
                       style={{ left: '68.9%', top: '53.0%' }}
                       className="absolute -translate-x-1/2 z-30 flex flex-col items-center"
                     >
+                      {/* Active beacon pulse ring */}
+                      {activeLocationId === 'india' && (
+                        <div className="absolute -translate-y-full top-0 pointer-events-none flex items-center justify-center">
+                          <span className="absolute w-8 h-8 rounded-full bg-brand-blue/30 animate-ping" />
+                          <span className="w-10 h-10 rounded-full bg-brand-blue/15 blur-xs" />
+                        </div>
+                      )}
+
                       {/* Interactive Pin Trigger Button with Standalone Location MapPin Icon (pointing at origin) */}
                       <button
                         type="button"
@@ -447,48 +435,20 @@ export default function CDMOLocationsMapSection({
                           strokeLinejoin="round"
                           className={`w-5.5 h-5.5 sm:w-6 sm:h-6 transition-all duration-300 drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] ${
                             activeLocationId === 'india'
-                              ? 'fill-brand-blue scale-110 drop-shadow-[0_3px_12px_rgba(0,174,239,0.85)]'
+                              ? 'fill-brand-blue scale-115 drop-shadow-[0_3px_14px_rgba(0,174,239,0.9)]'
                               : 'fill-brand-blue/95 scale-100 hover:scale-110 hover:fill-brand-blue'
                           }`}
                         />
                       </button>
 
                       {/* Fixed Label Pill below pin icon */}
-                      <div className="absolute top-1.5 whitespace-nowrap bg-white/95 border border-brand-blue/40 text-[10px] sm:text-[11px] font-bold text-brand-blue px-2 py-0.5 rounded-full shadow-sm pointer-events-none z-20">
+                      <div className={`absolute top-1.5 whitespace-nowrap px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold shadow-sm pointer-events-none z-20 transition-all duration-300 ${
+                        activeLocationId === 'india'
+                          ? 'bg-brand-blue text-white border border-brand-blue/60 shadow-md scale-105 ring-2 ring-brand-blue/20 font-extrabold'
+                          : 'bg-white/95 border border-brand-blue/40 text-brand-blue'
+                      }`}>
                         Ahmedabad, India
                       </div>
-
-                      {/* POPUP MODAL ANIMATION FOR AHMEDABAD - Active state below location name */}
-                      <AnimatePresence>
-                        {activeLocationId === 'india' && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 8, scale: 0.94 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: 6, scale: 0.94 }}
-                            transition={{ duration: 0.22, ease: 'easeOut' }}
-                            className="hidden xl:block absolute z-50 left-1/2 -translate-x-[25%] top-8.5 w-76 sm:w-80 bg-white/95 backdrop-blur-xl border border-brand-blue/40 rounded-xl p-3.5 shadow-2xl text-left"
-                          >
-                            <div className="flex items-center mb-1.5">
-                              <h4 className="text-sm font-bold text-neutral-900 flex items-center gap-1.5">
-                                <MapPin className="w-3.5 h-3.5 text-brand-blue" />
-                                <span>Ahmedabad, India</span>
-                              </h4>
-                            </div>
-
-                            <p className="text-xs text-slate-600 leading-relaxed mb-3">
-                              Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.
-                            </p>
-
-                            <Link
-                              href="/facility&location/India"
-                              className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg bg-brand-blue hover:bg-brand-blue-hover text-white text-xs font-semibold transition-all shadow-sm"
-                            >
-                              <span>Explore Ahmedabad Facility</span>
-                              <ArrowRight className="w-3.5 h-3.5" />
-                            </Link>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
                     </div>
 
                   </div>
