@@ -279,21 +279,10 @@ export default function OverviewLayout({ page, content }: OverviewLayoutProps) {
           : (idx % 2 === 1) !== flip;
         const isDiagram = Boolean(
           section.image &&
-            (section.image.endsWith('.png') ||
-              section.image.endsWith('.svg') ||
-              section.image.includes('cGMP') ||
-              section.image.includes('equipment') ||
-              section.image.includes('CDMOblue') ||
-              section.image.includes('celldev') ||
-              section.image.includes('cgmp2') ||
-              section.image.includes('Akta') ||
-              section.image.includes('ChromXact') ||
-              section.image.includes('Fermenters') ||
-              section.image.includes('Spray_Dryer') ||
-              section.image.includes('Batch_Centrifuge') ||
-              section.image.includes('Mammalian') ||
+            (section.image.endsWith('.svg') ||
               section.image.includes('gene_construct')) &&
-            !section.image.includes('teamwork')
+            !section.image.includes('teamwork') &&
+            !section.image.includes('CDMOblue')
         );
 
         const equipmentItems = getSectionEquipment(section.title, page.slug);
