@@ -14,9 +14,9 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({
-    heading = 'Biologics Development and Manufacturing',
-    subtitle = 'From Cell Line to Clinical Supply.',
-    description = 'Lambda CDMO provides integrated development, analytical characterization and GMP manufacturing services for biologics, supporting innovators and biosimilar developers from early development through clinical manufacturing.',
+    heading = 'Biologics Development and Manufacturing.',
+    subtitle = 'Integrated from Cell Line Engineering to Clinical Supplies.',
+    description = 'Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.',
     videoSrc = '/videos/newhero.mp4',
     primaryCta = { text: 'Get in touch', link: '/contact' },
     secondaryCta = { text: 'Explore Services', link: '/services/cell-line' }

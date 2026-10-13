@@ -47,9 +47,9 @@ interface HomeClientViewProps {
 export default function HomeClientView({ pageData }: HomeClientViewProps) {
   const [openFaqId, setOpenFaqId] = useState<number | null>(null);
 
-  const heroHeading = pageData?.heading || 'Accelerating Biologics from Gene to GMP.';
-  const heroSubtitle = pageData?.subtitle || 'From Cell Line to Clinical Supply.';
-  const heroDesc = pageData?.description || 'Supporting biopharmaceutical companies with integrated biologics development, cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.';
+  const heroHeading = pageData?.heading || 'Biologics Development and Manufacturing.';
+  const heroSubtitle = pageData?.subtitle || 'Integrated from Cell Line Engineering to Clinical Supplies.';
+  const heroDesc = pageData?.description || 'Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.';
   const heroVideo = pageData?.heroVideo || '/videos/newhero.mp4';
   const heroPrimaryCta = {
     text: pageData?.heroPrimaryCtaText || pageData?.primaryCta?.text || 'GET IN TOUCH',

@@ -7381,7 +7381,7 @@ export default function PageAdminEditor({
                       </label>
                       <textarea
                         rows={2}
-                        value={page.heading || 'Accelerating Biologics from Gene to GMP.'}
+                        value={page.heading || 'Biologics Development and Manufacturing.'}
                         onChange={(e) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, heading: e.target.value }))}
                         placeholder="Hero Main Heading..."
                         className="text-2xl sm:text-3xl lg:text-4xl font-normal text-white leading-tight w-full bg-black/30 border border-white/20 focus:border-brand-blue rounded-xl p-3 focus:outline-none backdrop-blur-xs shadow-inner"
@@ -7395,7 +7395,7 @@ export default function PageAdminEditor({
                       </label>
                       <input
                         type="text"
-                        value={page.subtitle || 'From Cell Line to Clinical Supply.'}
+                        value={page.subtitle || 'Integrated from Cell Line Engineering to Clinical Supplies.'}
                         onChange={(e) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, subtitle: e.target.value }))}
                         placeholder="Hero Subtitle..."
                         className="text-lg sm:text-xl font-light text-white/95 w-full bg-black/30 border border-white/20 focus:border-brand-blue rounded-xl p-2.5 focus:outline-none backdrop-blur-xs"
