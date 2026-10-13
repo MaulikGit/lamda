@@ -123,7 +123,16 @@ export default function ModularPageLayout({ page, content }: ModularPageLayoutPr
                     <img
                       src={heroImage}
                       alt={page.title}
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      className={`w-full h-full ${
+                        page.category?.toLowerCase() === 'modalities' || heroImage.includes('/modalities/')
+                          ? 'object-fill'
+                          : 'object-cover'
+                      } transition-transform duration-700 hover:scale-105`}
+                      style={
+                        page.category?.toLowerCase() === 'modalities' || heroImage.includes('/modalities/')
+                          ? { objectFit: 'fill' }
+                          : undefined
+                      }
                     />
                   </div>
                 )}

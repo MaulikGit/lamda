@@ -633,7 +633,8 @@ export default function DynamicSectionRenderer({
                       <img
                         src={modal.image || '/images/modalities/mAb.png'}
                         alt={modal.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-fill transition-transform duration-700 group-hover:scale-105"
+                        style={{ objectFit: 'fill' }}
                       />
                     </div>
                     <div className="p-5 flex-1 flex flex-col justify-between">

@@ -102,7 +102,8 @@ export default function ModalityLayout({ page, content }: ModalityLayoutProps) {
                   <img
                     src={page.image}
                     alt={page.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-fill"
+                    style={{ objectFit: 'fill' }}
                   />
                 </div>
               ) : null}

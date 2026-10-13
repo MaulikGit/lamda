@@ -394,7 +394,8 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
                       <img
                         src={modal.image}
                         alt={modal.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-fill transition-transform duration-700 group-hover:scale-105"
+                        style={{ objectFit: 'fill' }}
                       />
                     </div>
                     <div className="p-5 flex-1 flex items-center">

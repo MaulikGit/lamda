@@ -122,8 +122,8 @@ html {
 }
 
 @theme {
-  --font-serif: 'Aptos', 'Aptos Narrow', var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-sans: 'Aptos', 'Aptos Narrow', var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Aptos', 'Aptos Narrow', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Aptos', 'Aptos Narrow', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-aptos: 'Aptos', 'Aptos Narrow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-aptos-narrow: 'Aptos Narrow', 'Aptos', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-aptos-display: 'Aptos Display', 'Aptos', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

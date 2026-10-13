@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: "Lambda CDMO — Integrated Biologics Solutions & GMP Manufacturing",
@@ -47,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <body className="font-sans antialiased text-foreground bg-background selection:bg-brand-blue/20">
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
