@@ -86,8 +86,8 @@ export interface PresetMediaItem {
 export const PRESET_MEDIA_GALLERY: PresetMediaItem[] = [
   // 1. Cinematic Videos
   {
-    label: 'Hero Bioprocess Flow Video',
-    url: '/videos/newhero.mp4',
+    label: 'Hero Bioprocess Flow Video (Hero 5)',
+    url: '/videos/hero5.mp4',
     type: 'video',
     category: 'videos',
     badge: 'Hero Video'
@@ -7085,16 +7085,31 @@ export default function PageAdminEditor({
                   {/* Background Video Confined in Container */}
                   <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                     <video
-                      key={page.heroVideo || page.image || '/videos/newhero.mp4'}
-                      src={page.heroVideo || page.image || '/videos/newhero.mp4'}
+                      key={page.heroVideo || page.image || '/videos/hero5.mp4'}
+                      src={page.heroVideo || page.image || '/videos/hero5.mp4'}
                       autoPlay
                       loop
                       muted
                       playsInline
                       className="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-center opacity-85"
                     />
-                    {/* Dark gradient scrim on left for high contrast readability */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 sm:via-brand-navy/70 to-transparent pointer-events-none" />
+                    {/* Left-side blurry overlay: gradual decrease to half width (50%) */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        backdropFilter: 'blur(16px)',
+                        WebkitBackdropFilter: 'blur(16px)',
+                        maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.4) 38%, rgba(0,0,0,0) 50%)',
+                        WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.4) 38%, rgba(0,0,0,0) 50%)',
+                      }}
+                    />
+                    {/* Left-side dark gradient scrim: gradual decrease to half width (50%) */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background: 'linear-gradient(to right, rgba(15, 34, 49, 0.95) 0%, rgba(15, 34, 49, 0.85) 22%, rgba(15, 34, 49, 0.5) 36%, rgba(15, 34, 49, 0.15) 45%, rgba(15, 34, 49, 0) 50%)',
+                      }}
+                    />
                   </div>
 
                   {/* In-Place Editable Content Overlay */}

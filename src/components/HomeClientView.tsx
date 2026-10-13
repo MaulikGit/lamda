@@ -50,7 +50,7 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
   const heroHeading = pageData?.heading || 'Biologics Development and Manufacturing.';
   const heroSubtitle = pageData?.subtitle || 'Integrated from Cell Line Engineering to Clinical Supplies.';
   const heroDesc = pageData?.description || 'Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.';
-  const heroVideo = pageData?.heroVideo || '/videos/newhero.mp4';
+  const heroVideo = pageData?.heroVideo || '/videos/hero5.mp4';
   const heroPrimaryCta = {
     text: pageData?.heroPrimaryCtaText || pageData?.primaryCta?.text || 'GET IN TOUCH',
     link: pageData?.heroPrimaryCtaLink || pageData?.primaryCta?.link || '/contact',

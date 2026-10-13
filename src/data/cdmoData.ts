@@ -194,7 +194,7 @@ export const cdmoData: CDMOPage[] = [
     "subtitle": "Integrated from Cell Line Engineering to Clinical Supplies.",
     "description": "Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.",
     "image": "/images/hero_cleanroom.png",
-    "heroVideo": "/videos/newhero.mp4",
+    "heroVideo": "/videos/hero5.mp4",
     "heroMediaType": "video",
     "layoutTemplate": "universal",
     "primaryCta": {
@@ -465,7 +465,7 @@ export const cdmoData: CDMOPage[] = [
       "subtitle": "Integrated from Cell Line Engineering to Clinical Supplies.",
       "description": "Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.",
       "image": "/images/hero_cleanroom.png",
-      "heroVideo": "/videos/newhero.mp4",
+      "heroVideo": "/videos/hero5.mp4",
       "heroMediaType": "video",
       "layoutTemplate": "universal",
       "primaryCta": {

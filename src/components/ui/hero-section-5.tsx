@@ -17,7 +17,7 @@ export function HeroSection({
     heading = 'Biologics Development and Manufacturing.',
     subtitle = 'Integrated from Cell Line Engineering to Clinical Supplies.',
     description = 'Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.',
-    videoSrc = '/videos/newhero.mp4',
+    videoSrc = '/videos/hero5.mp4',
     primaryCta = { text: 'Get in touch', link: '/contact' },
     secondaryCta = { text: 'Explore Services', link: '/services/cell-line' }
 }: HeroSectionProps = {}) {
@@ -25,17 +25,37 @@ export function HeroSection({
         <section className="relative w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-4 min-h-[calc(100vh-64px)] lg:min-h-[calc(100vh-80px)] flex flex-col justify-center">
             <div className="relative w-full max-w-[1700px] mx-auto rounded-[10px] overflow-hidden border border-neutral-200 shadow-sm min-h-[calc(100vh-96px)] lg:min-h-[calc(100vh-120px)] flex items-center bg-brand-navy">
                 {/* Background Video confined within container */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0 overflow-hidden">
                     <video
-                        src={videoSrc || '/videos/newhero.mp4'}
+                        key={videoSrc || '/videos/hero5.mp4'}
+                        src={videoSrc || '/videos/hero5.mp4'}
                         autoPlay
                         loop
                         muted
                         playsInline
                         className="absolute inset-0 w-full h-full object-cover object-[75%_center] sm:object-[65%_center] md:object-center"
                     />
-                    {/* Dark gradient scrim on left for high contrast readability */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 sm:via-brand-navy/45 to-transparent pointer-events-none" />
+                    {/* Left-side blurry overlay: gradual decrease to half width (50%) */}
+                    <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                            backdropFilter: 'blur(16px)',
+                            WebkitBackdropFilter: 'blur(16px)',
+                            maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.4) 38%, rgba(0,0,0,0) 50%)',
+                            WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.4) 38%, rgba(0,0,0,0) 50%)',
+                        }}
+                    />
+                    {/* Left-side dark gradient scrim: gradual decrease to half width (50%) */}
+                    <div
+                        className="absolute inset-0 pointer-events-none hidden md:block"
+                        style={{
+                            background: 'linear-gradient(to right, rgba(15, 34, 49, 0.95) 0%, rgba(15, 34, 49, 0.85) 22%, rgba(15, 34, 49, 0.5) 36%, rgba(15, 34, 49, 0.15) 45%, rgba(15, 34, 49, 0) 50%)',
+                        }}
+                    />
+                    {/* Mobile fallback scrim for small screens */}
+                    <div
+                        className="absolute inset-0 pointer-events-none md:hidden bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/35"
+                    />
                 </div>
 
                 <div className="relative z-10 w-full px-8 sm:px-12 md:px-16 lg:px-20 py-16 md:py-24 lg:py-28 flex items-center">
