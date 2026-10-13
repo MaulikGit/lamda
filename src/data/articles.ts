@@ -189,7 +189,7 @@ Downstream, we deploy charge-based and affinity polishing steps that separate mi
       name: 'Lambda CDMO Scientific Team',
       avatar: '/images/lambda-symbol.svg',
     },
-    image: '/images/modalities/Antibody–Drug_Conjugate.png',
+    image: '/images/modalities/Antibody-Drug_Conjugate.png',
     content: `
 Antibody-drug conjugates merge the targeting of a monoclonal antibody with the potency of a cytotoxic payload — and the drug-to-antibody ratio (DAR) is the attribute that defines both efficacy and safety.
 

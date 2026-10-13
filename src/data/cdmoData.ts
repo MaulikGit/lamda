@@ -365,7 +365,7 @@ export const cdmoData: CDMOPage[] = [
             "title": "Antibody-Drug Conjugates",
             "description": "Conjugation process development, DAR characterization, and GMP manufacturing.",
             "link": "/modalities/adcs",
-            "image": "/images/modalities/Antibody–Drug_Conjugate.png"
+            "image": "/images/modalities/Antibody-Drug_Conjugate.png"
           },
           {
             "title": "Proteins & Peptides",
@@ -627,7 +627,7 @@ export const cdmoData: CDMOPage[] = [
               "title": "Antibody-Drug Conjugates",
               "description": "Conjugation process development, DAR characterization, and GMP manufacturing.",
               "link": "/modalities/adcs",
-              "image": "/images/modalities/Antibody–Drug_Conjugate.png"
+              "image": "/images/modalities/Antibody-Drug_Conjugate.png"
             },
             {
               "title": "Proteins & Peptides",
@@ -2211,7 +2211,7 @@ export const cdmoData: CDMOPage[] = [
     "badge": "Modalities",
     "heading": "Integrated Development for ADC Programs",
     "description": "Antibody-drug conjugates (ADCs) combine monoclonal antibodies with highly potent payloads, requiring specialized development, analytical characterization, and manufacturing strategies. Lambda CDMO supports ADC programs through capabilities spanning monoclonal antibody development, conjugation process development, analytical characterization, and manufacturing.",
-    "image": "/images/modalities/Antibody–Drug_Conjugate.png",
+    "image": "/images/modalities/Antibody-Drug_Conjugate.png",
     "capabilities": [
       "Monoclonal antibody development for ADC programs",
       "Conjugation process development",

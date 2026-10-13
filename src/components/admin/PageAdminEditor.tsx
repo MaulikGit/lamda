@@ -454,7 +454,7 @@ export const PRESET_MEDIA_GALLERY: PresetMediaItem[] = [
   },
   {
     label: 'Antibody-Drug Conjugates (ADCs)',
-    url: '/images/modalities/Antibody–Drug_Conjugate.png',
+    url: '/images/modalities/Antibody-Drug_Conjugate.png',
     type: 'image',
     category: 'modalities',
     badge: 'Conjugates'

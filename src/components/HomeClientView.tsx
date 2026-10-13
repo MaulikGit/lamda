@@ -142,7 +142,7 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
       title: 'Antibody-Drug Conjugates',
       slug: 'adcs',
       desc: 'Conjugation process development, DAR characterization, and GMP manufacturing.',
-      image: '/images/modalities/Antibody–Drug_Conjugate.png',
+      image: '/images/modalities/Antibody-Drug_Conjugate.png',
     },
     {
       title: 'Proteins & Peptides',

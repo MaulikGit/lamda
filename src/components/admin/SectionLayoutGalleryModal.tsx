@@ -273,7 +273,7 @@ export const SECTION_LAYOUTS: SectionLayoutOption[] = [
       cards: [
         { title: 'Monoclonal Antibodies', description: 'Platform capabilities for IgG1, IgG2, and IgG4 subclasses with high titers and purity.', link: '/modalities/mabs', image: '/images/modalities/mAb.png' },
         { title: 'Bispecific Antibodies', description: 'Overcoming chain pairing, homodimer formation, and mispairing with tailored purification.', link: '/modalities/bispecifics', image: '/images/modalities/Bispecific_Antibody.png' },
-        { title: 'Antibody-Drug Conjugates (ADCs)', description: 'Conjugation process development, drug-to-antibody ratio (DAR) optimization, and aseptic manufacturing.', link: '/modalities/adcs', image: '/images/modalities/Antibody–Drug_Conjugate.png' },
+        { title: 'Antibody-Drug Conjugates (ADCs)', description: 'Conjugation process development, drug-to-antibody ratio (DAR) optimization, and aseptic manufacturing.', link: '/modalities/adcs', image: '/images/modalities/Antibody-Drug_Conjugate.png' },
         { title: 'Proteins & Peptides', description: 'Recombinant proteins, fusion constructs, and synthetic peptides produced with high purity.', link: '/modalities/proteins-peptides', image: '/images/modalities/Proteins_and_Peptides.png' }
       ]
     }
