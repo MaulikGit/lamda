@@ -7,7 +7,7 @@ import Reveal from '@/components/Reveal';
 
 const ukEquipment = [
   {
-    image: '/images/uk/Screenshot%202026-09-26%20173649.png',
+    image: '/images/uk/xcell.png',
     alt: 'London Facility Equipment 1',
   },
   {

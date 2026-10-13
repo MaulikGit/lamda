@@ -6,12 +6,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const UK_FACILITY_IMAGES = [
   {
-    src: '/images/uk/Screenshot%202026-09-26%20173413.png',
-    alt: 'London Biologics Development Suite',
+    src: '/images/uk/xcell.png',
+    alt: 'London Biologics Development & Analytical Sciences',
   },
   {
-    src: '/images/uk/Screenshot%202026-09-26%20173649.png',
-    alt: 'London Innovation Centre Laboratory Equipment',
+    src: '/images/uk/Screenshot%202026-09-26%20173413.png',
+    alt: 'London Biologics Development Suite',
   },
   {
     src: '/images/uk/Screenshot%202026-09-26%20173425.png',
