@@ -238,7 +238,7 @@ export const DRUG_PRODUCT_EQUIPMENT: EquipmentItem[] = [
     tag: 'Stability Chamber',
   },
   {
-    src: '/images/Drugproductdev/Density Analyzer & Viscometer in FDL Lab.jpg',
+    src: '/images/Drugproductdev/Density Analyzer & Viscometer in FDL Lab.png',
     title: 'Density Analyzer & Micro-Viscometer',
     subtitle: 'Sub-microliter rheological profiling for high-concentration monoclonal antibody formulations and syringeability.',
     tag: 'Viscosity & Rheology',
