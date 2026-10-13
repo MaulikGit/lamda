@@ -58,7 +58,7 @@ const CDMO_LOCATIONS: LocationInfo[] = [
     badge: 'Primary Biomanufacturing Campus',
     tagline: 'India HQ & cGMP Biomanufacturing',
     categoryBadge: 'India cGMP Campus',
-    description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.',
+    description: 'Our Ahmedabad facility brings together cell line development, upstream and downstream process development, analytical development and characterization, drug product development, and GMP manufacturing within an integrated biologics development and manufacturing environment.',
     coreCapabilities: [
       {
         icon: FlaskConical,

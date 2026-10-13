@@ -31,16 +31,16 @@ Our facilities support with a strong focus, different aspects of biologics devel
     {
       id: 'India',
       name: 'Ahmedabad, India',
-      headline: 'Ahmedabad Biomanufacturing Campus: Integrated Development & GMP Suites',
+      headline: 'Integrated Biologics Development & GMP Manufacturing',
       categoryBadge: 'PRIMARY BIOMANUFACTURING CAMPUS',
       location: 'Gujarat, India',
-      statHighlight: '27,000 sqft Campus',
+      statHighlight: '27,000 sq. ft. Campus',
       badge: 'India HQ',
       image: '/images/Lamdabuilding.jpg',
       href: '/facility&location/India',
       ctaText: 'Ahmedabad Facility',
       description:
-        'Integrated development, comprehensive analytical characterization, and clinical GMP manufacturing platform under a unified quality framework.',
+        'Our Ahmedabad facility brings together cell line development, upstream and downstream process development, analytical development and characterization, drug product development, and GMP manufacturing within an integrated biologics development and manufacturing environment.',
       primaryHighlight:
         '2x 200L single-use bioreactors with robotic isolator aseptic filling (10,000 units/batch in vials, PFS, cartridges).',
       tags: ['GMP Manufacturing', 'Robotic Isolator', 'US FDA / EMA Aligned'],
