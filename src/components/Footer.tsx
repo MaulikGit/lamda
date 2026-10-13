@@ -175,7 +175,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start sm:items-center gap-2">
                 <MapPin className="w-4 h-4 text-brand-teal shrink-0 mt-0.5 sm:mt-0" />
-                <span>London, UK (ABL): 319 Sage House, Pinner Road, Harrow, London, HA1 4HF, UK</span>
+                <span>London, UK: 319 Sage House, Pinner Road, Harrow, London, HA1 4HF, UK</span>
               </div>
               <div className="flex flex-wrap items-center gap-6 pt-1">
                 <a

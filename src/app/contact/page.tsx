@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Phone, Check, ArrowRight, Shield } from 'lucide-react';
+import { Mail, MapPin, Phone, Check, ArrowRight } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 
 export default function Contact() {
@@ -298,13 +298,13 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* London ABL Location */}
+                  {/* London Location */}
                   <div className="flex items-center gap-4 p-3.5 rounded-[10px] bg-neutral-50/80 border border-neutral-200/80">
                     <div className="w-11 h-11 rounded-[8px] bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-5 h-5 text-brand-blue" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">London UK Centre (ABL)</span>
+                      <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">London UK Centre</span>
                       <p className="text-xs sm:text-sm font-semibold text-neutral-900 leading-snug">
                         319 Sage House, Pinner Road, Harrow, London, HA1 4HF, UK
                       </p>
@@ -325,14 +325,6 @@ export default function Contact() {
                       </p>
                     </div>
                   </a>
-                </div>
-
-                {/* Assurance Chips */}
-                <div className="flex flex-wrap gap-2.5 pt-4 border-t border-neutral-100 relative z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-[8px] bg-brand-blue/5 border border-brand-blue/15 text-neutral-800 text-[11px] font-semibold">
-                    <Shield className="w-3.5 h-3.5 text-brand-blue" />
-                    Mutual NDA on request
-                  </span>
                 </div>
               </div>
             </Reveal>
