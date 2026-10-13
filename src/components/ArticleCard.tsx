@@ -19,11 +19,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           src={article.image}
           alt={article.title}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
-          style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
         />
-        {/* Cold Bluish Scientific Color Grade Wash */}
-        <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
       </div>
       
      <div className="mt-4 px-1">

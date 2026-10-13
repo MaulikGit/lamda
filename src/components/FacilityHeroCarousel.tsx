@@ -94,7 +94,7 @@ export default function FacilityHeroCarousel({ images }: FacilityHeroCarouselPro
       role="region"
       aria-label="Lambda CDMO Facility Gallery Carousel"
     >
-      {/* Animated Image Slide with Cold Bluish Filter */}
+      {/* Animated Image Slide */}
       <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
           key={currentIndex}
@@ -110,13 +110,7 @@ export default function FacilityHeroCarousel({ images }: FacilityHeroCarouselPro
             src={currentImage.src}
             alt={currentImage.alt}
             className="w-full h-full object-cover"
-            style={{
-              filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)',
-            }}
           />
-          {/* Cold Bluish Scientific Color Grade Wash */}
-          <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
           {/* Bottom Vignette for Overlay Readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10 pointer-events-none" />
         </motion.div>

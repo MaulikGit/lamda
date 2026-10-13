@@ -265,11 +265,7 @@ export default async function AnalyticalCharacterizationPage({ searchParams }: P
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
                       />
-                      {/* Cold Bluish Scientific Color Grade Wash */}
-                      <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/75 via-brand-navy/20 to-transparent" />
                       
                       <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 text-white">

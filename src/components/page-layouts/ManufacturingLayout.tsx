@@ -162,11 +162,7 @@ export default function ManufacturingLayout({ page, content }: ManufacturingLayo
                     src={page.image || '/images/hero_cleanroom.png'}
                     alt={page.title}
                     className="w-full h-full object-cover"
-                    style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
                   />
-                  {/* Cold Bluish Scientific Color Grade Wash */}
-                  <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
                 </div>
               )}
             </Reveal>
@@ -361,16 +357,12 @@ export default function ManufacturingLayout({ page, content }: ManufacturingLayo
                             return <EquipmentCarousel items={equipmentItems} sectionTitle={section.title} />;
                           }
                           return (
-                            <div className={`relative rounded-[10px] overflow-hidden border border-neutral-200 ${section.image?.endsWith('.png') || section.image?.endsWith('.svg') || section.image?.includes('cGMP') || section.image?.includes('equipment') || section.image?.includes('Fermenters') || section.image?.includes('Spray_Dryer') || section.image?.includes('Akta') || section.image?.includes('ChromXact') || section.image?.includes('Batch_Centrifuge') ? 'bg-white p-3 sm:p-5' : 'bg-neutral-100'} aspect-[4/3] shadow-sm flex items-center justify-center`}>
+                            <div className="relative rounded-[10px] overflow-hidden border border-neutral-200 bg-neutral-100 aspect-[4/3] shadow-sm flex items-center justify-center">
                               <img
                                 src={section.image}
                                 alt={section.title}
-                                className={`w-full h-full ${section.image?.endsWith('.png') || section.image?.endsWith('.svg') || section.image?.includes('cGMP') || section.image?.includes('equipment') || section.image?.includes('Fermenters') || section.image?.includes('Spray_Dryer') || section.image?.includes('Akta') || section.image?.includes('ChromXact') || section.image?.includes('Batch_Centrifuge') ? 'object-contain' : 'object-cover'}`}
-                                style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
+                                className="w-full h-full object-cover"
                               />
-                              {/* Cold Bluish Scientific Color Grade Wash */}
-                              <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-                              <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
                             </div>
                           );
                         })()}

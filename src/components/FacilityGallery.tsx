@@ -94,13 +94,7 @@ export default function FacilityGallery() {
                   src={item.image}
                   alt={item.name}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={{
-                    filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)',
-                  }}
                 />
-                {/* Cold Bluish Scientific Color Grade Wash */}
-                <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-brand-navy/15 to-transparent" />
 
                 {/* Label */}
@@ -172,9 +166,6 @@ export default function FacilityGallery() {
                 src={equipment[selectedIdx].image}
                 alt={equipment[selectedIdx].name}
                 className="max-h-[84vh] max-w-[88vw] w-auto h-auto object-contain rounded-xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] border border-white/10"
-                style={{
-                  filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)',
-                }}
               />
               <div className="mt-3 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-xs sm:text-sm font-medium tracking-wide shadow-md">
                 {equipment[selectedIdx].name}

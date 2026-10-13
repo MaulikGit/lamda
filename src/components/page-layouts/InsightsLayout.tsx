@@ -156,17 +156,13 @@ export default function InsightsLayout({ page }: InsightsLayoutProps) {
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-brand-orange" />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
-                  {/* Left Column: Image with cold blue cleanroom/analytical treatment */}
+                  {/* Left Column: Featured Article Image */}
                   <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto min-h-[300px] lg:min-h-[440px] overflow-hidden bg-neutral-100">
                     <img
                       src={featuredItem.image}
                       alt={featuredItem.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
                     />
-                    {/* Cold Bluish Scientific Color Grade Wash */}
-                    <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden" />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider bg-white/95 text-brand-navy shadow-md backdrop-blur-sm border border-white/50">
@@ -267,11 +263,7 @@ export default function InsightsLayout({ page }: InsightsLayoutProps) {
                         src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
                       />
-                      {/* Cold Bluish Scientific Color Grade Wash */}
-                      <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
                       <div className="absolute top-4 left-4">
                         <span className="px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider bg-white/95 text-brand-navy shadow-md border border-white/40">
                           {item.badge}

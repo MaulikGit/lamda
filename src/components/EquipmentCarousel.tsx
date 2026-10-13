@@ -93,27 +93,15 @@ export default function EquipmentCarousel({
             className="absolute inset-0 w-full h-full cursor-pointer bg-neutral-900"
             onClick={() => setIsLightboxOpen(true)}
           >
-            {/* Ambient Blurred Background for complete edge-to-edge glow without letterbox void */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={encodeURI(currentItem.src)}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-40 select-none pointer-events-none"
-            />
-
-            {/* Foreground Main Image: object-contain ensures vertical/portrait machines are shown 100% complete */}
+            {/* Foreground Main Image: object-cover perfectly fits panel edge to edge */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={encodeURI(currentItem.src)}
               alt={currentItem.title || sectionTitle || 'Equipment'}
-              className="relative z-10 w-full h-full object-contain p-2 sm:p-3 drop-shadow-2xl transition-transform duration-700 group-hover:scale-102"
-              style={{ filter: 'contrast(1.06) brightness(0.98) saturate(1.04)' }}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            {/* Cold Bluish Scientific Color Grade Wash */}
-            <div className="absolute inset-0 bg-[#0099e6]/10 pointer-events-none mix-blend-color z-10" />
             {/* Subtle Gradient Overlays for Navigation and Indicator Contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/35 pointer-events-none z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none z-10" />
           </motion.div>
         </AnimatePresence>
 

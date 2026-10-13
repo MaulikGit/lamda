@@ -409,10 +409,7 @@ export default function DynamicSectionRenderer({
                     src={cardsList[0].image || '/images/cdn/unsplash-1614935151651-0bea6508db6b.jpg'}
                     alt={cardsList[0].title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
                   />
-                  <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
                 </div>
                 <div className="flex flex-col flex-1 p-6 md:p-8">
                   {cardsList[0].badge && (
@@ -451,10 +448,7 @@ export default function DynamicSectionRenderer({
                         src={card.image || '/images/default_scientist.png'}
                         alt={card.title}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
                       />
-                      <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
                     </div>
                     <div className="flex flex-col flex-1 p-5 md:p-6">
                       {card.badge && (
@@ -532,7 +526,6 @@ export default function DynamicSectionRenderer({
                           alt={card.title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
                       </div>
                     ) : null}
                     <div className="p-5 sm:p-6 lg:p-6 xl:p-7 flex flex-col flex-1 justify-between">
@@ -641,9 +634,7 @@ export default function DynamicSectionRenderer({
                         src={modal.image || '/images/modalities/mAb.png'}
                         alt={modal.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
                       />
-                      <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
                     </div>
                     <div className="p-5 flex-1 flex flex-col justify-between">
                       <h3 className="text-lg font-semibold text-black group-hover:text-brand-blue transition-colors leading-snug">
@@ -925,11 +916,8 @@ export default function DynamicSectionRenderer({
                   src={section.image || '/images/hero_cleanroom.png'}
                   alt={section.title}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
                 />
               )}
-              <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
             </div>
           </Reveal>
 

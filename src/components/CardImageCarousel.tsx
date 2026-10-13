@@ -62,16 +62,9 @@ export default function CardImageCarousel({
             src={encodeURI(images[currentIndex])}
             alt={`${alt} image ${currentIndex + 1}`}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            style={{ filter: 'contrast(1.08) brightness(0.97) saturate(1.04) hue-rotate(5deg)' }}
           />
-          {/* Cold Bluish Scientific Color Grade Wash */}
-          <div className="absolute inset-0 bg-[#0099e6]/14 pointer-events-none mix-blend-color" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#0a1b2a]/30 via-transparent to-[#00aeef]/18 pointer-events-none mix-blend-soft-light" />
         </motion.div>
       </AnimatePresence>
-
-      {/* Ambient bottom shadow gradient for visual depth */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-brand-navy/10 to-transparent pointer-events-none" />
     </>
   );
 

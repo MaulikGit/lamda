@@ -5822,21 +5822,11 @@ export default function PageAdminEditor({
 
                                             {/* Interactive Carousel Box (Matching EquipmentCarousel on the live website) */}
                                             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-neutral-800 shadow-md bg-neutral-900 group select-none">
-                                              {/* Image with ambient blur glow */}
-                                              <img
-                                                src={encodeURI(currentSlideUrl)}
-                                                alt=""
-                                                aria-hidden="true"
-                                                className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-40 select-none pointer-events-none"
-                                              />
                                               <img
                                                 src={encodeURI(currentSlideUrl)}
                                                 alt={sec.title || 'Section Equipment'}
-                                                className="relative z-10 w-full h-full object-contain p-2.5 drop-shadow-2xl transition-transform duration-500 group-hover:scale-102"
-                                                style={{ filter: 'contrast(1.06) brightness(0.98) saturate(1.04)' }}
+                                                className="relative z-10 w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
                                               />
-                                              {/* Cold scientific bluish wash */}
-                                              <div className="absolute inset-0 bg-[#0099e6]/10 pointer-events-none mix-blend-color z-10" />
                                               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/35 pointer-events-none z-10" />
 
                                               {/* Top-Right Counter Pill */}
