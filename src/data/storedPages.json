@@ -758,7 +758,7 @@
     "metaDesc": "Lambda CDMO's 27,000 sq. ft. purpose-built biologics development and manufacturing facility in Ahmedabad, India, designed for GMP manufacturing and global regulatory compliance.",
     "badge": "Ahmedabad, India",
     "heading": "Integrated Biologics Development & GMP Manufacturing",
-    "description": "Our Ahmedabad facility brings together **cell line development, upstream and downstream process development, analytical development and characterization, drug product development, and GMP manufacturing** within an integrated biologics development and manufacturing environment.\n\nThe approximately **27,000 sq. ft. facility** is designed to support biologics programs from laboratory development through process scale-up, technology transfer, and clinical supply.\n\nThe facility includes development laboratories, analytical laboratories, GMP manufacturing suites, quality control laboratories, and supporting infrastructure. Manufacturing operations incorporate **segregated areas, controlled material and personnel flows, single-use processing systems, and dedicated pre- and post-viral processing areas** to support the manufacture of biologic drug substance and drug product for clinical development.",
+    "description": "Our Ahmedabad facility brings together **cell line development, upstream and downstream process development, analytical development and characterization, drug product development, and GMP manufacturing** within an integrated biologics development and manufacturing environment.",
     "image": "/images/development.jpg",
     "images": [
       "/images/Screenshot 2026-09-11 131810.png",
@@ -775,7 +775,7 @@
         "style": "feature-split",
         "title": "Integrated 27,000 sq. ft. Biologics Facility",
         "subtitle": "00 — CAMPUS INFRASTRUCTURE",
-        "text": "The facility includes development laboratories, analytical laboratories, GMP manufacturing suites, quality control laboratories, and supporting infrastructure.\n\nManufacturing operations incorporate segregated areas, controlled material and personnel flows, single-use processing systems, and dedicated pre- and post-viral processing areas to support the manufacture of biologic drug substance and drug product for clinical development.",
+        "text": "The approximately **27,000 sq. ft. facility** is designed to support biologics programs from laboratory development through process scale-up, technology transfer, and clinical supply.\n\nThe facility includes development laboratories, analytical laboratories, GMP manufacturing suites, quality control laboratories, and supporting infrastructure.\n\nManufacturing operations incorporate **segregated areas, controlled material and personnel flows, single-use processing systems, and dedicated pre- and post-viral processing areas** to support the manufacture of biologic drug substance and drug product for clinical development.",
         "dark": false,
         "image": "/images/CDMOblue.png",
         "imageSide": "right",
