@@ -920,7 +920,6 @@ export default function PageAdminEditor({
   const [toast, setToast] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   const [heroPreviewSlideIdx, setHeroPreviewSlideIdx] = useState(0);
   const [sectionSlideIdxs, setSectionSlideIdxs] = useState<Record<number, number>>({});
-  const [isHeroCardOpen, setIsHeroCardOpen] = useState(false);
   const [isStatsCardOpen, setIsStatsCardOpen] = useState(true);
   const [isCapabilitiesCardOpen, setIsCapabilitiesCardOpen] = useState(true);
   const [isModalitiesCardOpen, setIsModalitiesCardOpen] = useState(true);
@@ -1060,7 +1059,6 @@ export default function PageAdminEditor({
 
   // Dynamic sequential numbering for visible sections
   let secCounter = 1;
-  const heroSecNum = secCounter++;
   const statsSecNum = hasStats ? secCounter++ : 0;
   const capabilitiesSecNum = hasCapabilities ? secCounter++ : 0;
   const modalitiesSecNum = hasModalities ? secCounter++ : 0;
@@ -2163,7 +2161,7 @@ export default function PageAdminEditor({
             }`}
           >
             <Layers className="w-4 h-4" />
-            <span>Full Page Sections (Hero to Footer)</span>
+            <span>Full Page Sections</span>
           </button>
 
           <button
@@ -2225,268 +2223,7 @@ export default function PageAdminEditor({
         {activeTab === 'sections' && (
           <div className="space-y-6">
             {/* =========================================================================
-                SECTION 1: HERO SECTION & LIVE HEADER BANNER
-               ========================================================================= */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all">
-              <div
-                onClick={() => setIsHeroCardOpen(!isHeroCardOpen)}
-                className="p-5 sm:p-6 flex items-center justify-between gap-4 bg-gradient-to-r from-slate-50 via-orange-50/20 to-slate-50 border-b border-slate-200 cursor-pointer hover:bg-slate-100/80 transition-colors select-none"
-              >
-                <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-brand-orange/10 border border-brand-orange/20 flex items-center justify-center text-brand-orange shrink-0">
-                    <Sparkles className="w-5 h-5" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-brand-orange text-white shadow-2xs">
-                        Section {heroSecNum} • Top Hero
-                      </span>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-slate-200/80 text-slate-700">
-                        {page.badge || 'Main Hero Banner'}
-                      </span>
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold text-neutral-900 truncate">
-                      {heroSecNum}. Hero Section & Live Visual Header
-                    </h3>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs text-slate-500 hidden sm:inline">
-                    {isHeroCardOpen ? 'Click to collapse' : 'Click to edit Hero'}
-                  </span>
-                  <div className="w-8 h-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 shadow-2xs">
-                    {isHeroCardOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                  </div>
-                </div>
-              </div>
-
-              {isHeroCardOpen && (
-                <div className="p-6 sm:p-8 space-y-6">
-                  <div className="p-4 rounded-xl bg-orange-50/60 border border-orange-200/80 text-xs text-slate-700 flex items-start gap-3">
-                    <Sparkles className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-bold text-slate-900">Live Header Banner: </span>
-                      The top visual section of this page. Features page category badge tag, H1 main heading, subtitle, introduction paragraph, and dual call-to-action buttons.
-                    </div>
-                  </div>
-
-                  {/* Grid of Inputs */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5 rounded-xl bg-slate-50/80 border border-slate-200/80">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-                        <Tag className="w-3.5 h-3.5 text-brand-orange" />
-                        <span>Hero Badge Tag</span>
-                      </label>
-                      <input
-                        type="text"
-                        value={page.badge || ''}
-                        onChange={(e) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, badge: e.target.value }))}
-                        placeholder="e.g. INTEGRATED BIOLOGICS CDMO"
-                        className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold focus:outline-none focus:border-brand-orange"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-                        <Tag className="w-3.5 h-3.5 text-brand-blue" />
-                        <span>Hero Subtitle (h2)</span>
-                      </label>
-                      <input
-                        type="text"
-                        value={page.subtitle || ''}
-                        onChange={(e) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, subtitle: e.target.value }))}
-                        placeholder="e.g. From Cell Line to Clinical Supply"
-                        className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-semibold focus:outline-none focus:border-brand-blue"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5 md:col-span-2">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-                        <Sparkles className="w-3.5 h-3.5 text-brand-orange" />
-                        <span>Hero Main Heading (H1)</span>
-                      </label>
-                      <input
-                        type="text"
-                        value={page.heading || ''}
-                        onChange={(e) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, heading: e.target.value }))}
-                        placeholder="e.g. Accelerating Biologics from Gene to GMP"
-                        className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-bold text-neutral-900 focus:outline-none focus:border-brand-orange"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5 md:col-span-2">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
-                        Hero Introduction Paragraph
-                      </label>
-                      <textarea
-                        rows={3}
-                        value={page.description || ''}
-                        onChange={(e) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, description: e.target.value }))}
-                        placeholder="Supporting biopharmaceutical companies with accelerated timelines..."
-                        className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm leading-relaxed focus:outline-none focus:border-brand-blue"
-                      />
-                    </div>
-
-                    {/* Media / Video URL */}
-                    <div className="space-y-1.5 md:col-span-2">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center justify-between">
-                        <span className="flex items-center gap-1.5">
-                          <Film className="w-3.5 h-3.5 text-brand-blue" />
-                          <span>Hero Media / Background Video or Image</span>
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setGalleryTargetCallback(() => (url: string) => {
-                              setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, heroVideo: url, image: url }));
-                            });
-                            setIsGalleryModalOpen(true);
-                          }}
-                          className="text-[11px] text-brand-blue font-bold hover:underline flex items-center gap-1 cursor-pointer"
-                        >
-                          <Images className="w-3 h-3" />
-                          <span>Choose from Preset Gallery</span>
-                        </button>
-                      </label>
-                      <div className="flex gap-2">
-                        <input
-                          type="text"
-                          value={page.heroVideo || page.image || ''}
-                          onChange={(e) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, heroVideo: e.target.value, image: e.target.value }))}
-                          placeholder="/videos/newhero.mp4 or /images/hero_cleanroom.png"
-                          className="flex-1 px-3.5 py-2 bg-white border border-slate-200 rounded-xl text-xs font-mono focus:outline-none focus:border-brand-blue"
-                        />
-                        <label className="px-3.5 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer transition-colors">
-                          <Upload className="w-3.5 h-3.5" />
-                          <span>Upload</span>
-                          <input
-                            type="file"
-                            accept="image/*,video/*"
-                            className="hidden"
-                            onChange={(e) => {
-                              const f = e.target.files?.[0];
-                              if (f) handleFileUpload(f, (url) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, heroVideo: url, image: url })));
-                            }}
-                          />
-                        </label>
-                      </div>
-                    </div>
-
-                    {/* Primary CTA */}
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-                        <MousePointerClick className="w-3.5 h-3.5 text-brand-orange" />
-                        <span>Primary CTA Button (Text & Link)</span>
-                      </label>
-                      <div className="grid grid-cols-2 gap-2">
-                        <input
-                          type="text"
-                          value={page.heroPrimaryCtaText || page.primaryCta?.text || ''}
-                          onChange={(e) => setPage((prev) => ({
-                            ...prev,
-                            hasUnpublishedChanges: true,
-                            heroPrimaryCtaText: e.target.value,
-                            primaryCta: { ...(prev.primaryCta || {}), text: e.target.value, link: prev.heroPrimaryCtaLink || prev.primaryCta?.link || '/contact' }
-                          }))}
-                          placeholder="GET IN TOUCH"
-                          className="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold"
-                        />
-                        <input
-                          type="text"
-                          value={page.heroPrimaryCtaLink || page.primaryCta?.link || ''}
-                          onChange={(e) => setPage((prev) => ({
-                            ...prev,
-                            hasUnpublishedChanges: true,
-                            heroPrimaryCtaLink: e.target.value,
-                            primaryCta: { ...(prev.primaryCta || {}), text: prev.heroPrimaryCtaText || prev.primaryCta?.text || 'GET IN TOUCH', link: e.target.value }
-                          }))}
-                          placeholder="/contact"
-                          className="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-mono"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Secondary CTA */}
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
-                        <MousePointerClick className="w-3.5 h-3.5 text-brand-blue" />
-                        <span>Secondary CTA Button (Text & Link)</span>
-                      </label>
-                      <div className="grid grid-cols-2 gap-2">
-                        <input
-                          type="text"
-                          value={page.heroSecondaryCtaText || page.secondaryCta?.text || ''}
-                          onChange={(e) => setPage((prev) => ({
-                            ...prev,
-                            hasUnpublishedChanges: true,
-                            heroSecondaryCtaText: e.target.value,
-                            secondaryCta: { ...(prev.secondaryCta || {}), text: e.target.value, link: prev.heroSecondaryCtaLink || prev.secondaryCta?.link || '/services' }
-                          }))}
-                          placeholder="EXPLORE SERVICES"
-                          className="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold"
-                        />
-                        <input
-                          type="text"
-                          value={page.heroSecondaryCtaLink || page.secondaryCta?.link || ''}
-                          onChange={(e) => setPage((prev) => ({
-                            ...prev,
-                            hasUnpublishedChanges: true,
-                            heroSecondaryCtaLink: e.target.value,
-                            secondaryCta: { ...(prev.secondaryCta || {}), text: prev.heroSecondaryCtaText || prev.secondaryCta?.text || 'EXPLORE SERVICES', link: e.target.value }
-                          }))}
-                          placeholder="/services"
-                          className="px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-mono"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Live Preview */}
-                  <div className="pt-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 block">
-                      Hero Live Visual Preview
-                    </span>
-                    <div className="relative rounded-2xl overflow-hidden bg-brand-navy p-8 text-white min-h-[220px] flex flex-col justify-between border border-slate-700 shadow-md">
-                      {page.heroVideo ? (
-                        <video src={page.heroVideo} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none" />
-                      ) : page.image ? (
-                        <img src={page.image} alt="Hero" className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none" />
-                      ) : null}
-                      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-transparent pointer-events-none" />
-                      <div className="relative z-10 max-w-xl space-y-2">
-                        {page.badge && (
-                          <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-orange text-black">
-                            {page.badge}
-                          </span>
-                        )}
-                        <h1 className="text-2xl sm:text-3xl font-light text-white leading-tight">
-                          {page.heading || 'Hero Main Heading'}
-                        </h1>
-                        {page.subtitle && (
-                          <p className="text-sm font-normal text-white/90">{page.subtitle}</p>
-                        )}
-                        {page.description && (
-                          <p className="text-xs text-white/70 line-clamp-2 leading-relaxed">{page.description}</p>
-                        )}
-                        <div className="pt-2 flex items-center gap-2">
-                          <span className="px-3 py-1.5 rounded-lg bg-brand-yellow text-black text-xs font-bold">
-                            {page.heroPrimaryCtaText || page.primaryCta?.text || 'GET IN TOUCH'}
-                          </span>
-                          {(page.heroSecondaryCtaText || page.secondaryCta?.text) && (
-                            <span className="px-3 py-1.5 rounded-lg border border-white/40 text-white text-xs font-bold">
-                              {page.heroSecondaryCtaText || page.secondaryCta?.text}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* =========================================================================
-                SECTION 2: STATS BAR & KEY METRICS (LIVE STRIP)
+                STATS BAR & KEY METRICS (LIVE STRIP)
                ========================================================================= */}
             {hasStats && (
               <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden transition-all">
