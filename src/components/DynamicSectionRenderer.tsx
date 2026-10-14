@@ -118,7 +118,7 @@ export default function DynamicSectionRenderer({
   const isDark = section.dark ?? false;
 
   // 1. LOCATIONS MAP SECTION
-  if (style === 'locations-map') {
+  if (style === 'locations-map' || style === 'dual-locations-map') {
     return (
       <CDMOLocationsMapSection
         title={section.title || 'Global CDMO Capabilities Across India and Europe'}

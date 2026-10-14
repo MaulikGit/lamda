@@ -207,8 +207,8 @@ export default async function FacilityAndLocationPage({ searchParams }: PageProp
 
       {/* INTERACTIVE MAP SECTION WITH UK & INDIA HIGHLIGHTED */}
       <CDMOLocationsMapSection 
-        title="Complementary Capabilities Across Two Locations"
-        subtitle={null}
+        title="Global CDMO Capabilities Across India and Europe"
+        subtitle="Bespoke Biologics Infrastructure"
       />
 
       {/* COMPLEMENTARY CAPABILITIES ACROSS TWO LOCATIONS — MATRIX TABLE */}

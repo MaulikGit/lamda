@@ -287,7 +287,7 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
       {/* GLOBAL CDMO CAPABILITIES ACROSS INDIA AND EUROPE - INTERACTIVE MAP */}
       <CDMOLocationsMapSection
         title={locationsMapSection?.title || 'Global CDMO Capabilities Across India and Europe'}
-        subtitle={locationsMapSection?.subtitle || null}
+        subtitle={locationsMapSection?.subtitle || 'Bespoke Biologics Infrastructure'}
       />
 
       {/* AN INTEGRATED PARTNER */}

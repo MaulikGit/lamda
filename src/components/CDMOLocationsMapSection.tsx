@@ -1,124 +1,84 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { 
-  MapPin, 
-  ArrowRight, 
-  Building2, 
-  Microscope, 
-  Factory, 
-  FlaskConical, 
-  Dna, 
-  Syringe, 
-  ShieldCheck, 
-  Activity, 
-  Sparkles,
-  Layers,
-  ChevronRight
-} from 'lucide-react';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, ArrowRight, Video } from 'lucide-react';
+import * as d3 from 'd3';
+import * as topojson from 'topojson-client';
 import Reveal from '@/components/Reveal';
 
-interface LocationStat {
-  label: string;
-  value: string;
-  icon: React.ElementType;
-}
-
-interface LocationInfo {
-  id: 'india' | 'uk';
-  city: string;
-  country: string;
-  title: string;
-  badge: string;
-  tagline: string;
-  categoryBadge: string;
-  description: string;
-  coreCapabilities: {
-    icon: React.ElementType;
-    text: string;
-  }[];
+interface LocationData {
+  key: 'amd' | 'lon';
+  name: string;
+  short: string;
+  role: string;
+  desc: string;
+  cta: string;
   href: string;
-  buttonText?: string;
-  // Map positioning in percentage (relative to world-map.svg viewBox)
-  xPercent: number;
-  yPercent: number;
-  stats: LocationStat[];
-  accentColor: string;
-  primaryIcon: React.ElementType;
+  color: string;
+  surfaceColor: string;
+  coordinates: [number, number]; // [lng, lat]
+  coordStr: string;
+  caps: string[];
+  tourHref?: string;
+  photo: string;
 }
 
-const CDMO_LOCATIONS: LocationInfo[] = [
-  {
-    id: 'india',
-    city: 'Ahmedabad',
-    country: 'India',
-    title: 'Ahmedabad, India',
-    badge: 'Primary Biomanufacturing Campus',
-    tagline: 'India HQ & cGMP Biomanufacturing',
-    categoryBadge: 'India cGMP Campus',
-    description: 'Our Ahmedabad facility brings together cell line development, upstream and downstream process development, analytical development and characterization, drug product development, and GMP manufacturing within an integrated biologics development and manufacturing environment.',
-    coreCapabilities: [
-      {
-        icon: FlaskConical,
-        text: '2x 200L single-use bioreactor suites for clinical & commercial drug substance'
-      },
-      {
-        icon: Syringe,
-        text: 'Robotic barrier isolator filling line (10,000 units/batch in vials, PFS & cartridges)'
-      },
-      {
-        icon: ShieldCheck,
-        text: 'Unified quality system aligned with US FDA & EMA cGMP regulatory standards'
-      }
-    ],
+const DEFAULT_LOCATIONS: Record<'amd' | 'lon', LocationData> = {
+  amd: {
+    key: 'amd',
+    name: 'Ahmedabad, India',
+    short: 'Ahmedabad',
+    role: 'Primary Biomanufacturing Campus',
+    desc: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.',
+    cta: 'Explore Ahmedabad Facility',
     href: '/facility&location/India',
-    xPercent: 68.9,
-    yPercent: 53.0,
-    stats: [
-      { label: 'Campus Size', value: '27,000 sqft', icon: Building2 },
-      { label: 'Bioreactors', value: '2x 200L SUBs', icon: FlaskConical },
-      { label: 'Fill-Finish', value: '10k units/batch', icon: Syringe }
+    color: '#00A3E8',
+    surfaceColor: '#EEF9FE',
+    coordinates: [72.5714, 23.0225],
+    coordStr: '23.02° N, 72.57° E',
+    caps: [
+      'Process Sciences',
+      'Analytical Sciences',
+      'cGMP Drug Substance',
+      'cGMP Drug Product'
     ],
-    accentColor: '#00aeef',
-    primaryIcon: MapPin
+    tourHref: 'https://lmada-cdmo.onrender.com/virtual-tour/00%20MAIN%20BUILDING/index.htm',
+    photo: '/images/ahmedabadsite.jpg'
   },
-  {
-    id: 'uk',
-    city: 'London',
-    country: 'UK',
-    title: 'London, UK',
-    badge: 'European Innovation Centre',
-    tagline: 'European Innovation & Analytics Hub',
-    categoryBadge: 'UK Innovation Hub',
-    description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.',
-    coreCapabilities: [
-      {
-        icon: Dna,
-        text: 'High-throughput clone screening, cell line optimization & expression vector design'
-      },
-      {
-        icon: Activity,
-        text: 'High-resolution intact LC-MS spectrometry & physicochemical CQA characterization'
-      },
-      {
-        icon: Layers,
-        text: 'Seamless tech transfer protocols & scale-up recipes to Ahmedabad GMP suites'
-      }
-    ],
+  lon: {
+    key: 'lon',
+    name: 'London, UK',
+    short: 'London',
+    role: 'European Innovation Centre',
+    desc: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.',
+    cta: 'Explore London Centre',
     href: '/facility&location/UK',
-    xPercent: 33.5,
-    yPercent: 21.0,
-    stats: [
-      { label: 'Platform', value: 'Process Dev', icon: Dna },
-      { label: 'Mass Spec', value: 'LC-MS High-Res', icon: Microscope },
-      { label: 'Scope', value: 'Characterisation', icon: Activity }
+    color: '#F6914B',
+    surfaceColor: '#FFF5EE',
+    coordinates: [-0.1276, 51.5072],
+    coordStr: '51.51° N, 0.13° W',
+    caps: [
+      'Drug Substance Process Development',
+      'Analytical Development',
+      'Process Characterisation'
     ],
-    accentColor: '#f58634',
-    primaryIcon: MapPin
+    photo: '/images/uk/uksite.png'
   }
-];
+};
+
+const VIEWS: Record<'amd' | 'lon', { rot: [number, number, number]; scale: number }> = {
+  amd: {
+    rot: [-DEFAULT_LOCATIONS.amd.coordinates[0] - 6, -DEFAULT_LOCATIONS.amd.coordinates[1] + 4, 0],
+    scale: 260
+  },
+  lon: {
+    rot: [-DEFAULT_LOCATIONS.lon.coordinates[0] - 4, -DEFAULT_LOCATIONS.lon.coordinates[1] + 6, 0],
+    scale: 260
+  }
+};
 
 interface CDMOLocationsMapSectionProps {
   id?: string;
@@ -138,328 +98,512 @@ interface CDMOLocationsMapSectionProps {
 export default function CDMOLocationsMapSection({
   id = 'our-cdmo-locations',
   className = '',
-  title = 'Our CDMO Locations',
-  subtitle = null,
+  title = 'Global CDMO Capabilities Across India and Europe',
+  subtitle = 'Bespoke Biologics Infrastructure',
   cards = []
 }: CDMOLocationsMapSectionProps = {}) {
-  const [activeLocationId, setActiveLocationId] = useState<'india' | 'uk'>('india');
+  const [activeKey, setActiveKey] = useState<'amd' | 'lon'>('amd');
+  const [isPaused, setIsPaused] = useState(false);
+  const [progressKey, setProgressKey] = useState(0);
 
-  // Merge custom card data if provided from admin panel / cdmoData
-  const locations = CDMO_LOCATIONS.map((loc, idx) => {
-    const customCard = cards && cards[idx];
-    if (!customCard) return loc;
-    return {
-      ...loc,
-      title: customCard.title || loc.title,
-      description: customCard.description || loc.description,
-      badge: customCard.badge || loc.badge,
-      href: customCard.link || customCard.href || loc.href,
-      buttonText: customCard.buttonText || (loc.id === 'india' ? 'Explore Ahmedabad Facility' : 'Explore London Centre')
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const spinFnRef = useRef<((to: [number, number, number], scale: number) => void) | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Merge any dynamic custom cards if provided
+  const locations: Record<'amd' | 'lon', LocationData> = {
+    amd: {
+      ...DEFAULT_LOCATIONS.amd,
+      name: cards?.[0]?.title || DEFAULT_LOCATIONS.amd.name,
+      role: cards?.[0]?.badge || DEFAULT_LOCATIONS.amd.role,
+      desc: cards?.[0]?.description || DEFAULT_LOCATIONS.amd.desc,
+      cta: cards?.[0]?.buttonText || DEFAULT_LOCATIONS.amd.cta,
+      href: cards?.[0]?.href || cards?.[0]?.link || DEFAULT_LOCATIONS.amd.href
+    },
+    lon: {
+      ...DEFAULT_LOCATIONS.lon,
+      name: cards?.[1]?.title || DEFAULT_LOCATIONS.lon.name,
+      role: cards?.[1]?.badge || DEFAULT_LOCATIONS.lon.role,
+      desc: cards?.[1]?.description || DEFAULT_LOCATIONS.lon.desc,
+      cta: cards?.[1]?.buttonText || DEFAULT_LOCATIONS.lon.cta,
+      href: cards?.[1]?.href || cards?.[1]?.link || DEFAULT_LOCATIONS.lon.href
+    }
+  };
+
+  const activeLoc = locations[activeKey];
+
+  // Helper function to switch location and animate globe
+  const handleSelectLocation = useCallback(
+    (key: 'amd' | 'lon') => {
+      setActiveKey(key);
+      setProgressKey((prev) => prev + 1);
+      if (spinFnRef.current) {
+        spinFnRef.current(VIEWS[key].rot, VIEWS[key].scale);
+      }
+    },
+    []
+  );
+
+  // Auto-advance every 7s unless paused
+  useEffect(() => {
+    if (isPaused) {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      return;
+    }
+
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      const nextKey = activeKey === 'amd' ? 'lon' : 'amd';
+      handleSelectLocation(nextKey);
+    }, 7000);
+
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
-  });
+  }, [activeKey, isPaused, handleSelectLocation]);
+
+  // Initialize D3 3D Globe with Orthographic projection
+  useEffect(() => {
+    const svgEl = svgRef.current;
+    if (!svgEl) return;
+
+    let isMounted = true;
+    let animTimer: d3.Timer | null = null;
+
+    function rw(g: any) {
+      const f = g.type === 'Feature' ? g.geometry : g;
+      const rev = (p: any[]) => p.map((r: any) => r.slice().reverse());
+      if (f.type === 'Polygon') {
+        if (d3.geoArea(f) > 2 * Math.PI) f.coordinates = rev(f.coordinates);
+      } else if (f.type === 'MultiPolygon') {
+        f.coordinates = f.coordinates.map((p: any) =>
+          d3.geoArea({ type: 'Polygon', coordinates: p }) > 2 * Math.PI ? rev(p) : p
+        );
+      }
+      return g;
+    }
+
+    Promise.all([
+      fetch('/data/countries-110m.json').then((r) => r.json()),
+      fetch('/data/india.json').then((r) => r.json())
+    ])
+      .then(([t, it]) => {
+        if (!isMounted || !svgRef.current) return;
+
+        const w = topojson.feature(t, t.objects.countries as any) as any;
+        const st = topojson.feature(it, it.objects.states as any) as any;
+        st.features.forEach(rw);
+
+        const inOutline = rw(topojson.merge(it, it.objects.states.geometries as any));
+        const inMesh = topojson.mesh(it, it.objects.states as any, (a: any, b: any) => a !== b);
+
+        const fc = {
+          type: 'FeatureCollection',
+          features: w.features
+            .filter((f: any) => f.id !== '356')
+            .concat([{ type: 'Feature', id: '356', properties: {}, geometry: inOutline }])
+        };
+
+        const svg = d3.select(svgRef.current);
+        svg.selectAll('*').remove();
+
+        const defs = svg.append('defs');
+
+        // Radial sea gradient
+        const rg = defs
+          .append('radialGradient')
+          .attr('id', 'bSea')
+          .attr('cx', '38%')
+          .attr('cy', '32%');
+        rg.append('stop').attr('offset', '0%').attr('stop-color', '#FFFFFF');
+        rg.append('stop').attr('offset', '100%').attr('stop-color', '#E3EEF8');
+
+        // Sphere drop shadow filter for realistic 3D appearance
+        const filter = defs
+          .append('filter')
+          .attr('id', 'globeShadow')
+          .attr('x', '-20%')
+          .attr('y', '-20%')
+          .attr('width', '140%')
+          .attr('height', '140%');
+        filter
+          .append('feDropShadow')
+          .attr('dx', '0')
+          .attr('dy', '18')
+          .attr('stdDeviation', '24')
+          .attr('flood-color', '#0f2231')
+          .attr('flood-opacity', '0.08');
+
+        const R = 260;
+        let rot: [number, number, number] = [...VIEWS[activeKey].rot];
+        const proj = d3
+          .geoOrthographic()
+          .scale(R)
+          .translate([280, 280])
+          .clipAngle(90)
+          .precision(0.4);
+        proj.rotate(rot);
+
+        const path = d3.geoPath(proj);
+
+        // Background ocean sphere
+        svg
+          .append('circle')
+          .attr('cx', 280)
+          .attr('cy', 280)
+          .attr('r', 260)
+          .attr('fill', 'url(#bSea)')
+          .attr('stroke', '#D9E4F0')
+          .attr('stroke-width', 0.8)
+          .attr('filter', 'url(#globeShadow)');
+
+        // Graticule lines
+        const grat = svg
+          .append('path')
+          .datum(d3.geoGraticule10())
+          .attr('fill', 'none')
+          .attr('stroke', '#D9E4F0')
+          .attr('stroke-width', 0.6);
+
+        // Landmasses (all countries except India and UK colored neutral, UK colored orange)
+        const land = svg
+          .append('g')
+          .selectAll('path')
+          .data(fc.features.filter((f: any) => f.id !== '356'))
+          .join('path')
+          .attr('fill', (d: any) => (d.id === '826' ? DEFAULT_LOCATIONS.lon.color : '#B9CCE3'))
+          .attr('stroke', '#ffffff')
+          .attr('stroke-width', 0.5);
+
+        // India outline (colored brand blue)
+        const inF = svg.append('path').datum(inOutline).attr('fill', DEFAULT_LOCATIONS.amd.color);
+
+        // India internal state borders
+        const inM = svg
+          .append('path')
+          .datum(inMesh)
+          .attr('fill', 'none')
+          .attr('stroke', '#ffffff')
+          .attr('stroke-width', 0.6)
+          .attr('stroke-opacity', 0.9);
+
+        // Site Pins
+        const pins = Object.values(DEFAULT_LOCATIONS).map((s) => {
+          const g = svg
+            .append('g')
+            .attr('class', `globe-pin pin-${s.key}`)
+            .style('cursor', 'pointer');
+
+          // Ripples
+          g.append('circle').attr('r', 6).attr('fill', s.color).attr('class', 'ripple');
+          g.append('circle').attr('r', 6).attr('fill', s.color).attr('class', 'ripple d2');
+
+          // Outer ring & dot
+          g.append('circle')
+            .attr('r', 8)
+            .attr('fill', '#ffffff')
+            .attr('stroke', s.color)
+            .attr('stroke-width', 2.5);
+          g.append('circle').attr('r', 3.5).attr('fill', s.color);
+
+          // Desktop Floating Label Pill
+          const lbl = g
+            .append('g')
+            .attr('class', 'plabel')
+            .attr('transform', 'translate(14, -13)');
+
+          const pillWidth = s.short.length * 7.5 + 24;
+          lbl
+            .append('rect')
+            .attr('rx', 8)
+            .attr('height', 26)
+            .attr('width', pillWidth)
+            .attr('fill', '#ffffff')
+            .attr('stroke', '#E6EAF0')
+            .attr('stroke-width', 1)
+            .attr('filter', 'drop-shadow(0 2px 6px rgba(0,0,0,0.06))');
+
+          lbl
+            .append('circle')
+            .attr('cx', 10)
+            .attr('cy', 13)
+            .attr('r', 3.5)
+            .attr('fill', s.color);
+
+          lbl
+            .append('text')
+            .text(s.short)
+            .attr('x', 19)
+            .attr('y', 17)
+            .attr('font-size', 12)
+            .attr('font-weight', 600)
+            .attr('fill', '#14181F');
+
+          // Make pin clickable
+          g.on('click', () => {
+            handleSelectLocation(s.key);
+          });
+
+          return { s, g };
+        });
+
+        function draw() {
+          proj.rotate(rot);
+          grat.attr('d', path as any);
+          land.attr('d', path as any);
+          inF.attr('d', path as any);
+          inM.attr('d', path as any);
+
+          pins.forEach(({ s, g }) => {
+            const vis = d3.geoDistance(s.coordinates, [-rot[0], -rot[1]]) < 1.45;
+            const p = proj(s.coordinates);
+            if (p) {
+              g.attr('transform', `translate(${p[0]},${p[1]})`).attr('opacity', vis ? 1 : 0);
+            }
+          });
+        }
+
+        draw();
+
+        function spin(to: [number, number, number], scale: number) {
+          const i = d3.interpolate(rot, to);
+          const si = d3.interpolate(proj.scale(), scale);
+          if (animTimer) animTimer.stop();
+
+          animTimer = d3.timer((elapsed) => {
+            const t = Math.min(1, elapsed / 1600);
+            const e = d3.easeCubicInOut(t);
+            rot = i(e);
+            proj.scale(si(e));
+            draw();
+            if (t === 1) {
+              animTimer?.stop();
+              animTimer = null;
+            }
+          });
+        }
+
+        spinFnRef.current = spin;
+      })
+      .catch((err) => {
+        console.error('Failed to load globe TopoJSON:', err);
+      });
+
+    return () => {
+      isMounted = false;
+      if (animTimer) animTimer.stop();
+    };
+  }, [handleSelectLocation]);
 
   return (
-    <section id={id} className={`scroll-mt-20 lg:scroll-mt-24 relative px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 md:py-24 bg-white border-b border-neutral-100 overflow-hidden select-none ${className}`}>
-      {/* Background Subtle Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#00aeef_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.05] pointer-events-none" />
+    <section
+      id={id}
+      className={`relative px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 bg-white overflow-hidden ${className}`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Subtle Dot Grid Background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(#E9EDF3 1px, transparent 1px)',
+          backgroundSize: '22px 22px'
+        }}
+      />
 
-      <div className="relative z-10 w-full max-w-[1700px] mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-10 md:mb-14 max-w-4xl mx-auto">
-          <Reveal>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light md:font-normal tracking-tight text-neutral-900 leading-[1.15]">
+      <div className="relative w-full max-w-[1280px] mx-auto">
+        {/* Header Section */}
+        <Reveal>
+          <header className="text-center mb-10 md:mb-14 max-w-3xl mx-auto">
+            <h2 className="font-light text-3xl sm:text-4xl lg:text-[44px] leading-tight tracking-tight text-neutral-900 mb-3 text-balance">
               {title}
             </h2>
             {subtitle && (
-              <div className="text-[15px] sm:text-[17px] text-slate-500 font-normal leading-relaxed max-w-3xl mx-auto mt-4 space-y-3">
-                {subtitle.split('\n\n').map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
-              </div>
+              <p className="text-neutral-500 text-sm sm:text-base font-normal">
+                {subtitle}
+              </p>
             )}
+          </header>
+        </Reveal>
+
+        {/* Main Showcase Layout: 2 Columns on Desktop, Stacked on Mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-14 items-center">
+          {/* Left Column: 3D Interactive Globe */}
+          <Reveal delay={0.1}>
+            <div className="relative flex justify-center items-center w-full max-w-[560px] mx-auto aspect-square">
+              <svg
+                ref={svgRef}
+                viewBox="0 0 560 560"
+                className="w-full h-auto aspect-square overflow-visible select-none"
+              />
+            </div>
+          </Reveal>
+
+          {/* Right Column: Facility Tabs & Information Card */}
+          <Reveal delay={0.2}>
+            <div className="w-full max-w-[560px] mx-auto lg:mx-0">
+              {/* Segmented Facility Tabs */}
+              <div className="flex gap-1 p-1 bg-[#F3F5F8] rounded-xl w-full sm:w-max mb-6 md:mb-7">
+                {(['amd', 'lon'] as const).map((key) => {
+                  const loc = locations[key];
+                  const isOn = activeKey === key;
+                  return (
+                    <button
+                      key={key}
+                      onClick={() => handleSelectLocation(key)}
+                      className={`relative flex-1 sm:flex-none px-4 py-2.5 rounded-lg text-[13px] font-semibold transition-all duration-200 cursor-pointer overflow-hidden ${
+                        isOn
+                          ? 'bg-white text-[#14181F] shadow-[0_1px_3px_rgba(0,0,0,0.08)]'
+                          : 'text-[#5B6472] hover:text-[#14181F]'
+                      }`}
+                      style={{ '--tab-color': loc.color } as React.CSSProperties}
+                    >
+                      <span className="relative z-10">{loc.name}</span>
+                      {isOn && (
+                        <span
+                          key={`prog-${progressKey}`}
+                          className="absolute left-2.5 right-2.5 bottom-1 h-[2px] rounded-full pointer-events-none tab-indicator-progress"
+                          style={{ backgroundColor: loc.color }}
+                        />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Facility Details Panel with Animated Slide/Fade */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeKey}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
+                  className="space-y-4"
+                >
+                  {/* Eyebrow with MapPin */}
+                  <div
+                    className="flex items-center gap-1.5 text-xs font-semibold tracking-wide"
+                    style={{ color: activeLoc.color }}
+                  >
+                    <MapPin className="w-3.5 h-3.5 shrink-0" />
+                    <span>{activeLoc.role}</span>
+                  </div>
+
+                  {/* Title & Coordinates */}
+                  <div>
+                    <h3 className="text-3xl sm:text-[38px] font-light tracking-tight text-neutral-900 leading-tight">
+                      {activeLoc.name}
+                    </h3>
+                    <p className="font-mono text-xs text-neutral-400 mt-1">
+                      {activeLoc.coordStr}
+                    </p>
+                  </div>
+
+                  {/* Facility Real Photo Slot */}
+                  <div className="relative w-full h-[190px] sm:h-[220px] rounded-[14px] overflow-hidden border border-[#C9D2DE]/70 shadow-xs">
+                    <Image
+                      src={activeLoc.photo}
+                      alt={`${activeLoc.name} Biologics Facility`}
+                      fill
+                      className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                      priority
+                    />
+                  </div>
+
+                  {/* Facility Narrative Description */}
+                  <p className="text-[14.5px] sm:text-[15px] text-[#5B6472] leading-relaxed max-w-[540px]">
+                    {activeLoc.desc}
+                  </p>
+
+                  {/* Core Capabilities Pills */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 pb-2">
+                    {activeLoc.caps.map((cap, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-2.5 px-3.5 py-3 rounded-xl border border-[#E6EAF0] bg-white text-[13px] sm:text-[13.5px] font-medium text-[#14181F] shadow-xs"
+                      >
+                        <span
+                          className="w-2 h-2 rounded-[2px] shrink-0"
+                          style={{ backgroundColor: activeLoc.color }}
+                        />
+                        <span className="truncate">{cap}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTAs Row */}
+                  <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                    <Link
+                      href={activeLoc.href}
+                      className="inline-flex items-center justify-center gap-2 h-[42px] sm:h-[38px] px-5 rounded-lg text-[13px] font-semibold text-white transition-all shadow-xs hover:-translate-y-0.5 w-full sm:w-auto"
+                      style={{ backgroundColor: activeLoc.color }}
+                    >
+                      <span>{activeLoc.cta}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+
+                    {activeLoc.tourHref && (
+                      <a
+                        href={activeLoc.tourHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 h-[42px] sm:h-[38px] px-4 rounded-lg text-[13px] font-semibold text-[#14181F] border border-[#E6EAF0] bg-white hover:border-[#14181F] transition-all shadow-xs hover:-translate-y-0.5 w-full sm:w-auto"
+                      >
+                        <Video className="w-4 h-4 text-neutral-600" />
+                        <span>Virtual Tour</span>
+                      </a>
+                    )}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </Reveal>
         </div>
-
-        {/* 2-Column Responsive Layout: Left 1 Single Interactive Card & Right Interactive Vector Map */}
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-8 items-stretch">
-          
-          {/* Left Column: 2 Separate Location Cards (India above, UK below) */}
-          <div className="xl:col-span-5 flex flex-col gap-4 sm:gap-5 justify-between">
-            {locations.map((loc, idx) => {
-              const isIndia = loc.id === 'india';
-              const isActive = activeLocationId === loc.id;
-              const PrimaryIcon = loc.primaryIcon;
-
-              return (
-                <Reveal key={loc.id} delay={0.1 + idx * 0.05} className="flex-1 flex flex-col">
-                  <div
-                    onClick={() => setActiveLocationId(loc.id)}
-                    onMouseEnter={() => setActiveLocationId(loc.id)}
-                    className={`h-full rounded-2xl overflow-hidden p-5 sm:p-6 border transition-all duration-300 flex flex-col justify-between relative bg-white cursor-pointer ${
-                      isActive
-                        ? isIndia
-                          ? 'border-brand-blue/70 shadow-lg ring-2 ring-brand-blue/20'
-                          : 'border-brand-orange/70 shadow-lg ring-2 ring-brand-orange/20'
-                        : 'border-slate-200/90 hover:border-slate-300 shadow-xs opacity-90 hover:opacity-100'
-                    }`}
-                  >
-                    {/* Top accent line indicator */}
-                    <div
-                      className={`absolute top-0 inset-x-0 h-1.5 rounded-t-2xl pointer-events-none transition-all duration-300 ${
-                        isActive
-                          ? isIndia
-                            ? 'bg-brand-blue'
-                            : 'bg-brand-orange'
-                          : 'bg-slate-200'
-                      }`}
-                    />
-
-                    <div>
-                      {/* Top Header Location */}
-                      <div className="flex items-center gap-1.5 text-xs font-semibold mb-2.5">
-                        <MapPin
-                          className={`w-4 h-4 ${
-                            isIndia ? 'text-brand-blue' : 'text-brand-orange'
-                          }`}
-                        />
-                        <span
-                          className={`font-bold ${
-                            isIndia ? 'text-brand-blue' : 'text-brand-orange'
-                          }`}
-                        >
-                          {loc.badge || loc.country}
-                        </span>
-                      </div>
-
-                      {/* Title & Primary CDMO Icon */}
-                      <div className="flex items-center justify-between gap-3 mb-2.5">
-                        <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                          {loc.title}
-                        </h3>
-                        <div
-                          className={`p-2 rounded-xl border transition-colors shrink-0 ${
-                            isIndia
-                              ? 'bg-sky-50 text-brand-blue border-sky-200 shadow-xs'
-                              : 'bg-orange-50 text-brand-orange border-orange-200 shadow-xs'
-                          }`}
-                        >
-                          <PrimaryIcon className="w-4.5 h-4.5 stroke-[2.2]" />
-                        </div>
-                      </div>
-
-                      {/* Description matching the map popup */}
-                      <p className="text-[13.5px] sm:text-[14.5px] font-normal leading-relaxed text-slate-600 mb-4">
-                        {loc.description}
-                      </p>
-                    </div>
-
-                    {/* Footer Action Link */}
-                    <div className="pt-3 border-t border-neutral-100 flex items-center justify-end mt-auto">
-                      <Link
-                        href={loc.href}
-                        onClick={(e) => e.stopPropagation()}
-                        className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-xs ${
-                          isIndia
-                            ? 'bg-brand-blue hover:bg-brand-blue-hover text-white'
-                            : 'bg-brand-orange hover:bg-brand-orange-hover text-black'
-                        }`}
-                      >
-                        <span>{loc.buttonText || (isIndia ? 'Explore Ahmedabad Facility' : 'Explore London Centre')}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
-
-          {/* Right Column: Interactive Vector Map Viewport */}
-          <div className="xl:col-span-7 flex flex-col">
-            <Reveal delay={0.15}>
-              <div className="relative w-full rounded-2xl bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] border border-slate-200/90 shadow-xl overflow-hidden flex flex-col">
-                
-                {/* Map Ambient Glows */}
-                <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
-                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none" />
-
-                {/* Top Control Bar with Quick Toggle Pills */}
-                <div className="relative z-20 flex items-center justify-between p-3 sm:p-3.5 border-b border-slate-200/90 bg-white/85 backdrop-blur-md">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-xs font-semibold text-slate-700">
-                      CDMO Global Network
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-1.5 bg-slate-100/90 p-1 rounded-xl border border-slate-200">
-                    <button
-                      type="button"
-                      onClick={() => setActiveLocationId('india')}
-                      onMouseEnter={() => setActiveLocationId('india')}
-                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
-                        activeLocationId === 'india'
-                          ? 'bg-brand-blue text-white shadow-xs'
-                          : 'text-slate-600 hover:text-neutral-900 hover:bg-white/60'
-                      }`}
-                    >
-                      <MapPin className="w-3.5 h-3.5" />
-                      <span>Ahmedabad, India</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActiveLocationId('uk')}
-                      onMouseEnter={() => setActiveLocationId('uk')}
-                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
-                        activeLocationId === 'uk'
-                          ? 'bg-brand-orange text-black shadow-xs'
-                          : 'text-slate-600 hover:text-neutral-900 hover:bg-white/60'
-                      }`}
-                    >
-                      <MapPin className="w-3.5 h-3.5" />
-                      <span>London, UK</span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Map Graphic Viewport Container */}
-                <div className="relative w-full overflow-hidden pt-2 pb-6 sm:pb-8">
-                  
-                  {/* Accurate World Map Graphic */}
-                  <div className="relative w-full aspect-[1051/619] max-w-[1300px] mx-auto select-none scale-[1.02] sm:scale-[1.05] origin-center">
-                    <img
-                      src="/images/map/Orange UK and India World Map.png"
-                      alt="World Map - Lambda CDMO Locations"
-                      className="w-full h-full object-contain filter contrast-105"
-                    />
-
-                    {/* Geodesic Connection Arc SVG between London (33.5%, 21.0%) and Ahmedabad (68.9%, 53.0%) */}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
-                      <defs>
-                        <linearGradient id="arcGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#f58634" stopOpacity="0.95" />
-                          <stop offset="50%" stopColor="#818cf8" stopOpacity="0.9" />
-                          <stop offset="100%" stopColor="#00aeef" stopOpacity="0.95" />
-                        </linearGradient>
-                      </defs>
-                      
-                      {/* Base Flight Path Curve (curved upwards over Europe/Middle East) */}
-                      <path
-                        d="M 33.5% 21.0% Q 50% 10%, 68.9% 53.0%"
-                        fill="none"
-                        stroke="url(#arcGradientLight)"
-                        strokeWidth="2.4"
-                        strokeDasharray="5,4"
-                        className="animate-pulse"
-                      />
-
-                      {/* Moving Light Particle Pulse along the flight path */}
-                      <circle r="4" fill="#00aeef" filter="drop-shadow(0 0 5px #00aeef)">
-                        <animateMotion
-                          path="M 33.5% 21.0% Q 50% 10%, 68.9% 53.0%"
-                          dur="4s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-                    </svg>
-
-                    {/* LOCATION 1: London, UK Pin & Beacon (Orange with white border) */}
-                    <div
-                      style={{ left: '33.5%', top: '21.0%' }}
-                      className="absolute -translate-x-1/2 z-30 flex flex-col items-center"
-                    >
-                      {/* Active beacon pulse ring */}
-                      {activeLocationId === 'uk' && (
-                        <div className="absolute -translate-y-full top-0 pointer-events-none flex items-center justify-center">
-                          <span className="absolute w-8 h-8 rounded-full bg-brand-orange/30 animate-ping" />
-                          <span className="w-10 h-10 rounded-full bg-brand-orange/15 blur-xs" />
-                        </div>
-                      )}
-
-                      {/* Interactive Pin Trigger Button with Standalone Location MapPin Icon (pointing at origin) */}
-                      <button
-                        type="button"
-                        onClick={() => setActiveLocationId('uk')}
-                        onMouseEnter={() => setActiveLocationId('uk')}
-                        className="relative -translate-y-full cursor-pointer transition-transform duration-300 hover:scale-115 focus:outline-hidden group"
-                        title="London, UK - European Innovation & Analytics Hub"
-                      >
-                        <MapPin
-                          stroke="#ffffff"
-                          strokeWidth={2.2}
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className={`w-5.5 h-5.5 sm:w-6 sm:h-6 transition-all duration-300 drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] ${
-                            activeLocationId === 'uk'
-                              ? 'fill-brand-orange scale-115 drop-shadow-[0_3px_14px_rgba(245,134,52,0.9)]'
-                              : 'fill-brand-orange/95 scale-100 hover:scale-110 hover:fill-brand-orange'
-                          }`}
-                        />
-                      </button>
-
-                      {/* Fixed Label Pill below pin icon */}
-                      <div className={`absolute top-1.5 whitespace-nowrap px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold shadow-sm pointer-events-none z-20 transition-all duration-300 ${
-                        activeLocationId === 'uk'
-                          ? 'bg-brand-orange text-black border border-brand-orange/60 shadow-md scale-105 ring-2 ring-brand-orange/20 font-extrabold'
-                          : 'bg-white/95 border border-brand-orange/40 text-brand-orange'
-                      }`}>
-                        London, UK
-                      </div>
-                    </div>
-
-                    {/* LOCATION 2: Ahmedabad, India Pin & Beacon (Blue with white border) */}
-                    <div
-                      style={{ left: '68.9%', top: '53.0%' }}
-                      className="absolute -translate-x-1/2 z-30 flex flex-col items-center"
-                    >
-                      {/* Active beacon pulse ring */}
-                      {activeLocationId === 'india' && (
-                        <div className="absolute -translate-y-full top-0 pointer-events-none flex items-center justify-center">
-                          <span className="absolute w-8 h-8 rounded-full bg-brand-blue/30 animate-ping" />
-                          <span className="w-10 h-10 rounded-full bg-brand-blue/15 blur-xs" />
-                        </div>
-                      )}
-
-                      {/* Interactive Pin Trigger Button with Standalone Location MapPin Icon (pointing at origin) */}
-                      <button
-                        type="button"
-                        onClick={() => setActiveLocationId('india')}
-                        onMouseEnter={() => setActiveLocationId('india')}
-                        className="relative -translate-y-full cursor-pointer transition-transform duration-300 hover:scale-115 focus:outline-hidden group"
-                        title="Ahmedabad, India - Primary Biomanufacturing Campus"
-                      >
-                        <MapPin
-                          stroke="#ffffff"
-                          strokeWidth={2.2}
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className={`w-5.5 h-5.5 sm:w-6 sm:h-6 transition-all duration-300 drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)] ${
-                            activeLocationId === 'india'
-                              ? 'fill-brand-blue scale-115 drop-shadow-[0_3px_14px_rgba(0,174,239,0.9)]'
-                              : 'fill-brand-blue/95 scale-100 hover:scale-110 hover:fill-brand-blue'
-                          }`}
-                        />
-                      </button>
-
-                      {/* Fixed Label Pill below pin icon */}
-                      <div className={`absolute top-1.5 whitespace-nowrap px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold shadow-sm pointer-events-none z-20 transition-all duration-300 ${
-                        activeLocationId === 'india'
-                          ? 'bg-brand-blue text-white border border-brand-blue/60 shadow-md scale-105 ring-2 ring-brand-blue/20 font-extrabold'
-                          : 'bg-white/95 border border-brand-blue/40 text-brand-blue'
-                      }`}>
-                        Ahmedabad, India
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
-            </Reveal>
-          </div>
-
-        </div>
       </div>
+
+      {/* Ripple Animation and Responsive Styles */}
+      <style jsx global>{`
+        @keyframes rip {
+          0% {
+            transform: scale(1);
+            opacity: 0.55;
+          }
+          100% {
+            transform: scale(5);
+            opacity: 0;
+          }
+        }
+        .ripple {
+          transform-box: fill-box;
+          transform-origin: center;
+          animation: rip 2.6s ease-out infinite;
+        }
+        .ripple.d2 {
+          animation-delay: 1.3s;
+        }
+
+        @keyframes tabProgress {
+          0% {
+            transform: scaleX(0);
+          }
+          100% {
+            transform: scaleX(1);
+          }
+        }
+        .tab-indicator-progress {
+          transform-origin: left;
+          animation: tabProgress 7s linear forwards;
+        }
+
+        /* Hide floating pin labels on mobile to keep globe pristine */
+        @media (max-width: 768px) {
+          .globe-pin .plabel {
+            display: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

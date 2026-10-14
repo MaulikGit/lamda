@@ -860,8 +860,8 @@ export default function OverviewLayout({ page, content }: OverviewLayoutProps) {
               </div>
             </section>
             <CDMOLocationsMapSection
-              title={mapSec?.title || 'Our CDMO Locations'}
-              subtitle={mapSec?.text || mapSec?.subtitle || null}
+              title={mapSec?.title || 'Global CDMO Capabilities Across India and Europe'}
+              subtitle={mapSec?.subtitle || mapSec?.text || 'Bespoke Biologics Infrastructure'}
               cards={mapSec?.cards}
             />
           </>
