@@ -51,13 +51,13 @@ function ensureStorageFileExists(): void {
           });
           changed = true;
         } else {
-          // If default page exists, make sure heroVideo on home is fixed to /videos/hero5.mp4 if it had /cta-bg-video.mp4 or /videos/newhero.mp4
+          // If default page exists, make sure heroVideo on home is fixed to /videos/newhero.mp4
           if (
             defPage.category === 'home' &&
             defPage.slug === 'home' &&
-            (parsed[foundIdx].heroVideo === '/cta-bg-video.mp4' || parsed[foundIdx].heroVideo === '/videos/newhero.mp4')
+            parsed[foundIdx].heroVideo !== '/videos/newhero.mp4'
           ) {
-            parsed[foundIdx].heroVideo = '/videos/hero5.mp4';
+            parsed[foundIdx].heroVideo = '/videos/newhero.mp4';
             changed = true;
           }
         }

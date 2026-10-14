@@ -17,7 +17,7 @@ export function HeroSection({
     heading = 'Biologics Development and Manufacturing.',
     subtitle = 'Integrated from Cell Line Engineering to Clinical Supplies.',
     description = 'Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.',
-    videoSrc = '/videos/hero5.mp4',
+    videoSrc = '/videos/newhero.mp4',
     primaryCta = { text: 'Get in touch', link: '/contact' },
     secondaryCta = { text: 'Explore Services', link: '/services/cell-line' }
 }: HeroSectionProps = {}) {
@@ -27,8 +27,8 @@ export function HeroSection({
                 {/* Background Video confined within container */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
                     <video
-                        key={videoSrc || '/videos/hero5.mp4'}
-                        src={videoSrc || '/videos/hero5.mp4'}
+                        key={videoSrc || '/videos/newhero.mp4'}
+                        src={videoSrc || '/videos/newhero.mp4'}
                         autoPlay
                         loop
                         muted

@@ -194,7 +194,7 @@ export const cdmoData: CDMOPage[] = [
     "subtitle": "Integrated from Cell Line Engineering to Clinical Supplies.",
     "description": "Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.",
     "image": "/images/hero_cleanroom.png",
-    "heroVideo": "/videos/hero5.mp4",
+    "heroVideo": "/videos/newhero.mp4",
     "heroMediaType": "video",
     "layoutTemplate": "universal",
     "primaryCta": {
@@ -465,7 +465,7 @@ export const cdmoData: CDMOPage[] = [
       "subtitle": "Integrated from Cell Line Engineering to Clinical Supplies.",
       "description": "Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.",
       "image": "/images/hero_cleanroom.png",
-      "heroVideo": "/videos/hero5.mp4",
+      "heroVideo": "/videos/newhero.mp4",
       "heroMediaType": "video",
       "layoutTemplate": "universal",
       "primaryCta": {
@@ -971,13 +971,10 @@ export const cdmoData: CDMOPage[] = [
     "description": "Our Ahmedabad facility brings together **cell line development, upstream and downstream process development, analytical development and characterization, drug product development, and GMP manufacturing** within an integrated biologics development and manufacturing environment.",
     "image": "/images/development.jpg",
     "images": [
-      "/images/Screenshot 2026-09-11 131721.png",
+      "/images/ahmedabad/Screenshot4.png",
       "/images/Screenshot 2026-09-11 132304.png",
       "/images/Screenshot 2026-09-11 132325.png",
-      "/images/Screenshot 2026-09-11 131810.png",
-      "/images/Screenshot 2026-09-11 131847.png",
-      "/images/Screenshot 2026-09-11 132133.png",
-      "/images/Screenshot 2026-09-11 132518.png"
+      "/images/Screenshot 2026-09-11 131847.png"
     ],
     "sections": [
       {

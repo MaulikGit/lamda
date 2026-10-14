@@ -7280,13 +7280,10 @@ export default function PageAdminEditor({
               ? page.images
               : (page.slug?.toLowerCase() === 'india' || page.title?.toLowerCase().includes('ahmedabad'))
               ? [
-                  '/images/Screenshot 2026-09-11 131810.png',
-                  '/images/Screenshot 2026-09-11 131847.png',
-                  '/images/Screenshot 2026-09-11 132133.png',
+                  '/images/ahmedabad/Screenshot4.png',
                   '/images/Screenshot 2026-09-11 132304.png',
                   '/images/Screenshot 2026-09-11 132325.png',
-                  '/images/Screenshot 2026-09-11 132518.png',
-                  '/images/Screenshot 2026-09-11 131721.png',
+                  '/images/Screenshot 2026-09-11 131847.png',
                 ]
               : (page.slug?.toLowerCase() === 'uk' || page.slug?.toLowerCase() === 'london' || page.title?.toLowerCase().includes('london'))
               ? [

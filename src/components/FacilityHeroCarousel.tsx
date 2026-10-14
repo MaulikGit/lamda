@@ -6,19 +6,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const FACILITY_IMAGES = [
   {
-    src: '/images/Screenshot%202026-09-11%20131810.png',
-    alt: 'Lambda CDMO Biologics Development Laboratories',
-    caption: 'Biologics Development Laboratories',
-  },
-  {
-    src: '/images/Screenshot%202026-09-11%20131847.png',
-    alt: 'Lambda CDMO Analytical Science Suite',
-    caption: 'Advanced Analytical & Physicochemical Suites',
-  },
-  {
-    src: '/images/Screenshot%202026-09-11%20132133.png',
-    alt: 'Lambda CDMO Bioprocess Development & Upstream Suite',
-    caption: 'Single-Use Bioreactor Production Suites',
+    src: '/images/ahmedabad/Screenshot4.png',
+    alt: 'Lambda CDMO Biologics Facility Infrastructure',
+    caption: 'Integrated Biologics Development & Manufacturing Campus',
   },
   {
     src: '/images/Screenshot%202026-09-11%20132304.png',
@@ -31,14 +21,9 @@ const FACILITY_IMAGES = [
     caption: 'Quality Control & Functional Bioassay Labs',
   },
   {
-    src: '/images/Screenshot%202026-09-11%20132518.png',
-    alt: 'Lambda CDMO Aseptic Fill-Finish & Isolator Suite',
-    caption: 'Automated Aseptic Fill-Finish Operations',
-  },
-  {
-    src: '/images/Screenshot%202026-09-11%20131721.png',
-    alt: 'Lambda CDMO Campus & Facility Infrastructure',
-    caption: 'Integrated 27,000 sqft Biologics Campus',
+    src: '/images/Screenshot%202026-09-11%20131847.png',
+    alt: 'Lambda CDMO Analytical Science Suite',
+    caption: 'Advanced Analytical & Physicochemical Suites',
   },
 ];
 
