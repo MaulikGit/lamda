@@ -314,7 +314,7 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
                   transition={{ duration: 0.55, delay: idx * 0.12, ease: 'easeOut' }}
                   className={`h-full ${isThirdOnMd ? 'md:col-span-2 lg:col-span-1 md:max-w-[calc(50%-0.75rem)] md:mx-auto lg:max-w-none lg:mx-0 w-full' : 'w-full'}`}
                 >
-                  <div className="group h-full glass-card rounded-[10px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between">
+                  <div className="group h-full glass-card rounded-[10px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col">
                     {/* Photo header Carousel */}
                     <CardImageCarousel
                       images={card.images}
@@ -322,9 +322,9 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
                       href={card.href}
                     />
                     {/* Body */}
-                    <div className="p-5 sm:p-6 lg:p-6 xl:p-7 flex flex-col flex-1 justify-between">
+                    <div className="p-5 sm:p-6 lg:p-6 xl:p-7 flex flex-col flex-1">
                       <div className="mb-4 flex flex-col">
-                        <Link href={card.href} className="flex items-start gap-2.5 sm:gap-3 mb-2.5 group/header">
+                        <Link href={card.href} className="flex items-start gap-2.5 sm:gap-3 mb-2.5 group/header min-h-[52px] sm:min-h-[56px]">
                           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-[10px] bg-brand-blue/10 border border-brand-blue/25 flex items-center justify-center shrink-0 text-brand-blue group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue group-hover:shadow-md group-hover:shadow-brand-blue/20 transition-all duration-300 shadow-xs mt-0.5">
                             <CardIcon className="w-4.5 h-4.5 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:scale-110" />
                           </div>
@@ -332,11 +332,11 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
                             {card.title}
                           </h3>
                         </Link>
-                        <p className="text-[14px] sm:text-[15px] text-neutral-600 leading-relaxed min-h-[60px] sm:min-h-[72px] lg:min-h-[84px]">
+                        <p className="text-[14px] sm:text-[15px] text-neutral-600 leading-relaxed min-h-[60px] sm:min-h-[72px] lg:min-h-[80px]">
                           {card.desc}
                         </p>
                       </div>
-                      <ul className="border-t border-neutral-100 pt-1 mt-auto">
+                      <ul className="border-t border-neutral-100 pt-1">
                         {card.items.map((item) => {
                           const ItemIcon = item.icon;
                           return (

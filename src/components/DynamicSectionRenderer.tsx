@@ -508,7 +508,7 @@ export default function DynamicSectionRenderer({
                   transition={{ duration: 0.55, delay: idx * 0.1 }}
                   className="h-full"
                 >
-                  <div className={`group h-full rounded-[10px] overflow-hidden flex flex-col justify-between ${
+                  <div className={`group h-full rounded-[10px] overflow-hidden flex flex-col ${
                     isDark
                       ? 'bg-slate-900/80 border border-slate-700/60 shadow-lg'
                       : 'glass-card border border-slate-200/80 shadow-xs hover:shadow-2xl hover:-translate-y-1.5'
@@ -528,14 +528,14 @@ export default function DynamicSectionRenderer({
                         />
                       </div>
                     ) : null}
-                    <div className="p-5 sm:p-6 lg:p-6 xl:p-7 flex flex-col flex-1 justify-between">
+                    <div className="p-5 sm:p-6 lg:p-6 xl:p-7 flex flex-col flex-1">
                       <div className="mb-4 flex flex-col">
                         {(card.badge || card.step) && (
                           <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-brand-orange mb-2">
                             {card.badge || card.step}
                           </span>
                         )}
-                        <div className="flex items-start gap-2.5 sm:gap-3 mb-2.5 group/header">
+                        <div className="flex items-start gap-2.5 sm:gap-3 mb-2.5 group/header min-h-[52px] sm:min-h-[56px]">
                           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-[10px] bg-brand-blue/10 border border-brand-blue/25 flex items-center justify-center shrink-0 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-xs mt-0.5">
                             <CardIcon className="w-4.5 h-4.5 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:scale-110" />
                           </div>
@@ -543,14 +543,14 @@ export default function DynamicSectionRenderer({
                             {card.title}
                           </h3>
                         </div>
-                        <p className="text-[14px] sm:text-[15px] text-neutral-600 leading-relaxed">
+                        <p className="text-[14px] sm:text-[15px] text-neutral-600 leading-relaxed min-h-[60px] sm:min-h-[72px] lg:min-h-[80px]">
                           {card.description}
                         </p>
                       </div>
 
                       {/* Sub-links List */}
                       {card.items && card.items.length > 0 && (
-                        <ul className="border-t border-neutral-100 pt-1 mt-auto">
+                        <ul className="border-t border-neutral-100 pt-1">
                           {card.items.map((item, itIdx) => {
                             const ItemIcon = resolveIcon(item.icon, Dna);
                             return (
