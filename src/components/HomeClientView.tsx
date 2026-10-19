@@ -105,9 +105,8 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
       step: '03 — Characterization',
       desc: 'Orthogonal physicochemical characterization, bioassays, and QC microbiology under a unified quality system.',
       icon: Microscope,
-      image: '/images/Analytical/Biacore 8K+.png',
+      image: '/images/Analytical/Orbitrap.png',
       images: [
-        '/images/Analytical/Biacore 8K+.png',
         '/images/Analytical/Orbitrap.png',
         '/images/Analytical/Q ToF.png',
         '/images/Analytical/Maurice.png',

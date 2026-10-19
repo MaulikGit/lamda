@@ -118,7 +118,7 @@ const TEMPLATE_PRESETS = [
         title: 'Orthogonal Analytical Characterization',
         subtitle: 'HIGH-RESOLUTION ATTRIBUTE PROFILING',
         text: 'State-of-the-art mass spectrometry, surface plasmon resonance, and capillary electrophoresis delivering comprehensive structural, functional, and purity insights.',
-        image: '/images/Analytical/Biacore 8K+.png',
+        image: '/images/Analytical/Orbitrap.png',
         imageSide: 'right' as const,
         bullets: [
           'Intact mass, peptide mapping, and glycan profiling via Orbitrap LC-MS/MS',

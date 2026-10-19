@@ -303,9 +303,8 @@ export const cdmoData: CDMOPage[] = [
             "link": "/characterization",
             "badge": "03 — Characterization",
             "step": "03 — Characterization",
-            "image": "/images/Analytical/Biacore 8K+.png",
+            "image": "/images/Analytical/Orbitrap.png",
             "images": [
-              "/images/Analytical/Biacore 8K+.png",
               "/images/Analytical/Orbitrap.png",
               "/images/Analytical/Q ToF.png",
               "/images/Analytical/Maurice.png",
@@ -568,9 +567,8 @@ export const cdmoData: CDMOPage[] = [
               "link": "/characterization",
               "badge": "03 — Characterization",
               "step": "03 — Characterization",
-              "image": "/images/Analytical/Biacore 8K+.png",
+              "image": "/images/Analytical/Orbitrap.png",
               "images": [
-                "/images/Analytical/Biacore 8K+.png",
                 "/images/Analytical/Orbitrap.png",
                 "/images/Analytical/Q ToF.png",
                 "/images/Analytical/Maurice.png",
@@ -1096,9 +1094,8 @@ export const cdmoData: CDMOPage[] = [
           "/images/downstream_GMP/AKTA Pilot Chromatography system(DSP25-0116).png",
           "/images/downstream_GMP/Automated TFF system with SUM(DSP25-0117).png",
           "/images/downstream_GMP/Axichrom column controller(DSP25-0230).png",
-          "/images/downstream_GMP/Chromatography Skid, Co-prime (DSP25-0118).png",
           "/images/downstream_GMP/HiScale Column.png"
-],
+        ],
         "imageSide": "left",
         "bullets": [
           "Dedicated pre-viral and post-viral processing suites",
@@ -2669,7 +2666,6 @@ export const cdmoData: CDMOPage[] = [
     "description": "Lambda CDMO provides analytical characterization and testing capabilities to support product understanding, process development, comparability, manufacturing, batch release, and stability assessment across biologics programs.\n\nOur analytical platform combines physicochemical, molecular, structural, biophysical, functional, and microbiological testing to generate data across development and manufacturing.",
     "image": "/images/Analytical/Orbitrap.png",
     "images": [
-      "/images/Analytical/Biacore 8K+.png",
       "/images/Analytical/Orbitrap.png",
       "/images/Analytical/Q ToF.png",
       "/images/Analytical/Maurice.png",

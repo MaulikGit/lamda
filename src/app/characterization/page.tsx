@@ -32,7 +32,6 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 }
 
 const ANALYTICAL_HERO_IMAGES = [
-  '/images/Analytical/Biacore 8K+.png',
   '/images/Analytical/Orbitrap.png',
   '/images/Analytical/Q ToF.png',
   '/images/Analytical/Maurice.png',

@@ -337,13 +337,6 @@ export const PRESET_MEDIA_GALLERY: PresetMediaItem[] = [
     badge: 'Column Control'
   },
   {
-    label: 'Chromatography Skid Co-Prime (GMP)',
-    url: '/images/downstream_GMP/Chromatography Skid, Co-prime (DSP25-0118).png',
-    type: 'image',
-    category: 'downstream',
-    badge: 'Chromatography'
-  },
-  {
     label: 'HiScale High-Resolution Column (GMP)',
     url: '/images/downstream_GMP/HiScale Column.png',
     type: 'image',
@@ -387,13 +380,6 @@ export const PRESET_MEDIA_GALLERY: PresetMediaItem[] = [
   },
 
   // 5. Analytical Characterization
-  {
-    label: 'Biacore 8K+ Surface Plasmon Resonance',
-    url: '/images/Analytical/Biacore 8K+.png',
-    type: 'image',
-    category: 'analytical',
-    badge: 'Binding Kinetics'
-  },
   {
     label: 'Thermo Orbitrap High-Resolution Mass Spec',
     url: '/images/Analytical/Orbitrap.png',

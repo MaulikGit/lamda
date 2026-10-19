@@ -172,12 +172,6 @@ export const DOWNSTREAM_GMP_EQUIPMENT: EquipmentItem[] = [
     tag: 'Column Control',
   },
   {
-    src: '/images/downstream_GMP/Chromatography Skid, Co-prime (DSP25-0118).png',
-    title: 'Chromatography Skid (Co-Prime)',
-    subtitle: 'Advanced multi-buffer inline dilution and multi-gradient chromatography skid with automated valve switching.',
-    tag: 'Chromatography',
-  },
-  {
     src: '/images/downstream_GMP/HiScale Column.png',
     title: 'HiScale High-Resolution Column',
     subtitle: 'Biocompatible pressure-rated glass column for pilot-scale affinity, IEX, and HIC purification polishing.',
@@ -237,12 +231,6 @@ export const DRUG_PRODUCT_EQUIPMENT: EquipmentItem[] = [
     subtitle: 'ICH Q1A stability chambers for real-time, accelerated, and freeze-thaw thermal stability evaluations.',
     tag: 'Stability Chamber',
   },
-  {
-    src: '/images/Drugproductdev/Density Analyzer & Viscometer in FDL Lab.png',
-    title: 'Density Analyzer & Micro-Viscometer',
-    subtitle: 'Sub-microliter rheological profiling for high-concentration monoclonal antibody formulations and syringeability.',
-    tag: 'Viscosity & Rheology',
-  },
 ];
 
 export const ANALYTICAL_EQUIPMENT: EquipmentItem[] = [
@@ -257,12 +245,6 @@ export const ANALYTICAL_EQUIPMENT: EquipmentItem[] = [
     title: 'Q-TOF High-Resolution LC-MS/MS System',
     subtitle: 'Comprehensive peptide mapping, PTM site localization, sequence confirmation, and glycan identification.',
     tag: 'Peptide Mapping',
-  },
-  {
-    src: '/images/Analytical/Biacore 8K+.png',
-    title: 'Biacore™ 8K+ Surface Plasmon Resonance (SPR)',
-    subtitle: 'High-throughput 8-needle parallel SPR for kinetic binding constants (Ka, Kd, KD), epitope binning, and Fc receptor affinity.',
-    tag: 'SPR Kinetics',
   },
   {
     src: '/images/Analytical/Octet.png',
