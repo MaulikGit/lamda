@@ -145,7 +145,19 @@ export default function CDMOLocationsMapSection({
     []
   );
 
-  // Auto-advance every 7s unless paused
+  // Switch to next location when progress bar completes
+  const handleNextLocation = useCallback(() => {
+    setActiveKey((prev) => {
+      const nextKey = prev === 'amd' ? 'lon' : 'amd';
+      setProgressKey((k) => k + 1);
+      if (spinFnRef.current) {
+        spinFnRef.current(VIEWS[nextKey].rot, VIEWS[nextKey].scale);
+      }
+      return nextKey;
+    });
+  }, []);
+
+  // Safety fallback: if onAnimationEnd doesn't trigger for any reason, auto-advance after 7.2s
   useEffect(() => {
     if (isPaused) {
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -154,14 +166,13 @@ export default function CDMOLocationsMapSection({
 
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
-      const nextKey = activeKey === 'amd' ? 'lon' : 'amd';
-      handleSelectLocation(nextKey);
-    }, 7000);
+      handleNextLocation();
+    }, 7200);
 
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [activeKey, isPaused, handleSelectLocation]);
+  }, [activeKey, progressKey, isPaused, handleNextLocation]);
 
   // Initialize D3 3D Globe with Orthographic projection
   useEffect(() => {
@@ -400,8 +411,6 @@ export default function CDMOLocationsMapSection({
     <section
       id={id}
       className={`relative font-sans px-4 sm:px-6 md:px-10 lg:px-16 py-16 md:py-24 bg-white overflow-hidden ${className}`}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Subtle Dot Grid Background */}
       <div
@@ -442,7 +451,11 @@ export default function CDMOLocationsMapSection({
 
           {/* Right Column: Facility Tabs & Information Card */}
           <Reveal delay={0.2}>
-            <div className="w-full max-w-[560px] mx-auto lg:mx-0">
+            <div
+              className="w-full max-w-[560px] mx-auto lg:mx-0"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               {/* Segmented Facility Tabs with Theme Typography */}
               <div className="flex gap-1 p-1 bg-[#F3F5F8] rounded-xl w-full sm:w-max mb-6 md:mb-7">
                 {(['amd', 'lon'] as const).map((key) => {
@@ -462,9 +475,13 @@ export default function CDMOLocationsMapSection({
                       <span className="relative z-10">{loc.name}</span>
                       {isOn && (
                         <span
-                          key={`prog-${progressKey}`}
+                          key={`prog-${key}-${progressKey}`}
+                          onAnimationEnd={handleNextLocation}
                           className="absolute left-3 right-3 bottom-1 h-[2px] rounded-full pointer-events-none tab-indicator-progress"
-                          style={{ backgroundColor: loc.color }}
+                          style={{
+                            backgroundColor: loc.color,
+                            animationPlayState: isPaused ? 'paused' : 'running',
+                          }}
                         />
                       )}
                     </button>
