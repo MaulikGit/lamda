@@ -446,7 +446,7 @@ export const UK_ANALYTICAL_EQUIPMENT: EquipmentItem[] = [
     tag: 'CE-SDS / cIEF',
   },
   {
-    src: '/images/uk/analytical/HPLC systems with fraction collector.jpg',
+    src: '/images/uk/analytical/HPLC systems with fraction collector.png',
     title: 'HPLC System with Automated Fraction Collector',
     subtitle: 'Preparative fraction collection for impurity isolation, post-translational modification analysis, and characterization.',
     tag: 'Fraction Collection',
@@ -461,7 +461,7 @@ export const UK_BIOSIMILAR_EQUIPMENT: EquipmentItem[] = [
     tag: 'Biosafety Suite',
   },
   {
-    src: '/images/uk/biosimiler/CO2 Incubators.jpg',
+    src: '/images/uk/biosimiler/CO2 Incubators.png',
     title: 'Precision CO2 Shaker Incubators',
     subtitle: 'Controlled environment incubators for parallel biosimilar clone growth and comparability culture.',
     tag: 'CO2 Incubators',
@@ -479,7 +479,7 @@ export const UK_BIOSIMILAR_EQUIPMENT: EquipmentItem[] = [
     tag: 'Bioassay Reader',
   },
   {
-    src: '/images/uk/biosimiler/Centrifuge.jpg',
+    src: '/images/uk/biosimiler/Centrifuge.png',
     title: 'Benchtop High-Speed Refrigerated Centrifuge',
     subtitle: 'Temperature-controlled centrifugation for sample preparation, cell harvesting, and clarified lysate isolation.',
     tag: 'Centrifugation',
