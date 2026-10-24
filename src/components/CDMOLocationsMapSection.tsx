@@ -2,9 +2,8 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, ArrowRight, Video } from 'lucide-react';
+import { ArrowRight, Video } from 'lucide-react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import Reveal from '@/components/Reveal';
@@ -46,7 +45,7 @@ const DEFAULT_LOCATIONS: Record<'amd' | 'lon', LocationData> = {
       'cGMP Drug Product'
     ],
     tourHref: '/virtual-tour/00%20MAIN%20BUILDING/index.htm',
-    photo: '/images/ahmedabadsite.jpg'
+    photo: '/images/ahmedabadsite.webp'
   },
   lon: {
     key: 'lon',
@@ -65,7 +64,7 @@ const DEFAULT_LOCATIONS: Record<'amd' | 'lon', LocationData> = {
       'Analytical Development',
       'Process Characterisation'
     ],
-    photo: '/images/uk/uksite.png'
+    photo: '/images/uk/uksite.webp'
   }
 };
 
@@ -92,6 +91,7 @@ interface CDMOLocationsMapSectionProps {
     buttonText?: string;
     link?: string;
     href?: string;
+    image?: string;
   }[];
 }
 
@@ -119,6 +119,7 @@ export default function CDMOLocationsMapSection({
       desc: cards?.[0]?.description || DEFAULT_LOCATIONS.amd.desc,
       cta: cards?.[0]?.buttonText || DEFAULT_LOCATIONS.amd.cta,
       href: cards?.[0]?.href || cards?.[0]?.link || DEFAULT_LOCATIONS.amd.href,
+      photo: cards?.[0]?.image || DEFAULT_LOCATIONS.amd.photo,
       tourHref: '/virtual-tour/00%20MAIN%20BUILDING/index.htm'
     },
     lon: {
@@ -127,7 +128,8 @@ export default function CDMOLocationsMapSection({
       role: cards?.[1]?.badge || DEFAULT_LOCATIONS.lon.role,
       desc: cards?.[1]?.description || DEFAULT_LOCATIONS.lon.desc,
       cta: cards?.[1]?.buttonText || DEFAULT_LOCATIONS.lon.cta,
-      href: cards?.[1]?.href || cards?.[1]?.link || DEFAULT_LOCATIONS.lon.href
+      href: cards?.[1]?.href || cards?.[1]?.link || DEFAULT_LOCATIONS.lon.href,
+      photo: cards?.[1]?.image || DEFAULT_LOCATIONS.lon.photo
     }
   };
 
@@ -424,8 +426,8 @@ export default function CDMOLocationsMapSection({
       <div className="relative w-full max-w-[1280px] mx-auto">
         {/* Header Section with Theme Typography */}
         <Reveal>
-          <header className="text-center mb-10 md:mb-14 max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light md:font-normal tracking-tight text-neutral-900 leading-[1.15] mb-3 text-balance">
+          <header className="text-center mb-10 md:mb-14 max-w-4xl lg:max-w-none mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light md:font-normal tracking-tight text-neutral-900 leading-[1.15] mb-3 lg:whitespace-nowrap">
               {title}
             </h2>
             {subtitle && (
@@ -499,34 +501,24 @@ export default function CDMOLocationsMapSection({
                   transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
                   className="space-y-4"
                 >
-                  {/* Eyebrow with MapPin & Theme styling */}
-                  <div
-                    className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider"
-                    style={{ color: activeLoc.color }}
-                  >
-                    <MapPin className="w-3.5 h-3.5 shrink-0" />
-                    <span>{activeLoc.role}</span>
-                  </div>
-
-                  {/* Title & Coordinates */}
+                  {/* Title */}
                   <div>
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-light md:font-normal tracking-tight text-neutral-900 leading-tight">
                       {activeLoc.name}
                     </h3>
-                    <p className="font-mono text-xs text-neutral-500 mt-1">
-                      {activeLoc.coordStr}
-                    </p>
                   </div>
 
                   {/* Facility Real Photo Slot */}
-                  <div className="relative w-full h-[190px] sm:h-[220px] rounded-[14px] overflow-hidden border border-neutral-200 shadow-xs">
-                    <Image
-                      src={activeLoc.photo}
+                  <div
+                    className="relative w-full rounded-[14px] overflow-hidden border border-neutral-200 shadow-xs bg-slate-100"
+                    style={{ height: '210px', minHeight: '210px' }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={encodeURI(activeLoc.photo)}
                       alt={`${activeLoc.name} Biologics Facility`}
-                      fill
-                      className="object-cover object-center transition-transform duration-700 hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 600px"
-                      priority
+                      className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </div>
 
