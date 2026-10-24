@@ -228,6 +228,13 @@ export default function OverviewLayout({ page, content }: OverviewLayoutProps) {
           sec.style === 'locations-map' ||
           sec.style === 'cards-grid' ||
           sec.style === 'capabilities-checklist')
+      ) &&
+      !(
+        page.slug === 'leadership' &&
+        (sec.style === 'leadership-grid' ||
+          sec.id === 'sec-leadership-team' ||
+          sec.title?.toLowerCase().includes('leadership') ||
+          sec.title?.toLowerCase().includes('executive'))
       )
   );
 
