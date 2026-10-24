@@ -193,7 +193,7 @@ function getDynamicContent(
     }
     if (cat === 'characterization' && pageSlug === 'microbiological') {
       const imgs = [
-        '/images/working employee2.png',
+        '/images/Analytical/microbiology/petri_dish_culture.webp',
         '/images/cdn/unsplash-1576086213369-97a306d36557.jpg',
         '/images/cdn/pexels-4033148.jpg',
       ];

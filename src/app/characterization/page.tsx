@@ -32,12 +32,12 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 }
 
 const ANALYTICAL_HERO_IMAGES = [
-  '/images/Analytical/Octet.png',
-  '/images/Analytical/Orbitrap.png',
-  '/images/Analytical/Q ToF.png',
-  '/images/Analytical/Maurice.png',
-  '/images/Analytical/nanoDSF.png',
-  '/images/Analytical/UPLC.png',
+  '/images/Analytical/Octet.webp',
+  '/images/Analytical/Orbitrap.webp',
+  '/images/Analytical/Q ToF.webp',
+  '/images/Analytical/Maurice.webp',
+  '/images/Analytical/nanoDSF.webp',
+  '/images/Analytical/UPLC.webp',
 ];
 
 const DEFAULT_CHARACTERIZATION_SUB_SERVICES = [
@@ -84,7 +84,7 @@ const DEFAULT_CHARACTERIZATION_SUB_SERVICES = [
     title: 'Microbiological Testing',
     slug: 'microbiological',
     href: '/characterization/microbiological',
-    image: '/images/working employee2.png',
+    image: '/images/Analytical/microbiology/petri_dish_culture.webp',
     description: 'Controlled microbiological testing services supporting biologics manufacturing, environmental monitoring, bioburden reduction, and sterility assurance.',
     capabilities: [
       'Sterility testing',

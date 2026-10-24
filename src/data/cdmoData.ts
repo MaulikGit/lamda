@@ -303,14 +303,14 @@ export const cdmoData: CDMOPage[] = [
             "link": "/characterization",
             "badge": "03 — Characterization",
             "step": "03 — Characterization",
-            "image": "/images/Analytical/Orbitrap.png",
+            "image": "/images/Analytical/Orbitrap.webp",
             "images": [
-              "/images/Analytical/Orbitrap.png",
-              "/images/Analytical/Q ToF.png",
-              "/images/Analytical/Maurice.png",
-              "/images/Analytical/nanoDSF.png",
-              "/images/Analytical/Octet.png",
-              "/images/Analytical/UPLC.png"
+              "/images/Analytical/Orbitrap.webp",
+              "/images/Analytical/Q ToF.webp",
+              "/images/Analytical/Maurice.webp",
+              "/images/Analytical/nanoDSF.webp",
+              "/images/Analytical/Octet.webp",
+              "/images/Analytical/UPLC.webp"
             ],
             "items": [
               {
@@ -567,14 +567,14 @@ export const cdmoData: CDMOPage[] = [
               "link": "/characterization",
               "badge": "03 — Characterization",
               "step": "03 — Characterization",
-              "image": "/images/Analytical/Orbitrap.png",
+              "image": "/images/Analytical/Orbitrap.webp",
               "images": [
-                "/images/Analytical/Orbitrap.png",
-                "/images/Analytical/Q ToF.png",
-                "/images/Analytical/Maurice.png",
-                "/images/Analytical/nanoDSF.png",
-                "/images/Analytical/Octet.png",
-                "/images/Analytical/UPLC.png"
+                "/images/Analytical/Orbitrap.webp",
+                "/images/Analytical/Q ToF.webp",
+                "/images/Analytical/Maurice.webp",
+                "/images/Analytical/nanoDSF.webp",
+                "/images/Analytical/Octet.webp",
+                "/images/Analytical/UPLC.webp"
               ],
               "items": [
                 {
@@ -1142,7 +1142,7 @@ export const cdmoData: CDMOPage[] = [
         "subtitle": "07 — ANALYTICAL SCIENCES",
         "text": "Our analytical sciences platform supports biologics development and manufacturing through **physicochemical, structural, and functional characterization**.",
         "dark": false,
-        "image": "/images/Analytical/Orbitrap.png",
+        "image": "/images/Analytical/Orbitrap.webp",
         "imageSide": "left",
         "bullets": [],
         "physicochemicalBullets": [
@@ -1835,7 +1835,22 @@ export const cdmoData: CDMOPage[] = [
     "badge": "Characterization",
     "heading": "Reliable Analytical Testing for Product Quality and Release",
     "description": "Lambda CDMO provides analytical testing for biologics drug substance and drug product, supporting in-process testing, batch release, stability studies, product characterization, and regulatory requirements. Testing is performed using qualified analytical methods and controlled laboratory processes designed to support data integrity, traceability, and reliable results.",
-    "image": "/images/default_scientist.jpg",
+    "image": "/images/Analytical/UPLC.webp",
+    "images": [
+      "/images/Analytical/UPLC.webp",
+      "/images/Analytical/UPLC - Thermo.webp",
+      "/images/Analytical/Q ToF.webp",
+      "/images/Analytical/Orbitrap.webp",
+      "/images/Analytical/Maurice.webp",
+      "/images/Analytical/BIOPHASE.webp",
+      "/images/Analytical/SoloVPE.webp",
+      "/images/Analytical/RT-PCR.webp",
+      "/images/Analytical/Multimode reader.webp",
+      "/images/Analytical/Flow Cytometer.webp",
+      "/images/Analytical/Liquid Handling System.webp",
+      "/images/Analytical/Cell Celector.webp",
+      "/images/Analytical/AMBR15.webp"
+],
     "capabilities": [
       "Identity testing using peptide mapping, LC-MS, and immunological methods",
       "Purity and impurity analysis using SEC-HPLC, CE-SDS, and IEF",
@@ -1902,7 +1917,21 @@ export const cdmoData: CDMOPage[] = [
     "badge": "Characterization",
     "heading": "Comprehensive Molecular Characterization for Biologics",
     "description": "Comprehensive molecular characterization is essential for understanding critical quality attributes, establishing product comparability, and supporting regulatory submissions. Lambda CDMO provides physicochemical and molecular characterization to evaluate identity, purity, structural attributes, heterogeneity, stability, and product comparability.\n\nOur analytical platforms support monoclonal antibodies (mAbs), bispecific antibodies, antibody-drug conjugates (ADCs), recombinant proteins, and other complex biologic modalities throughout development and manufacturing.",
-    "image": "/images/cdn/unsplash-1532187863486-abf9dbad1b69.jpg",
+    "image": "/images/Analytical/SoloVPE.webp",
+    "images": [
+      "/images/Analytical/SoloVPE.webp",
+      "/images/Analytical/nanoDSF.webp",
+      "/images/Analytical/Circular Dichroism.webp",
+      "/images/Analytical/FT-IR.webp",
+      "/images/Analytical/Maurice.webp",
+      "/images/Analytical/BIOPHASE.webp",
+      "/images/Analytical/UPLC.webp",
+      "/images/Analytical/UPLC - Thermo.webp",
+      "/images/Analytical/Q ToF.webp",
+      "/images/Analytical/Orbitrap.webp",
+      "/images/Analytical/Biacore 8K+.webp",
+      "/images/Analytical/Octet.webp"
+],
     "capabilities": [
       "Primary structure analysis",
       "Intact mass and peptide mass analysis",
@@ -2008,7 +2037,14 @@ export const cdmoData: CDMOPage[] = [
     "badge": "Characterization",
     "heading": "Functional Testing for Biological Activity and Product Performance",
     "description": "Lambda CDMO provides bioassay capabilities to evaluate biological activity, potency, binding, and functional properties of biologic products. The platform supports product characterization, process development, comparability, batch release, and regulatory requirements.",
-    "image": "/images/upstream/Biosaftey_cabinet.png",
+    "image": "/images/Analytical/Multimode reader.webp",
+    "images": [
+      "/images/Analytical/Multimode reader.webp",
+      "/images/Analytical/Flow Cytometer.webp",
+      "/images/Analytical/Biacore 8K+.webp",
+      "/images/Analytical/Octet.webp",
+      "/images/Analytical/Liquid Handling System.webp"
+],
     "bioassayCapabilities": [
       "Cell-based potency assays",
       "Reporter gene assays",
@@ -2081,7 +2117,15 @@ export const cdmoData: CDMOPage[] = [
     "badge": "Characterization",
     "heading": "Microbiological Testing for Manufacturing and Product Quality",
     "description": "Lambda CDMO provides microbiological testing services to support biologics manufacturing, environmental monitoring, and product release. Our microbiology laboratory performs compendial and validated assays to ensure microbiological quality and compliance with global pharmacopeial requirements.\n\nTesting is conducted in accordance with USP, EP, and IP standards within an established quality management system.",
-    "image": "/images/working employee2.png",
+    "image": "/images/Analytical/microbiology/petri_dish_culture.webp",
+    "images": [
+      "/images/Analytical/microbiology/petri_dish_culture.webp",
+      "/images/Analytical/microbiology/sterility_testing_cabinet.webp",
+      "/images/Analytical/microbiology/microbial_filtration_assay.webp",
+      "/images/Analytical/microbiology/bioburden_testing_incubation.webp",
+      "/images/Analytical/microbiology/environmental_monitoring_cleanroom.webp",
+      "/images/Analytical/microbiology/bacterial_endotoxin_testing.webp"
+],
     "capabilities": [
       "Sterility testing",
       "Bioburden testing",
@@ -2099,7 +2143,7 @@ export const cdmoData: CDMOPage[] = [
         "subtitle": "MICROBIOLOGICAL QUALITY ASSURANCE",
         "text": "Membrane filtration sterility testing, microbial enumeration, and bioburden controls compliant with USP <71> and EP 2.6.1.",
         "dark": false,
-        "image": "/images/working employee2.png",
+        "image": "/images/Analytical/microbiology/sterility_testing_cabinet.webp",
         "imageSide": "right",
         "bullets": [
           "USP <71> / EP 2.6.1 membrane filtration and direct inoculation sterility testing",
@@ -2520,7 +2564,7 @@ export const cdmoData: CDMOPage[] = [
             "title": "Analytical Development",
             "link": "/services/analytical",
             "badge": "Analytical Dev",
-            "image": "/images/Analytical/UPLC.png",
+            "image": "/images/Analytical/UPLC.webp",
             "description": "Analytical methods supporting product and process development, comparability, stability assessment, and regulatory requirements.",
             "bullets": [
               "Analytical method development",
@@ -2664,14 +2708,14 @@ export const cdmoData: CDMOPage[] = [
     "badge": "Analytical Characterization and Testing",
     "heading": "Analytical Insights that Advance Biologics Development",
     "description": "Lambda CDMO provides analytical characterization and testing capabilities to support product understanding, process development, comparability, manufacturing, batch release, and stability assessment across biologics programs.\n\nOur analytical platform combines physicochemical, molecular, structural, biophysical, functional, and microbiological testing to generate data across development and manufacturing.",
-    "image": "/images/Analytical/Octet.png",
+    "image": "/images/Analytical/Octet.webp",
     "images": [
-      "/images/Analytical/Octet.png",
-      "/images/Analytical/Orbitrap.png",
-      "/images/Analytical/Q ToF.png",
-      "/images/Analytical/Maurice.png",
-      "/images/Analytical/nanoDSF.png",
-      "/images/Analytical/UPLC.png"
+      "/images/Analytical/Octet.webp",
+      "/images/Analytical/Orbitrap.webp",
+      "/images/Analytical/Q ToF.webp",
+      "/images/Analytical/Maurice.webp",
+      "/images/Analytical/nanoDSF.webp",
+      "/images/Analytical/UPLC.webp"
     ],
     "sections": [
       {
@@ -2686,7 +2730,7 @@ export const cdmoData: CDMOPage[] = [
             "title": "Analytical Testing",
             "link": "/characterization/analytical-testing",
             "badge": "Analytical Testing",
-            "image": "/images/Analytical/UPLC.png",
+            "image": "/images/Analytical/UPLC.webp",
             "description": "Reliable analytical testing for biologics drug substance and drug product, supporting in-process controls, batch release, stability programs, and regulatory compliance.",
             "bullets": [
               "Identity testing using peptide mapping, LC-MS, and immunological methods",
@@ -2699,7 +2743,7 @@ export const cdmoData: CDMOPage[] = [
             "title": "Physicochemical Characterization",
             "link": "/characterization/physicochemical",
             "badge": "Physicochemical",
-            "image": "/images/Analytical/Orbitrap.png",
+            "image": "/images/Analytical/Orbitrap.webp",
             "description": "Comprehensive structural, molecular, and biophysical characterization to evaluate identity, purity, structural attributes, heterogeneity, stability, and product comparability.",
             "bullets": [
               "Primary structure analysis",

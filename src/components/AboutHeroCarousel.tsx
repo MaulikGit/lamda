@@ -130,7 +130,7 @@ export default function AboutHeroCarousel({ images }: AboutHeroCarouselProps) {
 
       {/* Top Floating Slide Counter Badge */}
       <div className="absolute top-3 right-3 z-20 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wider">
-        {currentIndex + 1} / {activeImages.length}
+        {String(currentIndex + 1).padStart(2, '0')} / {String(activeImages.length).padStart(2, '0')}
       </div>
 
       {/* Bottom Floating Navigation Dots */}
