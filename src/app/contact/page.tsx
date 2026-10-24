@@ -304,7 +304,7 @@ export default function Contact() {
                       <MapPin className="w-5 h-5 text-brand-blue" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">London UK Centre</span>
+                      <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">London UK Facility</span>
                       <p className="text-xs sm:text-sm font-semibold text-neutral-900 leading-snug">
                         319 Sage House, Pinner Road, Harrow, London, HA1 4HF, UK
                       </p>

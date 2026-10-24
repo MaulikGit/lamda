@@ -375,7 +375,7 @@ export default function InsightDetailLayout({ item, relatedItems }: InsightDetai
               </div>
 
               <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                Specializing in biologics process optimization, cell line stability, high-throughput characterization, and tech transfer at Lambda CDMO's Ahmedabad Center of Excellence.
+                Specializing in biologics process optimization, cell line stability, high-throughput characterization, and tech transfer at Lambda CDMO's Ahmedabad Facility of Excellence.
               </p>
 
               <div className="pt-2">

@@ -27,7 +27,7 @@ const equipment = [
 ];
 
 /**
- * Expanding equipment gallery for Ahmedabad Campus —
+ * Expanding equipment gallery for Ahmedabad Facility —
  * five vertical strips that expand on hover.
  */
 export default function FacilityGallery() {

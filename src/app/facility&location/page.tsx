@@ -106,7 +106,7 @@ const CAPABILITIES_TABLE: CapabilityRow[] = [
 const DEFAULT_FACILITY_FAQS = [
   {
     question: 'How do Lambda CDMO’s Ahmedabad and London facilities collaborate on a single program?',
-    answer: 'Our multi-site model allows sponsors to initiate clone screening, analytical development, and early process characterisation in our London centre, followed by seamless technology transfer to our Ahmedabad cGMP suites for scale-up (up to 2x 200L single-use bioreactors) and automated isolator fill-finish.',
+    answer: 'Our multi-site model allows sponsors to initiate clone screening, analytical development, and early process characterisation in our London facility, followed by seamless technology transfer to our Ahmedabad cGMP suites for scale-up (up to 2x 200L single-use bioreactors) and automated isolator fill-finish.',
   },
   {
     question: 'What regulatory standards do the facilities comply with?',
@@ -183,7 +183,7 @@ export default async function FacilityAndLocationPage({ searchParams }: PageProp
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] bg-brand-orange hover:bg-brand-orange-hover text-black font-semibold text-xs uppercase tracking-wider shadow-sm transition-all group"
                 >
                   <Factory className="w-4 h-4" />
-                  <span>Ahmedabad Campus</span>
+                  <span>Ahmedabad Facility</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -192,7 +192,7 @@ export default async function FacilityAndLocationPage({ searchParams }: PageProp
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-[10px] bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold text-xs uppercase tracking-wider shadow-sm transition-all group"
                 >
                   <Building2 className="w-4 h-4" />
-                  <span>London Centre</span>
+                  <span>London Facility</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

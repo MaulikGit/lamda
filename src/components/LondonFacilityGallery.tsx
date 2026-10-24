@@ -47,7 +47,7 @@ const ukEquipment = [
 ];
 
 /**
- * Expanding equipment gallery for London Innovation Centre —
+ * Expanding equipment gallery for London Innovation Facility —
  * renders clean image cards that expand on hover.
  */
 export default function LondonFacilityGallery() {

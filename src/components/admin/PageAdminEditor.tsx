@@ -137,11 +137,11 @@ export const PRESET_MEDIA_GALLERY: PresetMediaItem[] = [
     badge: 'cGMP Suite'
   },
   {
-    label: 'Ahmedabad CDMO Campus (Blue Facade)',
+    label: 'Ahmedabad CDMO Facility (Blue Facade)',
     url: '/images/CDMOblue.png',
     type: 'image',
     category: 'cleanroom',
-    badge: 'Campus'
+    badge: 'Facility'
   },
   {
     label: 'London Innovation Laboratory',
@@ -3601,23 +3601,23 @@ export default function PageAdminEditor({
                               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch pt-2">
                                 {/* Left Column: 2 Separate Location Cards */}
                                 <div className="lg:col-span-6 flex flex-col gap-5">
-                                  {/* Card 1: India Campus */}
+                                  {/* Card 1: India Facility */}
                                   <div className="p-5 rounded-2xl border-2 border-brand-blue/60 bg-sky-50/20 space-y-3 relative shadow-xs">
                                     <div className="flex items-center justify-between">
                                       <div className="inline-flex items-center gap-1 text-xs font-bold text-brand-blue bg-sky-100 px-2.5 py-0.5 rounded-md border border-sky-200">
                                         <MapPin className="w-3.5 h-3.5 shrink-0" />
                                         <input
                                           type="text"
-                                          value={sec.cards?.[0]?.badge ?? 'India Campus'}
+                                          value={sec.cards?.[0]?.badge ?? 'India Facility'}
                                           onChange={(e) => {
                                             const cards = [...(sec.cards || [
-                                              { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                              { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                              { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                              { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                             ])];
                                             cards[0] = { ...cards[0], badge: e.target.value };
                                             updateSectionField(idx, 'cards', cards);
                                           }}
-                                          placeholder="India Campus"
+                                          placeholder="India Facility"
                                           className="bg-transparent border-none text-xs font-bold text-brand-blue focus:outline-none focus:ring-0 p-0 w-28"
                                         />
                                       </div>
@@ -3627,15 +3627,15 @@ export default function PageAdminEditor({
                                     </div>
                                     <div>
                                       <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">
-                                        Campus Title / City
+                                        Facility Title / City
                                       </label>
                                       <input
                                         type="text"
                                         value={sec.cards?.[0]?.title ?? 'Ahmedabad, India'}
                                         onChange={(e) => {
                                           const cards = [...(sec.cards || [
-                                            { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                            { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                            { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                            { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                           ])];
                                           cards[0] = { ...cards[0], title: e.target.value };
                                           updateSectionField(idx, 'cards', cards);
@@ -3653,8 +3653,8 @@ export default function PageAdminEditor({
                                         value={sec.cards?.[0]?.description ?? 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.'}
                                         onChange={(e) => {
                                           const cards = [...(sec.cards || [
-                                            { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                            { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                            { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                            { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                           ])];
                                           cards[0] = { ...cards[0], description: e.target.value };
                                           updateSectionField(idx, 'cards', cards);
@@ -3671,8 +3671,8 @@ export default function PageAdminEditor({
                                           value={sec.cards?.[0]?.link || (sec.cards?.[0] as any)?.href || '/facility&location/India'}
                                           onChange={(e) => {
                                             const cards = [...(sec.cards || [
-                                              { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                              { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                              { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                              { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                             ])];
                                             cards[0] = { ...cards[0], link: e.target.value };
                                             updateSectionField(idx, 'cards', cards);
@@ -3687,8 +3687,8 @@ export default function PageAdminEditor({
                                           value={sec.cards?.[0]?.buttonText ?? 'Explore Ahmedabad Facility'}
                                           onChange={(e) => {
                                             const cards = [...(sec.cards || [
-                                              { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                              { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                              { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                              { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                             ])];
                                             cards[0] = { ...cards[0], buttonText: e.target.value };
                                             updateSectionField(idx, 'cards', cards);
@@ -3701,23 +3701,23 @@ export default function PageAdminEditor({
                                     </div>
                                   </div>
 
-                                  {/* Card 2: UK Campus */}
+                                  {/* Card 2: UK Facility */}
                                   <div className="p-5 rounded-2xl border-2 border-brand-orange/60 bg-orange-50/20 space-y-3 relative shadow-xs">
                                     <div className="flex items-center justify-between">
                                       <div className="inline-flex items-center gap-1 text-xs font-bold text-brand-orange bg-orange-100 px-2.5 py-0.5 rounded-md border border-orange-200">
                                         <MapPin className="w-3.5 h-3.5 shrink-0" />
                                         <input
                                           type="text"
-                                          value={sec.cards?.[1]?.badge ?? 'UK Centre'}
+                                          value={sec.cards?.[1]?.badge ?? 'UK Facility'}
                                           onChange={(e) => {
                                             const cards = [...(sec.cards || [
-                                              { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                              { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                              { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                              { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                             ])];
                                             cards[1] = { ...cards[1], badge: e.target.value };
                                             updateSectionField(idx, 'cards', cards);
                                           }}
-                                          placeholder="UK Centre"
+                                          placeholder="UK Facility"
                                           className="bg-transparent border-none text-xs font-bold text-brand-orange focus:outline-none focus:ring-0 p-0 w-28"
                                         />
                                       </div>
@@ -3727,15 +3727,15 @@ export default function PageAdminEditor({
                                     </div>
                                     <div>
                                       <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">
-                                        Campus Title / City
+                                        Facility Title / City
                                       </label>
                                       <input
                                         type="text"
                                         value={sec.cards?.[1]?.title ?? 'London, UK'}
                                         onChange={(e) => {
                                           const cards = [...(sec.cards || [
-                                            { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                            { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                            { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                            { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                           ])];
                                           cards[1] = { ...cards[1], title: e.target.value };
                                           updateSectionField(idx, 'cards', cards);
@@ -3753,8 +3753,8 @@ export default function PageAdminEditor({
                                         value={sec.cards?.[1]?.description ?? 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.'}
                                         onChange={(e) => {
                                           const cards = [...(sec.cards || [
-                                            { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                            { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                            { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                            { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                           ])];
                                           cards[1] = { ...cards[1], description: e.target.value };
                                           updateSectionField(idx, 'cards', cards);
@@ -3771,8 +3771,8 @@ export default function PageAdminEditor({
                                           value={sec.cards?.[1]?.link || (sec.cards?.[1] as any)?.href || '/facility&location/UK'}
                                           onChange={(e) => {
                                             const cards = [...(sec.cards || [
-                                              { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                              { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                              { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                              { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                             ])];
                                             cards[1] = { ...cards[1], link: e.target.value };
                                             updateSectionField(idx, 'cards', cards);
@@ -3784,16 +3784,16 @@ export default function PageAdminEditor({
                                       <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-orange text-white text-xs font-bold shadow-2xs">
                                         <input
                                           type="text"
-                                          value={sec.cards?.[1]?.buttonText ?? 'Explore London Centre'}
+                                          value={sec.cards?.[1]?.buttonText ?? 'Explore London Facility'}
                                           onChange={(e) => {
                                             const cards = [...(sec.cards || [
-                                              { badge: 'India Campus', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
-                                              { badge: 'UK Centre', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Centre', link: '/facility&location/UK' }
+                                              { badge: 'India Facility', title: 'Ahmedabad, India', description: 'Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.', buttonText: 'Explore Ahmedabad Facility', link: '/facility&location/India' },
+                                              { badge: 'UK Facility', title: 'London, UK', description: 'Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.', buttonText: 'Explore London Facility', link: '/facility&location/UK' }
                                             ])];
                                             cards[1] = { ...cards[1], buttonText: e.target.value };
                                             updateSectionField(idx, 'cards', cards);
                                           }}
-                                          placeholder="Explore London Centre"
+                                          placeholder="Explore London Facility"
                                           className="bg-transparent border-none text-white text-xs font-bold focus:outline-none focus:ring-0 p-0 text-right w-44"
                                         />
                                         <ArrowRight className="w-3.5 h-3.5 shrink-0" />

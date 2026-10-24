@@ -8,7 +8,7 @@ const FACILITY_IMAGES = [
   {
     src: '/images/ahmedabad/Screenshot4.png',
     alt: 'Lambda CDMO Biologics Facility Infrastructure',
-    caption: 'Integrated Biologics Development & Manufacturing Campus',
+    caption: 'Integrated Biologics Development & Manufacturing Facility',
   },
   {
     src: '/images/Screenshot%202026-09-11%20132304.png',

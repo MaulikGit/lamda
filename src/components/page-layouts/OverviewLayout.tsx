@@ -108,7 +108,7 @@ const LEADERSHIP_PROFILES: LeaderProfile[] = [
     credentials: 'Bioprocess Engineering & cGMP Scale-Up • Upstream & Downstream Technology Transfer',
     bio: [
       'Jagannathan Sundaram is Vice President of Process Sciences at Lambda CDMO, leading bioprocess engineering, upstream cell culture development, downstream purification, and technology transfer for biologics and biosimilars.',
-      'With extensive expertise across biopharmaceutical process development and scale-up, he oversees the development of scalable single-use bioreactor systems and multi-modal downstream purification trains from bench scale through clinical and commercial cGMP biomanufacturing suites at Lambda\'s Ahmedabad campus.',
+      'With extensive expertise across biopharmaceutical process development and scale-up, he oversees the development of scalable single-use bioreactor systems and multi-modal downstream purification trains from bench scale through clinical and commercial cGMP biomanufacturing suites at Lambda\'s Ahmedabad facility.',
       'His leadership ensures robust tech transfer protocols, critical process parameter (CPP) control, high process yields, and full alignment with global US FDA, EMA, and WHO regulatory manufacturing expectations.'
     ]
   },
@@ -178,7 +178,7 @@ function getOverviewCapabilityIcon(text: string, index: number) {
   if (lower.includes('visual inspection') || lower.includes('secondary packaging') || lower.includes('inspection suite')) return Eye;
   if (lower.includes('qtpp') || lower.includes('analytical sciences workflow')) return Search;
   if (lower.includes('regulatory') || lower.includes('fda') || lower.includes('ema') || lower.includes('pmda') || lower.includes('tga') || lower.includes('cmc')) return Scale;
-  if (lower.includes('campus') || lower.includes('infrastructure') || lower.includes('27,000 sqft') || lower.includes('sqft')) return Building2;
+  if (lower.includes('campus') || lower.includes('facility') || lower.includes('infrastructure') || lower.includes('27,000 sqft') || lower.includes('sqft')) return Building2;
   if (lower.includes('global') || lower.includes('market')) return Globe;
   if (lower.includes('phase-aligned') || lower.includes('lifecycle')) return Milestone;
   if (lower.includes('scalable') || lower.includes('capacity')) return Maximize2;

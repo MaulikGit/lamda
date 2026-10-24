@@ -40,7 +40,7 @@ const POPULAR_SEARCHES = [
   'Cell Line Development',
   'Drug Substance',
   'Ahmedabad Facility',
-  'London Centre',
+  'London Facility',
   'Monoclonal Antibodies',
   'Analytical Characterization',
   'Virtual Tour',
@@ -270,7 +270,7 @@ export default function SearchModal({ isOpen, onClose, initialQuery = '' }: Sear
                         </div>
                         <div>
                           <div className="text-xs font-semibold text-neutral-900 group-hover:text-brand-orange">
-                            Ahmedabad cGMP Campus
+                            Ahmedabad cGMP Facility
                           </div>
                           <div className="text-[11px] text-slate-500">Single-use Bioreactors & Suites</div>
                         </div>

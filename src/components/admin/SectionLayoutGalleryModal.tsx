@@ -68,7 +68,7 @@ export const SECTION_LAYOUTS: SectionLayoutOption[] = [
           badge: 'PROCESS SCIENCES (INDIA)',
           step: '20+ Years Experience',
           icon: 'Master’s in Engineering in Bio-Process Technology | B.Tech in Chemical & Bio-Chemical Engineering - Tech',
-          description: 'Jagannathan Sundaram is Vice President of Process Sciences at Lambda CDMO, leading bioprocess engineering, upstream cell culture development, downstream purification, and technology transfer for biologics and biosimilars.\n\nWith extensive expertise across biopharmaceutical process development and scale-up, he oversees the development of scalable single-use bioreactor systems and multi-modal downstream purification suites from bench scale through clinical and commercial cGMP biomanufacturing suites at Lambda’s Ahmedabad campus.\n\nHis leadership ensures robust tech transfer protocols, critical process parameter (CPP) control, high process yields, and full alignment with global US FDA, EMA, and WHO regulatory manufacturing expectations.',
+          description: 'Jagannathan Sundaram is Vice President of Process Sciences at Lambda CDMO, leading bioprocess engineering, upstream cell culture development, downstream purification, and technology transfer for biologics and biosimilars.\n\nWith extensive expertise across biopharmaceutical process development and scale-up, he oversees the development of scalable single-use bioreactor systems and multi-modal downstream purification suites from bench scale through clinical and commercial cGMP biomanufacturing suites at Lambda’s Ahmedabad facility.\n\nHis leadership ensures robust tech transfer protocols, critical process parameter (CPP) control, high process yields, and full alignment with global US FDA, EMA, and WHO regulatory manufacturing expectations.',
           image: '/images/team/Jagannathan.jpg'
         },
         {
@@ -225,7 +225,7 @@ export const SECTION_LAYOUTS: SectionLayoutOption[] = [
       text: 'Demonstrated infrastructure, quality compliance, and leadership expertise supporting worldwide biopharma programs.',
       dark: false,
       stats: [
-        { value: '27,000', label: 'Sqft Biomanufacturing Campus', sublabel: 'Purpose-built biologics development and GMP cleanroom suites in Ahmedabad, India.' },
+        { value: '27,000', label: 'Sqft Biomanufacturing Facility', sublabel: 'Purpose-built biologics development and GMP cleanroom suites in Ahmedabad, India.' },
         { value: '25+', label: 'Years Group Legacy', sublabel: 'Backed by Lambda Therapeutic Research international clinical and bioanalytical heritage.' },
         { value: '99.9%', label: 'Analytical Resolution', sublabel: 'High-resolution orthogonal mass spectrometry and chromatographic purity analysis.' },
         { value: '100%', label: 'Regulatory Readiness', sublabel: 'Full alignment with US FDA, EMA, PMDA, and global regulatory submission dossiers.' }
@@ -329,7 +329,7 @@ export const SECTION_LAYOUTS: SectionLayoutOption[] = [
       style: 'video-hero-banner',
       title: 'Precision Science Meets Manufacturing Excellence',
       subtitle: 'DISCOVER OUR FACILITY',
-      text: 'Experience our 27,000 sqft biologics campus in Ahmedabad with automated single-use cleanroom suites and advanced analytical laboratories.',
+      text: 'Experience our 27,000 sqft biologics facility in Ahmedabad with automated single-use cleanroom suites and advanced analytical laboratories.',
       video: '/cta-bg-video.mp4',
       buttonText: 'Schedule a Virtual Facility Tour',
       buttonLink: '/contact'

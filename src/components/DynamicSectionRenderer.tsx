@@ -711,7 +711,7 @@ export default function DynamicSectionRenderer({
       ? section.faqs
       : [
           { question: 'What modalities are supported at Lambda CDMO?', answer: 'We support Monoclonal Antibodies (mAbs), Bispecific Antibodies, Antibody-Drug Conjugates (ADCs), and Recombinant Proteins & Peptides across all development stages.' },
-          { question: 'Where are Lambda CDMO facilities located?', answer: 'Lambda CDMO operates an integrated development and GMP manufacturing campus in Ahmedabad, India, and an advanced European Innovation Centre in London, UK.' },
+          { question: 'Where are Lambda CDMO facilities located?', answer: 'Lambda CDMO operates an integrated development and GMP manufacturing facility in Ahmedabad, India, and an advanced European Innovation Facility in London, UK.' },
           { question: 'How do you handle technical transfers and regulatory filings?', answer: 'We utilize standardized tech transfer protocols with comprehensive analytical comparability, process qualification packages, and QA documentation aligned with US FDA, EMA, PMDA, and TGA requirements.' }
         ];
 

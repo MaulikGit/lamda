@@ -93,8 +93,8 @@ export default function Navigation() {
           title: 'CDMO Locations',
           href: '/facility&location',
           links: [
-            { label: 'Ahmedabad, India', href: '/facility&location/India', icon: Factory, sublabel: 'Integrated Biomanufacturing Campus' },
-            { label: 'London, UK', href: '/facility&location/UK', icon: Building2, sublabel: 'European Innovation Centre' },
+            { label: 'Ahmedabad, India', href: '/facility&location/India', icon: Factory, sublabel: 'Integrated Biomanufacturing Facility' },
+            { label: 'London, UK', href: '/facility&location/UK', icon: Building2, sublabel: 'European Innovation Facility' },
           ],
         },
       ],
@@ -372,7 +372,7 @@ export default function Navigation() {
                                           href="/facility&location/UK" 
                                           className="text-xs font-semibold text-brand-blue hover:text-brand-blue-hover flex items-center gap-1.5 group"
                                         >
-                                          <span>London Centre</span>
+                                          <span>London Facility</span>
                                           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
                                         </Link>
                                       </div>

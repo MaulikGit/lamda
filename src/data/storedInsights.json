@@ -853,7 +853,7 @@
       "readTime": "Downloadable PDF • 32 Pages",
       "author": {
         "name": "Lambda CDMO Engineering & Operations",
-        "role": "Ahmedabad Biologics Campus"
+        "role": "Ahmedabad Biologics Facility"
       },
       "image": "/images/Lamdabuilding.jpg",
       "summary": "The definitive guide to Lambda CDMO’s integrated biologics infrastructure, detailing cleanroom classifications, bioreactor trains (50L–2000L), analytical suites, and regulatory compliance.",
@@ -871,7 +871,7 @@
       ],
       "detailedContent": {
         "subtitle": "Your complete reference for integrated biologics development and clinical manufacturing",
-        "abstract": "This comprehensive compendium details our state-of-the-art biopharmaceutical campus, designed in compliance with US FDA, EU EMA, and WHO cGMP guidelines. Discover how our end-to-end integration—from cell line generation through aseptic fill-finish—accelerates clinical timelines while minimizing technology transfer friction.",
+        "abstract": "This comprehensive compendium details our state-of-the-art biopharmaceutical facility, designed in compliance with US FDA, EU EMA, and WHO cGMP guidelines. Discover how our end-to-end integration—from cell line generation through aseptic fill-finish—accelerates clinical timelines while minimizing technology transfer friction.",
         "sections": [
           {
             "heading": "1. Upstream & Downstream Processing Specifications",
@@ -1092,7 +1092,7 @@
         "role": "Lambda CDMO Quality Assurance"
       },
       "image": "/images/insights/cgmp_audit_inspection.png",
-      "summary": "Lambda CDMO has successfully concluded a rigorous multi-agency regulatory cGMP audit covering its biologics development and commercial manufacturing campus, receiving zero Form 483 observations.",
+      "summary": "Lambda CDMO has successfully concluded a rigorous multi-agency regulatory cGMP audit covering its biologics development and commercial manufacturing facility, receiving zero Form 483 observations.",
       "keyTakeaways": [
         "Zero Form 483 observations received across comprehensive 5-day facility audit.",
         "Audit inspected cell banking, upstream bioreactor suites, downstream purification, and QC laboratories.",
@@ -1112,7 +1112,7 @@
           {
             "heading": "1. Scope of the Facility Audit",
             "body": [
-              "The five-day inspection encompassed every facet of the Ahmedabad campus, including the Grade A/B aseptic fill-finish suites, 50L–2000L single-use bioreactor bays, automated QC testing suites, and cryogenic cell bank repositories.",
+              "The five-day inspection encompassed every facet of the Ahmedabad facility, including the Grade A/B aseptic fill-finish suites, 50L–2000L single-use bioreactor bays, automated QC testing suites, and cryogenic cell bank repositories.",
               "Auditors reviewed electronic audit trails across all computerized chromatography and spectrophotometric systems, affirming complete adherence to 21 CFR Part 11 and ALCOA+ data integrity principles."
             ]
           },
@@ -1134,7 +1134,7 @@
       "id": "news-2",
       "slug": "biologics-campus-expansion-2000l-bioreactors",
       "category": "news",
-      "title": "Lambda CDMO Expands Biologics Campus with New 2,000L Single-Use Bioreactor Suites",
+      "title": "Lambda CDMO Expands Biologics Facility with New 2,000L Single-Use Bioreactor Suites",
       "badge": "Facility Expansion",
       "date": "February 18, 2026",
       "readTime": "5 min read",

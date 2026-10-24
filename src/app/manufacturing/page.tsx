@@ -77,7 +77,7 @@ const DEFAULT_MANUFACTURING_FAQS = [
   },
   {
     question: 'What regulatory standards govern the manufacturing facility?',
-    answer: 'The Ahmedabad manufacturing campus operates under a harmonized Quality Management System compliant with US FDA (21 CFR Part 210, 211, and Part 11), EMA cGMP (EudraLex Vol 4, Annex 1), PIC/S, and WHO cGMP guidelines.',
+    answer: 'The Ahmedabad manufacturing facility operates under a harmonized Quality Management System compliant with US FDA (21 CFR Part 210, 211, and Part 11), EMA cGMP (EudraLex Vol 4, Annex 1), PIC/S, and WHO cGMP guidelines.',
   },
   {
     question: 'Do you support lyophilization cycle development and clinical scale freeze-drying?',

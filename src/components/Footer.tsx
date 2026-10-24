@@ -13,7 +13,7 @@ export default function Footer() {
         { name: 'Leadership', href: '/overview/leadership' },
         { name: 'Facilities Overview', href: '/facility&location' },
         { name: 'Ahmedabad Facility', href: '/facility&location/India' },
-        { name: 'London UK Centre', href: '/facility&location/UK' },
+        { name: 'London UK Facility', href: '/facility&location/UK' },
         { name: 'Virtual Tour', href: '/virtual-tour/00%20MAIN%20BUILDING/index.htm' },
         { name: 'Integrated Dev', href: '/overview/integrated' },
         { name: 'Careers', href: '/overview/careers' },

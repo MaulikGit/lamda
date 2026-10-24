@@ -443,7 +443,7 @@ export const cdmoData: CDMOPage[] = [
       },
       {
         "question": "Where are Lambda CDMO facilities located?",
-        "answer": "Lambda CDMO operates an integrated development and GMP manufacturing campus in Ahmedabad, India, and an advanced European Innovation Centre in London, UK."
+        "answer": "Lambda CDMO operates an integrated development and GMP manufacturing facility in Ahmedabad, India, and an advanced European Innovation Facility in London, UK."
       },
       {
         "question": "How do you handle technical transfers and regulatory filings?",
@@ -702,7 +702,7 @@ export const cdmoData: CDMOPage[] = [
             },
             {
               "question": "Where are Lambda CDMO facilities located?",
-              "answer": "Lambda CDMO operates an integrated development and GMP manufacturing campus in Ahmedabad, India, and an advanced European Innovation Centre in London, UK."
+              "answer": "Lambda CDMO operates an integrated development and GMP manufacturing facility in Ahmedabad, India, and an advanced European Innovation Facility in London, UK."
             },
             {
               "question": "How do you handle technical transfers and regulatory filings?",
@@ -729,7 +729,7 @@ export const cdmoData: CDMOPage[] = [
         },
         {
           "question": "Where are Lambda CDMO facilities located?",
-          "answer": "Lambda CDMO operates an integrated development and GMP manufacturing campus in Ahmedabad, India, and an advanced European Innovation Centre in London, UK."
+          "answer": "Lambda CDMO operates an integrated development and GMP manufacturing facility in Ahmedabad, India, and an advanced European Innovation Facility in London, UK."
         },
         {
           "question": "How do you handle technical transfers and regulatory filings?",
@@ -781,17 +781,17 @@ export const cdmoData: CDMOPage[] = [
         "bullets": [],
         "cards": [
           {
-            "badge": "India Campus",
+            "badge": "India Facility",
             "title": "Ahmedabad, India",
             "description": "Integrated development with Process and Analytical Sciences, combined with cGMP manufacturing for both drug substance and drug product.",
             "buttonText": "Explore Ahmedabad Facility",
             "link": "/facility&location/India"
           },
           {
-            "badge": "UK Centre",
+            "badge": "UK Facility",
             "title": "London, UK",
             "description": "Biologics development capabilities supporting drug substance process & analytical development and process characterisation studies.",
-            "buttonText": "Explore London Centre",
+            "buttonText": "Explore London Facility",
             "link": "/facility&location/UK"
           }
         ]
@@ -917,7 +917,7 @@ export const cdmoData: CDMOPage[] = [
           },
           {
             "title": "Jagannathan Sundaram",
-            "description": "Jagannathan Sundaram is Vice President of Process Sciences at Lambda CDMO, leading bioprocess engineering, upstream cell culture development, downstream purification, and technology transfer for biologics and biosimilars.\n\nWith extensive expertise across biopharmaceutical process development and scale-up, he oversees the development of scalable single-use bioreactor systems and multi-modal downstream purification trains from bench scale through clinical and commercial cGMP biomanufacturing suites at Lambda's Ahmedabad campus.\n\nHis leadership ensures robust tech transfer protocols, critical process parameter (CPP) control, high process yields, and full alignment with global US FDA, EMA, and WHO regulatory manufacturing expectations.",
+            "description": "Jagannathan Sundaram is Vice President of Process Sciences at Lambda CDMO, leading bioprocess engineering, upstream cell culture development, downstream purification, and technology transfer for biologics and biosimilars.\n\nWith extensive expertise across biopharmaceutical process development and scale-up, he oversees the development of scalable single-use bioreactor systems and multi-modal downstream purification trains from bench scale through clinical and commercial cGMP biomanufacturing suites at Lambda's Ahmedabad facility.\n\nHis leadership ensures robust tech transfer protocols, critical process parameter (CPP) control, high process yields, and full alignment with global US FDA, EMA, and WHO regulatory manufacturing expectations.",
             "image": "/images/team/Jagan Sundaram Profile Picture.png",
             "badge": "Process Sciences (India)",
             "step": "25+ Years Experience",
@@ -979,7 +979,7 @@ export const cdmoData: CDMOPage[] = [
         "id": "sec-9cqax0o",
         "style": "feature-split",
         "title": "Integrated 27,000 sq. ft. Biologics Facility",
-        "subtitle": "00 — CAMPUS INFRASTRUCTURE",
+        "subtitle": "00 — FACILITY INFRASTRUCTURE",
         "text": "The approximately **27,000 sq. ft. facility** is designed to support biologics programs from laboratory development through process scale-up, technology transfer, and clinical supply.\n\nThe facility includes development laboratories, analytical laboratories, GMP manufacturing suites, quality control laboratories, and supporting infrastructure.\n\nManufacturing operations incorporate **segregated areas, controlled material and personnel flows, single-use processing systems, and dedicated pre- and post-viral processing areas** to support the manufacture of biologic drug substance and drug product for clinical development.",
         "dark": false,
         "image": "/images/CDMOblue.png",
@@ -2676,7 +2676,7 @@ export const cdmoData: CDMOPage[] = [
       },
       {
         "question": "What regulatory standards govern the manufacturing facility?",
-        "answer": "The Ahmedabad manufacturing campus operates under a harmonized Quality Management System compliant with US FDA (21 CFR Part 210, 211, and Part 11), EMA cGMP (EudraLex Vol 4, Annex 1), PIC/S, and WHO cGMP guidelines."
+        "answer": "The Ahmedabad manufacturing facility operates under a harmonized Quality Management System compliant with US FDA (21 CFR Part 210, 211, and Part 11), EMA cGMP (EudraLex Vol 4, Annex 1), PIC/S, and WHO cGMP guidelines."
       },
       {
         "question": "Do you support lyophilization cycle development and clinical scale freeze-drying?",
@@ -2842,11 +2842,11 @@ export const cdmoData: CDMOPage[] = [
         "dark": false,
         "locations": [
           {
-            "name": "Ahmedabad Biologics Campus",
+            "name": "Ahmedabad Biologics Facility",
             "country": "India",
             "city": "Ahmedabad",
             "type": "Primary Development & GMP Manufacturing Hub",
-            "description": "Integrated campus featuring mammalian cell line development, high-titer upstream & downstream bioprocess suites, single-use bioreactors up to 2x 200L, automated robotic barrier isolator fill-finish, and comprehensive analytical release testing.",
+            "description": "Integrated facility featuring mammalian cell line development, high-titer upstream & downstream bioprocess suites, single-use bioreactors up to 2x 200L, automated robotic barrier isolator fill-finish, and comprehensive analytical release testing.",
             "tag": "Ahmedabad, India",
             "address": "Lambda House, Plot No. 38, Survey No. 388, Near Silver Oak University, S. G. Highway, Gota, Ahmedabad - 382481, Gujarat, India",
             "badge": "GMP Facility",
@@ -2855,11 +2855,11 @@ export const cdmoData: CDMOPage[] = [
             "link": "/facility&location/India"
           },
           {
-            "name": "London Analytical Innovation Centre",
+            "name": "London Analytical Innovation Facility",
             "country": "UK",
             "city": "London",
             "type": "Specialized Biologics & Characterization Hub",
-            "description": "Advanced analytical and early development center offering clone screening, multi-attribute LC-MS profiling, higher-order structure analysis, biophysical characterization, and early process characterization.",
+            "description": "Advanced analytical and early development facility offering clone screening, multi-attribute LC-MS profiling, higher-order structure analysis, biophysical characterization, and early process characterization.",
             "tag": "London, UK",
             "address": "319 Sage House, Pinner Road, Harrow, London, HA1 4HF, UK",
             "badge": "Analytical Hub",
@@ -2873,7 +2873,7 @@ export const cdmoData: CDMOPage[] = [
     "faqs": [
       {
         "question": "How do Lambda CDMO’s Ahmedabad and London facilities collaborate on a single program?",
-        "answer": "Our multi-site model allows sponsors to initiate clone screening, analytical development, and early process characterisation in our London centre, followed by seamless technology transfer to our Ahmedabad cGMP suites for scale-up (up to 2x 200L single-use bioreactors) and automated isolator fill-finish."
+        "answer": "Our multi-site model allows sponsors to initiate clone screening, analytical development, and early process characterisation in our London facility, followed by seamless technology transfer to our Ahmedabad cGMP suites for scale-up (up to 2x 200L single-use bioreactors) and automated isolator fill-finish."
       },
       {
         "question": "What regulatory standards do the facilities comply with?",
