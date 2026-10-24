@@ -23,6 +23,7 @@ interface LocationData {
   caps: string[];
   tourHref?: string;
   photo: string;
+  photoPosition?: string;
 }
 
 const DEFAULT_LOCATIONS: Record<'amd' | 'lon', LocationData> = {
@@ -45,7 +46,8 @@ const DEFAULT_LOCATIONS: Record<'amd' | 'lon', LocationData> = {
       'cGMP Drug Product'
     ],
     tourHref: '/virtual-tour/00%20MAIN%20BUILDING/index.htm',
-    photo: '/images/ahmedabadsite.webp'
+    photo: '/images/ahmedabadsite.webp',
+    photoPosition: 'center 80%'
   },
   lon: {
     key: 'lon',
@@ -64,7 +66,8 @@ const DEFAULT_LOCATIONS: Record<'amd' | 'lon', LocationData> = {
       'Analytical Development',
       'Process Characterisation'
     ],
-    photo: '/images/uk/uksite.webp'
+    photo: '/images/uk/uksite.webp',
+    photoPosition: 'center center'
   }
 };
 
@@ -120,6 +123,7 @@ export default function CDMOLocationsMapSection({
       cta: cards?.[0]?.buttonText || DEFAULT_LOCATIONS.amd.cta,
       href: cards?.[0]?.href || cards?.[0]?.link || DEFAULT_LOCATIONS.amd.href,
       photo: cards?.[0]?.image || DEFAULT_LOCATIONS.amd.photo,
+      photoPosition: 'center 80%',
       tourHref: '/virtual-tour/00%20MAIN%20BUILDING/index.htm'
     },
     lon: {
@@ -129,7 +133,8 @@ export default function CDMOLocationsMapSection({
       desc: cards?.[1]?.description || DEFAULT_LOCATIONS.lon.desc,
       cta: cards?.[1]?.buttonText || DEFAULT_LOCATIONS.lon.cta,
       href: cards?.[1]?.href || cards?.[1]?.link || DEFAULT_LOCATIONS.lon.href,
-      photo: cards?.[1]?.image || DEFAULT_LOCATIONS.lon.photo
+      photo: cards?.[1]?.image || DEFAULT_LOCATIONS.lon.photo,
+      photoPosition: 'center center'
     }
   };
 
@@ -517,8 +522,14 @@ export default function CDMOLocationsMapSection({
                     <img
                       src={encodeURI(activeLoc.photo)}
                       alt={`${activeLoc.name} Biologics Facility`}
-                      className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: activeLoc.photoPosition || (activeKey === 'amd' ? 'center 80%' : 'center center'),
+                        transformOrigin: activeLoc.photoPosition || (activeKey === 'amd' ? 'center 80%' : 'center center')
+                      }}
                     />
                   </div>
 
