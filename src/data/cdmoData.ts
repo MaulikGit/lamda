@@ -2109,11 +2109,10 @@ export const cdmoData: CDMOPage[] = [
     "images": [
       "/images/Analytical/microbiology/petri_dish_culture.webp",
       "/images/Analytical/microbiology/sterility_testing_cabinet.webp",
-      "/images/Analytical/microbiology/microbial_filtration_assay.webp",
       "/images/Analytical/microbiology/bioburden_testing_incubation.webp",
       "/images/Analytical/microbiology/environmental_monitoring_cleanroom.webp",
       "/images/Analytical/microbiology/bacterial_endotoxin_testing.webp"
-],
+    ],
     "capabilities": [
       "Sterility testing",
       "Bioburden testing",
