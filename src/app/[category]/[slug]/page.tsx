@@ -276,7 +276,9 @@ function getDynamicContent(
 
   const enrichedSections = sections.map((sec, idx) => ({
     ...sec,
-    image: sec.image || getUniqueBentoImage(category, slug, idx),
+    image: (category === 'services' && slug === 'cell-line')
+      ? ''
+      : (sec.image !== undefined ? sec.image : getUniqueBentoImage(category, slug, idx)),
   }));
 
   let processSteps = [];

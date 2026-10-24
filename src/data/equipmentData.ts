@@ -489,6 +489,12 @@ export const UK_BIOSIMILAR_EQUIPMENT: EquipmentItem[] = [
 export function getSectionEquipment(sectionTitle: string, pageSlug?: string): EquipmentItem[] | null {
   const combined = `${sectionTitle} ${pageSlug || ''}`.toLowerCase();
   const slugLower = (pageSlug || '').toLowerCase();
+
+  // Cell-line sections have image carousels removed as per specification
+  if (slugLower === 'cell-line' || slugLower === 'cell line' || slugLower.includes('cell-line')) {
+    return null;
+  }
+
   const isUK = slugLower === 'uk' || slugLower === 'london' || combined.includes('uk') || combined.includes('london');
 
   if (isUK) {

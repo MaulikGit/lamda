@@ -177,6 +177,14 @@ export default function ServiceLayout({ page, content }: ServiceLayoutProps) {
               const isDownstreamProcess = page.slug === 'process' && section.title.toLowerCase().includes('downstream');
               const imageRight = idx % 2 === 1;
 
+              const equipmentItems = (page.slug === 'cell-line') ? null : getSectionEquipment(section.title, page.slug);
+              const isVideo = section.mediaType === 'video' || /\.(mp4|webm|ogg|mov)$/i.test(section.video || section.image || '');
+              const hasEquipment = Boolean(equipmentItems && equipmentItems.length > 0);
+              const hasMultiImages = Boolean(section.images && section.images.length > 1);
+              const hasSingleImage = Boolean(section.image && section.image.trim() !== '');
+              const hasVideo = Boolean(isVideo && (section.video || section.image));
+              const hasMedia = page.slug !== 'cell-line' && (hasMultiImages || hasVideo || hasEquipment || hasSingleImage);
+
               return (
                 <Reveal key={idx} delay={idx * 0.08}>
                   {isUpstreamProcess ? (
@@ -302,6 +310,64 @@ export default function ServiceLayout({ page, content }: ServiceLayoutProps) {
                         <DownstreamProcessAnimation />
                       </div>
                     </div>
+                  ) : !hasMedia ? (
+                    <div className="bg-white border border-neutral-200/80 rounded-[10px] p-6 sm:p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-300">
+                      {/* Header */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="w-11 h-11 rounded-[10px] bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-6 h-6 text-brand-blue" />
+                        </span>
+                        <h3 className="text-2xl sm:text-3xl font-light md:font-normal tracking-tight text-neutral-900">
+                          {section.title}
+                        </h3>
+                      </div>
+
+                      {section.subtitle && (
+                        <span className="text-xs font-bold uppercase tracking-wider text-brand-orange block mb-3">
+                          {section.subtitle}
+                        </span>
+                      )}
+
+                      {section.text && (
+                        <p className="text-[15px] sm:text-[17px] text-slate-500 font-normal leading-relaxed max-w-5xl mb-6">
+                          {section.text}
+                        </p>
+                      )}
+
+                      {section.bullets && section.bullets.length > 0 && (
+                        <div className={section.text ? "pt-5 border-t border-neutral-100" : ""}>
+                          {section.bulletsTitle && (
+                            <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-neutral-900 block mb-3">
+                              {section.bulletsTitle}
+                            </span>
+                          )}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                            {section.bullets.map((b: string, bIdx: number) => {
+                              const BulletIcon = getBulletCapabilityIcon(b, bIdx);
+                              return (
+                                <div
+                                  key={bIdx}
+                                  className="group/pill flex items-center gap-3.5 p-3.5 rounded-[8px] bg-neutral-50 border border-neutral-200/70 hover:border-brand-yellow hover:bg-white transition-all duration-200"
+                                >
+                                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center shrink-0 group-hover/pill:bg-brand-yellow group-hover/pill:border-brand-yellow transition-colors duration-200">
+                                    <BulletIcon className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-brand-blue group-hover/pill:text-black transition-colors duration-200" />
+                                  </div>
+                                  <span className="text-sm sm:text-base font-medium text-neutral-900 leading-snug group-hover/pill:text-black">
+                                    {b}
+                                  </span>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+
+                      {section.footerText && (
+                        <div className="mt-6 p-4 rounded-[8px] bg-neutral-50 border border-neutral-200/80 text-sm sm:text-[15px] text-slate-700 font-normal leading-relaxed">
+                          {section.footerText}
+                        </div>
+                      )}
+                    </div>
                   ) : (
                     <div className="bg-white border border-neutral-200/80 rounded-[10px] p-6 sm:p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-300">
                       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -312,7 +378,6 @@ export default function ServiceLayout({ page, content }: ServiceLayoutProps) {
                             if (section.images && section.images.length > 1) {
                               return <AboutHeroCarousel images={section.images} />;
                             }
-                            const isVideo = section.mediaType === 'video' || /\.(mp4|webm|ogg|mov)$/i.test(section.video || section.image || '');
                             if (isVideo && (section.video || section.image)) {
                               return (
                                 <div className="relative aspect-[4/3] rounded-[10px] overflow-hidden bg-neutral-950 border border-neutral-200 shadow-sm">
@@ -325,24 +390,6 @@ export default function ServiceLayout({ page, content }: ServiceLayoutProps) {
                                     className="w-full h-full object-cover"
                                   />
                                 </div>
-                              );
-                            }
-                            const equipmentItems = getSectionEquipment(section.title, page.slug);
-                            if (section.images && section.images.length > 1) {
-                              return (
-                                <EquipmentCarousel
-                                  items={section.images.map((img: string, i: number) => {
-                                    const match = (equipmentItems || []).find((eq) => eq.src === img) ||
-                                      ALL_EQUIPMENT_ITEMS.find((eq) => eq.src === img);
-                                    return match || {
-                                      src: img,
-                                      title: `${section.title} Equipment ${i + 1}`,
-                                      subtitle: `${section.title} instrumentation suite.`,
-                                      tag: 'Equipment'
-                                    };
-                                  })}
-                                  sectionTitle={section.title}
-                                />
                               );
                             }
                             if (equipmentItems && equipmentItems.length > 0) {

@@ -1278,7 +1278,7 @@
         "subtitle": "",
         "text": "Our expertise spans gene construct design, stable pool generation, single-cell cloning, clone selection, and cGMP cell bank development using mammalian expression systems. We support the development of monoclonal antibodies (mAbs), bispecific antibodies, and other recombinant biologics. Our Ahmedabad facility provides the broader cell line development platform, while Accord Biopharma London supports clone screening and selection as part of its biologics development activities.",
         "dark": false,
-        "image": "/images/cdn/unsplash-1579154204601-01588f351e67.jpg",
+        "image": "",
         "imageSide": "right",
         "bullets": [
           "Gene construct design and optimization",
@@ -1300,7 +1300,7 @@
         "subtitle": "ACCELERATED GENE-TO-RCB TIMELINE",
         "text": "Accelerating clone selection with automated screening and single-cell deposition in CHO-K1 and CHO-S host lines, delivering verified stable lineages in 14 to 16 weeks.",
         "dark": false,
-        "image": "/images/cdn/unsplash-1628595351029-c2bf17511435.jpg",
+        "image": "",
         "imageSide": "left",
         "bullets": [
           "High-throughput single-cell cloning and image-based verification of monoclonality",
