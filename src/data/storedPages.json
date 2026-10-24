@@ -7,7 +7,7 @@
     "metaDesc": "Supporting biopharmaceutical companies with integrated biologics development, cell line engineering, process development, analytical characterization, GMP manufacturing, and clinical supply.",
     "badge": "INTEGRATED BIOLOGICS CDMO",
     "heading": "Biologics Development and Manufacturing.",
-    "subtitle": "Integrated from Cell Line Engineering to Clinical Supplies.",
+    "subtitle": "From Gene to Clinic.",
     "description": "Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.",
     "image": "/images/hero_cleanroom.png",
     "heroVideo": "/videos/newhero.mp4",
@@ -277,7 +277,7 @@
       "metaDesc": "Supporting biopharmaceutical companies with integrated biologics development, cell line engineering, process development, analytical characterization, GMP manufacturing, and clinical supply.",
       "badge": "INTEGRATED BIOLOGICS CDMO",
       "heading": "Biologics Development and Manufacturing.",
-      "subtitle": "Integrated from Cell Line Engineering to Clinical Supplies.",
+      "subtitle": "From Gene to Clinic.",
       "description": "Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.",
       "image": "/images/hero_cleanroom.png",
       "heroVideo": "/videos/newhero.mp4",
@@ -2467,13 +2467,13 @@
     "badge": "Analytical Characterization and Testing",
     "heading": "Analytical Insights that Advance Biologics Development",
     "description": "Lambda CDMO provides analytical characterization and testing capabilities to support product understanding, process development, comparability, manufacturing, batch release, and stability assessment across biologics programs.\n\nOur analytical platform combines physicochemical, molecular, structural, biophysical, functional, and microbiological testing to generate data across development and manufacturing.",
-    "image": "/images/Analytical/Orbitrap.png",
+    "image": "/images/Analytical/Octet.png",
     "images": [
+      "/images/Analytical/Octet.png",
       "/images/Analytical/Orbitrap.png",
       "/images/Analytical/Q ToF.png",
       "/images/Analytical/Maurice.png",
       "/images/Analytical/nanoDSF.png",
-      "/images/Analytical/Octet.png",
       "/images/Analytical/UPLC.png"
     ],
     "sections": [

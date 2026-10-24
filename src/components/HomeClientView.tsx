@@ -48,7 +48,7 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
   const [openFaqId, setOpenFaqId] = useState<number | null>(null);
 
   const heroHeading = pageData?.heading || 'Biologics Development and Manufacturing.';
-  const heroSubtitle = pageData?.subtitle || 'Integrated from Cell Line Engineering to Clinical Supplies.';
+  const heroSubtitle = pageData?.subtitle || 'From Gene to Clinic.';
   const heroDesc = pageData?.description || 'Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.';
   const heroVideo = (pageData?.heroVideo && pageData.heroVideo !== '/videos/hero5.mp4') ? pageData.heroVideo : '/videos/newhero.mp4';
   const heroPrimaryCta = {

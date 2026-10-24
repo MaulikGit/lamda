@@ -15,7 +15,7 @@ interface HeroSectionProps {
 
 export function HeroSection({
     heading = 'Biologics Development and Manufacturing.',
-    subtitle = 'Integrated from Cell Line Engineering to Clinical Supplies.',
+    subtitle = 'From Gene to Clinic.',
     description = 'Supporting biopharmaceutical companies with integrated biologics development, from Gene to GMP – cell line engineering, process development of Drug substance and Drug product, analytical characterization, GMP manufacturing, and clinical supply capabilities to accelerate the journey from molecule to market.',
     videoSrc = '/videos/newhero.mp4',
     primaryCta = { text: 'Get in touch', link: '/contact' },

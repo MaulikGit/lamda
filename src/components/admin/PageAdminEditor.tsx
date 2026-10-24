@@ -7133,7 +7133,7 @@ export default function PageAdminEditor({
                       </label>
                       <input
                         type="text"
-                        value={page.subtitle || 'Integrated from Cell Line Engineering to Clinical Supplies.'}
+                        value={page.subtitle || 'From Gene to Clinic.'}
                         onChange={(e) => setPage((prev) => ({ ...prev, hasUnpublishedChanges: true, subtitle: e.target.value }))}
                         placeholder="Hero Subtitle..."
                         className="text-lg sm:text-xl font-light text-white/95 w-full bg-black/30 border border-white/20 focus:border-brand-blue rounded-xl p-2.5 focus:outline-none backdrop-blur-xs"
