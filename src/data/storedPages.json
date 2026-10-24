@@ -1526,26 +1526,12 @@
         "title": "Seamless Development to GMP Transfer",
         "subtitle": "",
         "text": "Manufacturing capabilities are designed to support scalable production, controlled process execution, and regulatory requirements throughout clinical development.",
+        "secondaryTitle": "Single-Use Bioreactor Production Suites",
+        "secondaryText": "Operating flexible 50 L to 500 L SUB trains in ISO Class 7 / Grade C cleanroom suites with digital monitoring of critical process parameters to support clinical phases I through III.",
         "dark": false,
         "image": "/images/upstream_GMP/549A7821.png",
         "imageSide": "right",
         "bullets": []
-      },
-      {
-        "id": "sec-ds-02",
-        "style": "feature-split",
-        "title": "Single-Use Bioreactor Production Suites",
-        "subtitle": "FLEXIBLE GMP BIOMANUFACTURING CAPACITY",
-        "text": "Operating flexible 50 L to 500 L SUB trains in ISO Class 7 / Grade C cleanroom suites with digital monitoring of critical process parameters to support clinical phases I through III.",
-        "dark": false,
-        "image": "/images/cdn/pexels-2280571.jpg",
-        "imageSide": "left",
-        "bullets": [
-          "50 L to 500 L single-use bioreactor trains reducing cross-contamination risk",
-          "Dedicated downstream purification skids with multi-modal column chromatography",
-          "Automated tangential flow filtration (TFF) and viral clearance nanofiltration",
-          "Real-time automated environmental monitoring and particulate tracking"
-        ]
       }
     ],
     "faqs": [

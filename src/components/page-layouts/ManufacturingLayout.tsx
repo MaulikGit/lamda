@@ -379,13 +379,30 @@ export default function ManufacturingLayout({ page, content }: ManufacturingLayo
                           );
                         })()}
                       </div>
-                      <div className={`${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                        <h3 className="text-2xl md:text-3xl font-light md:font-normal tracking-tight text-neutral-900 mb-4">
-                          {section.title}
-                        </h3>
-                        <p className="text-[15px] md:text-[17px] text-slate-500 font-normal leading-relaxed">
-                          {section.text}
-                        </p>
+                      <div className={`${idx % 2 === 1 ? 'lg:order-1' : ''} space-y-6 md:space-y-8`}>
+                        <div>
+                          <h3 className="text-2xl md:text-3xl font-light md:font-normal tracking-tight text-neutral-900 mb-3 sm:mb-4">
+                            {section.title}
+                          </h3>
+                          <p className="text-[15px] md:text-[17px] text-slate-500 font-normal leading-relaxed">
+                            {section.text}
+                          </p>
+                        </div>
+
+                        {(section.secondaryTitle || section.secondaryText) && (
+                          <div className="pt-6 border-t border-neutral-100">
+                            {section.secondaryTitle && (
+                              <h3 className="text-2xl md:text-3xl font-light md:font-normal tracking-tight text-neutral-900 mb-3 sm:mb-4">
+                                {section.secondaryTitle}
+                              </h3>
+                            )}
+                            {section.secondaryText && (
+                              <p className="text-[15px] md:text-[17px] text-slate-500 font-normal leading-relaxed">
+                                {section.secondaryText}
+                              </p>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </Reveal>
