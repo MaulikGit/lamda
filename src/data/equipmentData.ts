@@ -574,10 +574,10 @@ export function getPageEquipment(pageSlug: string): EquipmentItem[] | null {
     return ANALYTICAL_EQUIPMENT;
   }
   if (lower.includes('drug-product')) {
-    return DRUG_PRODUCT_EQUIPMENT;
+    return null;
   }
   if (lower.includes('drug-substance')) {
-    return [...UPSTREAM_GMP_EQUIPMENT, ...DOWNSTREAM_GMP_EQUIPMENT];
+    return null;
   }
   return null;
 }

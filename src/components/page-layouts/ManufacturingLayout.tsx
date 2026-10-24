@@ -99,6 +99,10 @@ export default function ManufacturingLayout({ page, content }: ManufacturingLayo
 
   // Per-slug accent: drug-substance = blue, drug-product = yellow
   const isSubstance = page.slug === 'drug-substance';
+  const isProduct = page.slug === 'drug-product';
+  const isMfgCustomHero = isSubstance || isProduct;
+  const customHeroImage = isSubstance ? '/images/drugsubstance.png' : '/images/drugproduct.png';
+
   const accentText = isSubstance ? 'text-brand-blue' : 'text-brand-yellow';
   const accentBox = isSubstance ? 'bg-brand-blue' : 'bg-brand-yellow';
   const accentIcon = isSubstance ? 'text-white' : 'text-black';
@@ -141,7 +145,15 @@ export default function ManufacturingLayout({ page, content }: ManufacturingLayo
               </div>
             </div>
             <Reveal className="w-full">
-              {page.images && page.images.length > 1 ? (
+              {isMfgCustomHero ? (
+                <div className="w-full rounded-[10px] border border-neutral-200/90 shadow-xl bg-white p-4 sm:p-6 lg:p-8 flex items-center justify-center relative overflow-hidden group">
+                  <img
+                    src={customHeroImage}
+                    alt={page.title}
+                    className="w-full h-auto max-h-[460px] object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+              ) : page.images && page.images.length > 1 ? (
                 <AboutHeroCarousel images={page.images} />
               ) : heroEquipment && heroEquipment.length > 0 ? (
                 <EquipmentCarousel items={heroEquipment} sectionTitle={page.heading} />
