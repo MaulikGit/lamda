@@ -94,7 +94,7 @@ export default function ServiceLayout({ page, content }: ServiceLayoutProps) {
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-molecules-hero overflow-hidden px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <section className="relative bg-molecules-hero overflow-hidden px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="absolute inset-0 opacity-[0.07]">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:40px_40px]" />
         </div>
@@ -114,7 +114,7 @@ export default function ServiceLayout({ page, content }: ServiceLayoutProps) {
                   {page.badge}
                 </span>
               )}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-neutral-900 leading-[1.05]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-neutral-900 leading-[1.05]">
                 <span className="text-neutral-900">{page.heading.split(' ')[0]}</span>
                 {` ${page.heading.split(' ').slice(1).join(' ')}`}
               </h1>
@@ -155,7 +155,7 @@ export default function ServiceLayout({ page, content }: ServiceLayoutProps) {
       </section>
 
       {/* TECHNICAL FOCUS AREAS — HORIZONTAL SECTIONS WITH KEY CAPABILITIES ICONS */}
-      <section className="px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-12 md:py-20">
+      <section className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-12 md:py-20">
         <div className="w-full max-w-[1700px] mx-auto">
           <div className="flex flex-col gap-10 md:gap-14">
             {content.sections
@@ -469,7 +469,7 @@ export default function ServiceLayout({ page, content }: ServiceLayoutProps) {
 
       {/* APPLICABLE MODALITIES */}
       {page.applicableModalities && page.applicableModalities.length > 0 && (
-        <section className="px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-12 md:py-20 bg-neutral-50/70 border-t border-neutral-200/80">
+        <section className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-12 md:py-20 bg-neutral-50/70 border-t border-neutral-200/80">
           <div className="w-full max-w-[1700px] mx-auto">
             <Reveal>
               <div className="text-center mb-10 md:mb-14">

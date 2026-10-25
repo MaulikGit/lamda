@@ -154,7 +154,7 @@ export default function Navigation() {
 
   return (
     <>
-      <header className="fixed top-0 z-50 w-full bg-white border-b border-neutral-200 select-none px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <header className="fixed top-0 z-50 w-full bg-white border-b border-neutral-200 select-none px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="w-full max-w-[1700px] mx-auto h-16 lg:h-20 flex items-center justify-between">
 
           <Link
@@ -166,7 +166,7 @@ export default function Navigation() {
               alt="Lambda & Novum"
               width={2991}
               height={358}
-              className="h-10 sm:h-11 md:h-12 w-auto max-w-[260px] sm:max-w-[320px] md:max-w-[360px] object-contain outline-none border-none select-none pointer-events-none"
+              className="h-9 sm:h-11 md:h-12 w-auto max-w-[220px] sm:max-w-[320px] md:max-w-[360px] object-contain outline-none border-none select-none pointer-events-none"
               priority
               unoptimized
             />
@@ -474,11 +474,6 @@ export default function Navigation() {
             >
               Contact Us
             </Link>
-
-            {/* Mobile/Tablet Search Button */}
-            <div className="xl:hidden">
-              <NavSearchBar className="px-2.5 py-1.5" placeholder="Search" />
-            </div>
 
             {/* Mobile Menu Trigger */}
             <button
