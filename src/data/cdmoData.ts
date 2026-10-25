@@ -1917,9 +1917,9 @@ export const cdmoData: CDMOPage[] = [
       "/images/Analytical/UPLC - Thermo.webp",
       "/images/Analytical/Q ToF.webp",
       "/images/Analytical/Orbitrap.webp",
-      "/images/Analytical/Biacore 8K+.webp",
+      "/images/Analytical/Biacore 8K Plus.webp",
       "/images/Analytical/Octet.webp"
-],
+    ],
     "capabilities": [
       "Primary structure analysis",
       "Intact mass and peptide mass analysis",
@@ -2029,10 +2029,10 @@ export const cdmoData: CDMOPage[] = [
     "images": [
       "/images/Analytical/Multimode reader.webp",
       "/images/Analytical/Flow Cytometer.webp",
-      "/images/Analytical/Biacore 8K+.webp",
+      "/images/Analytical/Biacore 8K Plus.webp",
       "/images/Analytical/Octet.webp",
       "/images/Analytical/Liquid Handling System.webp"
-],
+    ],
     "bioassayCapabilities": [
       "Cell-based potency assays",
       "Reporter gene assays",
@@ -2108,10 +2108,7 @@ export const cdmoData: CDMOPage[] = [
     "image": "/images/Analytical/microbiology/petri_dish_culture.webp",
     "images": [
       "/images/Analytical/microbiology/petri_dish_culture.webp",
-      "/images/Analytical/microbiology/sterility_testing_cabinet.webp",
-      "/images/Analytical/microbiology/bioburden_testing_incubation.webp",
-      "/images/Analytical/microbiology/environmental_monitoring_cleanroom.webp",
-      "/images/Analytical/microbiology/bacterial_endotoxin_testing.webp"
+      "/images/Analytical/microbiology/environmental_monitoring_cleanroom.webp"
     ],
     "capabilities": [
       "Sterility testing",
