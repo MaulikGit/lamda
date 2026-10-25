@@ -2753,7 +2753,7 @@ export const cdmoData: CDMOPage[] = [
             "title": "Microbiological Testing",
             "link": "/characterization/microbiological",
             "badge": "Microbiology",
-            "image": "/images/working employee2.png",
+            "image": "/images/Analytical/microbiology/environmental_monitoring_cleanroom.webp",
             "description": "Controlled microbiological testing services supporting biologics manufacturing, environmental monitoring, bioburden reduction, and sterility assurance.",
             "bullets": [
               "Sterility testing",

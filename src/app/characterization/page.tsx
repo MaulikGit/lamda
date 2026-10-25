@@ -84,7 +84,7 @@ const DEFAULT_CHARACTERIZATION_SUB_SERVICES = [
     title: 'Microbiological Testing',
     slug: 'microbiological',
     href: '/characterization/microbiological',
-    image: '/images/Analytical/microbiology/petri_dish_culture.webp',
+    image: '/images/Analytical/microbiology/environmental_monitoring_cleanroom.webp',
     description: 'Controlled microbiological testing services supporting biologics manufacturing, environmental monitoring, bioburden reduction, and sterility assurance.',
     capabilities: [
       'Sterility testing',
