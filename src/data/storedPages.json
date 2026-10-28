@@ -699,7 +699,7 @@
           {
             "title": "Dr. M.S. Ramakrishnan",
             "description": "Dr. M. S. Ramakrishnan is a biopharmaceutical development leader with more than 27 years of experience spanning technical product development and in vitro and in vivo pharmacology. His experience includes the development of novel biologics and biosimilars, with a focus on advancing complex biologic programs through the development pipeline.\n\nPreviously, Dr. Ramakrishnan served as Vice President of Research and Development at Biocon Biologics Limited, where he contributed to the development of analytical characterization technologies for novel and biosimilar monoclonal antibodies, with a focus on product quality, safety, and efficacy.\n\nHe holds a Ph.D. in Biochemistry from the University of Mysore and completed post-doctoral research at the Howard Hughes Medical Institute, University of Chicago. As Executive Vice President – CDMO, he provides strategic leadership for the CDMO business, with a focus on strengthening service capabilities and aligning development and manufacturing offerings with global industry requirements.",
-            "image": "/images/team/MS Ramaki.jpg",
+            "image": "/uploads/Ramki_new_1793186122334.webp",
             "badge": "Executive Leadership",
             "step": "27+ Years Experience",
             "link": "Executive Vice President – CDMO",
@@ -708,7 +708,7 @@
           {
             "title": "Jagannathan Sundaram",
             "description": "Jagannathan Sundaram is Vice President of Process Sciences at Lambda CDMO, leading bioprocess engineering, upstream cell culture development, downstream purification, and technology transfer for biologics and biosimilars.\n\nWith extensive expertise across biopharmaceutical process development and scale-up, he oversees the development of scalable single-use bioreactor systems and multi-modal downstream purification trains from bench scale through clinical and commercial cGMP biomanufacturing suites at Lambda's Ahmedabad facility.\n\nHis leadership ensures robust tech transfer protocols, critical process parameter (CPP) control, high process yields, and full alignment with global US FDA, EMA, and WHO regulatory manufacturing expectations.",
-            "image": "/images/team/Jagan Sundaram Profile Picture.png",
+            "image": "/uploads/Professional_Blue-Gray_Corporate_Headshot_1793186151449.webp",
             "badge": "Process Sciences (India)",
             "step": "25+ Years Experience",
             "link": "Vice President – Process Sciences (India)",
@@ -717,7 +717,7 @@
           {
             "title": "Dr. Abhishek Kulshrestha",
             "description": "Dr. Abhishek Kulshrestha is Associate Vice President and Head of Analytical Sciences for the CDMO vertical at Lambda Therapeutic Research, with more than 20 years of experience in the biopharmaceutical industry. His expertise spans analytical sciences, quality control, and regulatory lifecycle management of complex biologics.\n\nAt Lambda, he leads analytical development and characterization for therapeutic antibodies and large molecule bioanalytical services supporting domestic and international sponsors. His technical experience includes cell line development, orthogonal analytical and immunological strategies, process impurity clearance, asset evaluation, and immunogenicity risk assessment.\n\nPreviously, Dr. Kulshrestha served as General Manager and Head of Immunology at Biocon Biologics and as a Research Leader at Reliance Life Sciences. He has also contributed to regulatory interactions and inspection-related data packages involving global health authorities. He holds a Ph.D. in Biochemistry from the University of Delhi, an M.Sc. in Biotechnology from Jawaharlal Nehru University (JNU), is a co-inventor on granted European and US patents related to antibody drug detection methods, and has published research in peer-reviewed journals.",
-            "image": "/images/team/Abhishek.jpeg",
+            "image": "/uploads/Approachable_Corporate_Headshot_1793186162359.webp",
             "badge": "Analytical Sciences (India)",
             "step": "20+ Years Experience",
             "link": "Associate Vice President – Analytical Sciences (India)",
@@ -726,7 +726,7 @@
           {
             "title": "Bhargav Perla",
             "description": "Bhargav Perla is a biopharmaceutical CMC and technical development leader with 20 years of experience across biologics and biosimilars. His expertise spans drug substance and drug product development, technology transfer, scale-up, product lifecycle management, CDMO management, and co-development partnerships.\n\nHis experience includes developing and implementing development strategies, applying platform technologies, and coordinating internal and external capabilities to support biologics programs. He has worked across technical, regulatory, and operational functions to address complex development challenges and align program execution with business objectives.\n\nBhargav has supported regulatory programs involving EMA, FDA, TGA, and Health Canada, with experience in development strategies leading to regulatory outcomes. He also has extensive experience in building high performing teams, scientific mentoring, resource management, and cross-functional governance.",
-            "image": "/images/team/Bhargav Perla.png",
+            "image": "/uploads/Professional_Corporate_Portrait_1793186166814.webp",
             "badge": "European R&D (Harrow, UK)",
             "step": "20+ Years Experience",
             "link": "Head of Technical Development, Biopharma R&D (Harrow)",
@@ -746,7 +746,13 @@
       }
     ],
     "faqTitle": "Common Questions",
-    "faqSubtitle": "FREQUENTLY ASKED QUESTIONS"
+    "faqSubtitle": "FREQUENTLY ASKED QUESTIONS",
+    "isPublished": true,
+    "hasUnpublishedChanges": false,
+    "status": "published",
+    "lastPublishedAt": "2026-10-28T11:16:20.179Z",
+    "lastSavedAt": "2026-10-28T11:16:20.179Z",
+    "updatedAt": "2026-10-28T11:16:20.179Z"
   },
   {
     "slug": "India",
