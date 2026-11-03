@@ -15,7 +15,7 @@ export default function Footer() {
         { name: 'Ahmedabad Facility', href: '/facility&location/India' },
         { name: 'London UK Facility', href: '/facility&location/UK' },
         { name: 'Virtual Tour', href: '/virtual-tour/00%20MAIN%20BUILDING/index.htm' },
-        { name: 'Integrated Dev', href: '/overview/integrated' },
+        { name: 'Integrated Development', href: '/overview/integrated' },
         { name: 'Careers', href: '/overview/careers' },
       ],
     },

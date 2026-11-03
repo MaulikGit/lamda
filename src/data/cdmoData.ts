@@ -265,8 +265,8 @@ export const cdmoData: CDMOPage[] = [
               },
               {
                 "name": "Analytical Development",
-                "href": "/services/analytical",
-                "icon": "Search"
+                  "href": "/services/analytical",
+                  "icon": "FlaskConical"
               }
             ]
           },
@@ -318,7 +318,7 @@ export const cdmoData: CDMOPage[] = [
               {
                 "name": "Analytical Testing",
                 "href": "/characterization/analytical-testing",
-                "icon": "Search"
+                "icon": "Microscope"
               },
               {
                 "name": "Physicochemical Characterization",
@@ -827,7 +827,7 @@ export const cdmoData: CDMOPage[] = [
         "style": "feature-split",
         "title": "Drug Product Development & Manufacturing",
         "subtitle": "06 — DRUG PRODUCT & FILL-FINISH",
-        "text": "The drug product platform supports **formulation, process development, lyophilization, and clinical GMP manufacturing**.\n\n**Development capabilities.** The drug product filling line is isolator based with robotic operations minimizing operator handling and ensuring a high degree of aseptic compliance. The line has a nominal ability to process 10,000 units in a batch in vial, PFS or cartridge formats. The facility also has a visual inspection suite with manual inspection setup, and a suite for secondary packaging primarily for bulk packaging of filled units.",
+        "text": "The drug product platform supports **formulation, process development, lyophilization, and clinical GMP manufacturing**.\n\n**Drug Development:** The drug product filling line is isolator based with robotic operations minimizing operator handling and ensuring a high degree of aseptic compliance. The line has a nominal ability to process 10,000 units per batch in vial, PFS or cartridge formats. The facility also has a visual inspection suite with manual inspection setup, and a suite for secondary packaging primarily for bulk packaging of filled units.",
         "dark": false,
         "image": "/images/Drugproductdev/FDL Lab.png",
         "imageSide": "right",
@@ -906,7 +906,7 @@ export const cdmoData: CDMOPage[] = [
       },
       {
         "question": "What cleanroom grades and bioreactor capacities are available?",
-        "answer": "Our facility incorporates 2x 200L (400L total) single-use bioreactor suites, Grade C downstream suites with viral segregation, and Grade A robotic isolator fill-finish capable of 10,000 units per batch."
+        "answer": "Our facility incorporates 2 × 200 L (400 L total) single-use bioreactor suites, Grade C downstream suites with viral segregation, and Grade A robotic isolator fill-finish capable of 10,000 units per batch."
       }
     ],
     "faqSubtitle": "TECHNICAL & OPERATIONAL CLARIFICATIONS"
@@ -1033,7 +1033,7 @@ export const cdmoData: CDMOPage[] = [
     "faqs": [
       {
         "question": "What services are offered at the London, UK facility?",
-        "answer": "The London facility specializes in upstream and downstream process development, analytical method development and validation, biosimilar development, and deep process characterization."
+        "answer": "The London facility specializes in upstream and downstream process development, analytical method development and characterization, biosimilar development, and deep process characterization."
       },
       {
         "question": "How do the London and Ahmedabad facilities collaborate?",
@@ -1242,14 +1242,14 @@ export const cdmoData: CDMOPage[] = [
         "title": "Recombinant Proteins",
         "subtitle": "Enzymes & Fc-Fusions",
         "description": "High-yielding mammalian expression systems tailored for complex glycoproteins, fusion proteins, cytokines, and bioactive factors.",
-        "link": "/modalities/proteins",
+        "link": "/modalities/proteins-peptides",
         "badge": "Recombinant"
       },
       {
         "title": "Other Mammalian Biologics",
         "subtitle": "Biosimilars & Novel Scaffolds",
         "description": "Customized stable pool generation and clone isolation for emerging biologic constructs, scaffold proteins, and biosimilar candidates.",
-        "link": "/modalities/biosimilars",
+        "link": "/modalities/proteins-peptides",
         "badge": "Emerging"
       }
     ],
@@ -1989,7 +1989,7 @@ export const cdmoData: CDMOPage[] = [
     "metaTitle": "Protein & Peptide Development & Manufacturing | Lambda CDMO",
     "metaDesc": "Lambda CDMO offers development and manufacturing capabilities for recombinant proteins and therapeutic peptides across a range of biologic applications.",
     "badge": "Modalities",
-    "heading": "Development and Manufacturing for Protein- and Peptide-Based Therapeutics",
+    "heading": "Development and Manufacturing for Proteins and Peptides",
     "description": "Lambda CDMO offers development and manufacturing capabilities for recombinant proteins and therapeutic peptides across a range of biologic applications. Our integrated platform combines process development, analytical characterization, quality control, and manufacturing to support the development of protein- and peptide-based therapeutics.",
     "image": "/images/modalities/Proteins_and_Peptides.png",
     "capabilities": [
@@ -2284,7 +2284,7 @@ export const cdmoData: CDMOPage[] = [
       },
       {
         "question": "How are development processes transferred into cGMP manufacturing?",
-        "answer": "Our integrated operating model bridges process development directly with our cGMP manufacturing suites at Ahmedabad. Analytical methods, process control parameters, and operational batch records undergo structured tech transfer protocols, supported by joint cross-functional teams."
+        "answer": "Our integrated operating model bridges process development directly with our cGMP manufacturing suites at Ahmedabad. Analytical methods, process control parameters, and operational batch records undergo structured technology transfer protocols, supported by joint cross-functional teams."
       },
       {
         "question": "Can you support biosimilar development and comparative characterization?",
@@ -2365,7 +2365,7 @@ export const cdmoData: CDMOPage[] = [
     "faqs": [
       {
         "question": "What batch scales and filling formats are supported at the Ahmedabad facility?",
-        "answer": "Our drug substance facility operates single-use bioreactors up to 2x 200L scale. Our drug product aseptic suite features an automated robotic isolator supporting liquid and lyophilized vials (2R to 50R), prefilled syringes (0.5 mL to 5 mL), and cartridges (1.5 mL to 3 mL)."
+        "answer": "Our drug substance facility operates single-use bioreactors up to 2 × 200 L scale. Our drug product aseptic suite features an automated robotic isolator supporting liquid and lyophilized vials (2R to 50R), prefilled syringes (0.5 mL to 5 mL), and cartridges (1.5 mL to 3 mL)."
       },
       {
         "question": "How do you prevent cross-contamination during multi-product operations?",
@@ -2543,7 +2543,7 @@ export const cdmoData: CDMOPage[] = [
             "country": "India",
             "city": "Ahmedabad",
             "type": "Primary Development & GMP Manufacturing Hub",
-            "description": "Integrated facility featuring mammalian cell line development, high-titer upstream & downstream bioprocess suites, single-use bioreactors up to 2x 200L, automated robotic barrier isolator fill-finish, and comprehensive analytical release testing.",
+            "description": "Integrated facility featuring mammalian cell line development, high-titer upstream & downstream bioprocess suites, single-use bioreactors up to 2 × 200 L, automated robotic barrier isolator fill-finish, and comprehensive analytical release testing.",
             "tag": "Ahmedabad, India",
             "address": "Lambda House, Plot No. 38, Survey No. 388, Near Silver Oak University, S. G. Highway, Gota, Ahmedabad - 382481, Gujarat, India",
             "badge": "GMP Facility",
@@ -2570,7 +2570,7 @@ export const cdmoData: CDMOPage[] = [
     "faqs": [
       {
         "question": "How do Lambda CDMO’s Ahmedabad and London facilities collaborate on a single program?",
-        "answer": "Our multi-site model allows sponsors to initiate clone screening, analytical development, and early process characterisation in our London facility, followed by seamless technology transfer to our Ahmedabad cGMP suites for scale-up (up to 2x 200L single-use bioreactors) and automated isolator fill-finish."
+        "answer": "Our multi-site model allows sponsors to initiate clone screening, analytical development, and early process characterisation in our London facility, followed by seamless technology transfer to our Ahmedabad cGMP suites for scale-up (up to 2 × 200 L single-use bioreactors) and automated isolator fill-finish."
       },
       {
         "question": "What regulatory standards do the facilities comply with?",

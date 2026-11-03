@@ -21,7 +21,7 @@ const equipment = [
     image: '/images/Spray_Dryer.jpeg',
   },
   {
-    name: '2×7 Litres Fermenters',
+    name: '2 × 7-Litre Fermenters',
     image: '/images/2X7_Litres_Fermenters.jpeg',
   },
 ];

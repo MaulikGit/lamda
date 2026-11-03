@@ -665,7 +665,7 @@ export default function OverviewLayout({ page, content }: OverviewLayoutProps) {
             <span>/</span>
             <span className="text-neutral-500">{page.category === 'facility&location' ? 'Facility & Location' : page.category}</span>
             <span>/</span>
-            <span className="text-brand-yellow">{page.slug}</span>
+            <span className="text-brand-yellow">{page.title ? page.title.split('—')[0].split('|')[0].trim() : page.slug.replace(/-/g, ' ')}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

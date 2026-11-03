@@ -33,6 +33,7 @@ import {
   HelpCircle,
   Globe,
   ArrowRight,
+  FlaskConical,
   LucideIcon 
 } from 'lucide-react';
 import SearchModal from './SearchModal';
@@ -133,7 +134,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           links: [
             { label: 'Cell Line Development', href: '/services/cell-line', icon: Dna },
             { label: 'Process Development', href: '/services/process', icon: Settings },
-            { label: 'Analytical Development', href: '/services/analytical', icon: Search },
+            { label: 'Analytical Development', href: '/services/analytical', icon: FlaskConical },
           ],
         },
         {

@@ -69,7 +69,7 @@ const DEFAULT_MANUFACTURING_SUB_SERVICES = [
 const DEFAULT_MANUFACTURING_FAQS = [
   {
     question: 'What batch scales and filling formats are supported at the Ahmedabad facility?',
-    answer: 'Our drug substance facility operates single-use bioreactors up to 2x 200L scale. Our drug product aseptic suite features an automated robotic isolator supporting liquid and lyophilized vials (2R to 50R), prefilled syringes (0.5 mL to 5 mL), and cartridges (1.5 mL to 3 mL).',
+    answer: 'Our drug substance facility operates single-use bioreactors up to 2 × 200 L scale. Our drug product aseptic suite features an automated robotic isolator supporting liquid and lyophilized vials (2R to 50R), prefilled syringes (0.5 mL to 5 mL), and cartridges (1.5 mL to 3 mL).',
   },
   {
     question: 'How do you prevent cross-contamination during multi-product operations?',
@@ -170,16 +170,16 @@ export default async function ManufacturingServicesPage({ searchParams }: PagePr
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link
                   href="/manufacturing/drug-substance"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-brand-blue hover:bg-brand-blue-hover text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-blue text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <Beaker className="w-4 h-4" />
+                  <Beaker className="w-4 h-4 text-brand-blue group-hover:text-white transition-colors" />
                   <span>Drug Substance</span>
                 </Link>
                 <Link
                   href="/manufacturing/drug-product"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-orange text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-orange text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <Package className="w-4 h-4" />
+                  <Package className="w-4 h-4 text-brand-orange group-hover:text-white transition-colors" />
                   <span>Drug Product</span>
                 </Link>
               </div>

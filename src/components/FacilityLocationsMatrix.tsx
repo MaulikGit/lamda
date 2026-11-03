@@ -42,7 +42,7 @@ Our facilities support with a strong focus, different aspects of biologics devel
       description:
         'Our Ahmedabad facility brings together cell line development, upstream and downstream process development, analytical development and characterization, drug product development, and GMP manufacturing within an integrated biologics development and manufacturing environment.',
       primaryHighlight:
-        '2x 200L single-use bioreactors with robotic isolator aseptic filling (10,000 units/batch in vials, PFS, cartridges).',
+        '2 × 200 L single-use bioreactors with robotic isolator aseptic filling (10,000 units/batch in vials, PFS, cartridges).',
       tags: ['GMP Manufacturing', 'Robotic Isolator', 'US FDA / EMA Aligned'],
     },
     {

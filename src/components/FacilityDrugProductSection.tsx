@@ -74,7 +74,7 @@ export default function FacilityDrugProductSection({ section }: FacilityDrugProd
                 The drug product platform supports <strong className="text-neutral-900 font-semibold">formulation, process development, lyophilization, and clinical GMP manufacturing</strong>.
               </p>
               <p>
-                <strong className="text-neutral-900 font-semibold">Development capabilities.</strong> The drug product filling line is isolator based with robotic operations minimizing operator handling and ensuring a high degree of aseptic compliance. The line has a nominal ability to process 10,000 units in a batch in vial, PFS or cartridge formats. The facility also has a visual inspection suite with manual inspection setup, and a suite for secondary packaging primarily for bulk packaging of filled units.
+                <strong className="text-neutral-900 font-semibold">Drug Development:</strong> The drug product filling line is isolator based with robotic operations minimizing operator handling and ensuring a high degree of aseptic compliance. The line has a nominal ability to process 10,000 units per batch in vial, PFS or cartridge formats. The facility also has a visual inspection suite with manual inspection setup, and a suite for secondary packaging primarily for bulk packaging of filled units.
               </p>
             </div>
           </div>

@@ -81,7 +81,7 @@ export const allFaqs: FAQItemDetail[] = [
     question: 'Where are Lambda CDMO’s development and manufacturing facilities located?',
     answer: 'Lambda CDMO operates two complementary, purpose-built facilities across India and the United Kingdom:',
     bullets: [
-      'Ahmedabad, India Facility: Approximately 27,000 sqft facility integrating cell line development, process development, analytical characterization, upstream single-use suites (2x 200L), Grade C downstream suites, Grade A robotic isolator fill-finish (10,000 units/batch), and lyophilization.',
+      'Ahmedabad, India Facility: Approximately 27,000 sqft facility integrating cell line development, process development, analytical characterization, upstream single-use suites (2 × 200 L), Grade C downstream suites, Grade A robotic isolator fill-finish (10,000 units/batch), and lyophilization.',
       'London, United Kingdom Facility: Dedicated process development and analytical characterization laboratory focused on upstream optimization, downstream purification design, biosimilar comparability, and advanced physicochemical analytics.',
     ],
     tags: ['Ahmedabad', 'London', 'Facility', 'Facilities', 'UK', 'India'],

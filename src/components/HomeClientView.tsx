@@ -77,7 +77,7 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
       items: [
         { name: 'Cell Line Development', icon: Dna, href: '/services/cell-line' },
         { name: 'Process Development', icon: Activity, href: '/services/process' },
-        { name: 'Analytical Development', icon: Search, href: '/services/analytical' },
+        { name: 'Analytical Development', icon: FlaskConical, href: '/services/analytical' },
       ],
       href: '/services',
     },
@@ -115,7 +115,7 @@ export default function HomeClientView({ pageData }: HomeClientViewProps) {
         '/images/Analytical/UPLC.png',
       ],
       items: [
-        { name: 'Analytical Testing', icon: Search, href: '/characterization/analytical-testing' },
+        { name: 'Analytical Testing', icon: Microscope, href: '/characterization/analytical-testing' },
         { name: 'Physicochemical Characterization', icon: Scale, href: '/characterization/physicochemical' },
         { name: 'Bioassays & Immunogenicity Testing', icon: HeartPulse, href: '/characterization/bioassays' },
         { name: 'Microbiological Testing', icon: Bug, href: '/characterization/microbiological' },

@@ -202,30 +202,30 @@ export default async function AnalyticalCharacterizationPage({ searchParams }: P
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link
                   href="/characterization/analytical-testing"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-brand-blue hover:bg-brand-blue-hover text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
+                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-blue text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <Microscope className="w-4 h-4" />
+                  <Microscope className="w-4 h-4 text-brand-blue group-hover:text-white transition-colors" />
                   <span>Analytical Testing</span>
                 </Link>
                 <Link
                   href="/characterization/physicochemical"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-orange text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
+                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-orange text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <Scale className="w-4 h-4" />
+                  <Scale className="w-4 h-4 text-brand-orange group-hover:text-white transition-colors" />
                   <span>Physicochemical</span>
                 </Link>
                 <Link
                   href="/characterization/bioassays"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] border border-neutral-300 hover:border-brand-orange hover:text-brand-orange text-neutral-800 text-xs font-semibold uppercase tracking-wider transition-all"
+                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-blue text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <HeartPulse className="w-4 h-4" />
+                  <HeartPulse className="w-4 h-4 text-brand-blue group-hover:text-white transition-colors" />
                   <span>Bioassays & ADA</span>
                 </Link>
                 <Link
                   href="/characterization/microbiological"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] border border-neutral-300 hover:border-brand-blue hover:text-brand-blue text-neutral-800 text-xs font-semibold uppercase tracking-wider transition-all"
+                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-orange text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <Bug className="w-4 h-4" />
+                  <Bug className="w-4 h-4 text-brand-orange group-hover:text-white transition-colors" />
                   <span>Microbiology</span>
                 </Link>
               </div>

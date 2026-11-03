@@ -106,7 +106,7 @@ const CAPABILITIES_TABLE: CapabilityRow[] = [
 const DEFAULT_FACILITY_FAQS = [
   {
     question: 'How do Lambda CDMO’s Ahmedabad and London facilities collaborate on a single program?',
-    answer: 'Our multi-site model allows sponsors to initiate clone screening, analytical development, and early process characterisation in our London facility, followed by seamless technology transfer to our Ahmedabad cGMP suites for scale-up (up to 2x 200L single-use bioreactors) and automated isolator fill-finish.',
+    answer: 'Our multi-site model allows sponsors to initiate clone screening, analytical development, and early process characterisation in our London facility, followed by seamless technology transfer to our Ahmedabad cGMP suites for scale-up (up to 2 × 200 L single-use bioreactors) and automated isolator fill-finish.',
   },
   {
     question: 'What regulatory standards do the facilities comply with?',

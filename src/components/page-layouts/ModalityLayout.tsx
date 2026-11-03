@@ -62,7 +62,7 @@ export default function ModalityLayout({ page, content }: ModalityLayoutProps) {
             <span>/</span>
             <span className="text-neutral-500">{page.category}</span>
             <span>/</span>
-            <span className="text-black">{page.slug}</span>
+            <span className="text-black">{page.title ? page.title.split('—')[0].split('|')[0].trim() : page.slug.replace(/-/g, ' ')}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

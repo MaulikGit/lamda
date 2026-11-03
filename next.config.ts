@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/modalities/proteins',
+        destination: '/modalities/proteins-peptides',
+        permanent: true,
+      },
+      {
+        source: '/modalities/biosimilars',
+        destination: '/modalities/mabs',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

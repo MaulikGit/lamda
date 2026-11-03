@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, ChevronDown, Building2, Users, Factory, Layers, ShieldCheck, Briefcase, Settings, Search, Beaker, Package, Microscope, Scale, HeartPulse, Bug, Target, GitMerge, Syringe, Dna, BookOpen, FileText, FileDown, Newspaper, Calendar, Compass, HelpCircle, MapPin, LucideIcon, ArrowRight, Check, Globe } from 'lucide-react';
+import { Menu, ChevronDown, Building2, Users, Factory, Layers, ShieldCheck, Briefcase, Settings, Search, Beaker, Package, Microscope, Scale, HeartPulse, Bug, Target, GitMerge, Syringe, Dna, BookOpen, FileText, FileDown, Newspaper, Calendar, Compass, HelpCircle, MapPin, LucideIcon, ArrowRight, Check, Globe, FlaskConical } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 import NavSearchBar from './NavSearchBar';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -61,7 +61,7 @@ export default function Navigation() {
           links: [
             { label: 'Cell Line Development', href: '/services/cell-line', icon: Dna },
             { label: 'Process Development', href: '/services/process', icon: Settings },
-            { label: 'Analytical Development', href: '/services/analytical', icon: Search },
+            { label: 'Analytical Development', href: '/services/analytical', icon: FlaskConical },
           ],
         },
         {

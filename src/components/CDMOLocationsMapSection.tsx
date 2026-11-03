@@ -543,13 +543,15 @@ export default function CDMOLocationsMapSection({
                     {activeLoc.caps.map((cap, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center gap-2.5 px-4 py-3 rounded-xl border border-neutral-200 bg-white text-[14px] sm:text-[15px] font-medium text-neutral-800 shadow-xs"
+                        className={`flex items-center gap-2.5 px-4 py-3 rounded-xl border border-neutral-200 bg-white text-[14px] sm:text-[15px] font-medium text-neutral-800 shadow-xs ${
+                          cap.length > 28 ? 'sm:col-span-2' : ''
+                        }`}
                       >
                         <span
                           className="w-2 h-2 rounded-[2px] shrink-0"
                           style={{ backgroundColor: activeLoc.color }}
                         />
-                        <span className="truncate">{cap}</span>
+                        <span className="leading-snug break-words">{cap}</span>
                       </div>
                     ))}
                   </div>

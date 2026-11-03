@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { 
   Dna, 
   Settings, 
-  Search, 
+  FlaskConical, 
   ArrowRight, 
   Check
 } from 'lucide-react';
@@ -91,7 +91,7 @@ const DEFAULT_DEVELOPMENT_FAQS = [
   },
   {
     question: 'How are development processes transferred into cGMP manufacturing?',
-    answer: 'Our integrated operating model bridges process development directly with our cGMP manufacturing suites at Ahmedabad. Analytical methods, process control parameters, and operational batch records undergo structured tech transfer protocols, supported by joint cross-functional teams.',
+    answer: 'Our integrated operating model bridges process development directly with our cGMP manufacturing suites at Ahmedabad. Analytical methods, process control parameters, and operational batch records undergo structured technology transfer protocols, supported by joint cross-functional teams.',
   },
   {
     question: 'Can you support biosimilar development and comparative characterization?',
@@ -103,10 +103,10 @@ function getServiceIcon(title: string, index: number) {
   const t = title.toLowerCase();
   if (t.includes('cell')) return Dna;
   if (t.includes('process')) return Settings;
-  if (t.includes('analytical') || t.includes('testing')) return Search;
+  if (t.includes('analytical') || t.includes('testing')) return FlaskConical;
   if (index === 0) return Dna;
   if (index === 1) return Settings;
-  return Search;
+  return FlaskConical;
 }
 
 export default async function DevelopmentServicesPage({ searchParams }: PageProps) {
@@ -187,23 +187,23 @@ export default async function DevelopmentServicesPage({ searchParams }: PageProp
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link
                   href="/services/cell-line"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-brand-blue hover:bg-brand-blue-hover text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-blue text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <Dna className="w-4 h-4" />
+                  <Dna className="w-4 h-4 text-brand-blue group-hover:text-white transition-colors" />
                   <span>Cell Line Dev</span>
                 </Link>
                 <Link
                   href="/services/process"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-orange text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-orange text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <Settings className="w-4 h-4" />
+                  <Settings className="w-4 h-4 text-brand-orange group-hover:text-white transition-colors" />
                   <span>Process Dev</span>
                 </Link>
                 <Link
                   href="/services/analytical"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] border border-neutral-300 hover:border-brand-blue hover:text-brand-blue text-neutral-800 text-xs font-semibold uppercase tracking-wider transition-all"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-neutral-900 hover:bg-brand-blue text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
-                  <Search className="w-4 h-4" />
+                  <FlaskConical className="w-4 h-4 text-brand-blue group-hover:text-white transition-colors" />
                   <span>Analytical Dev</span>
                 </Link>
               </div>
